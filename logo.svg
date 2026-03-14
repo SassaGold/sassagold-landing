@@ -1,11 +1,62 @@
-<svg width="600" height="140" viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg">
-  <rect width="600" height="140" fill="black"/>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
-        font-family="Montserrat, sans-serif"
-        font-size="72"
-        letter-spacing="4"
-        fill="white">
-    SASSAGOLD
-  </text>
-  <rect x="150" y="95" width="300" height="3" fill="#FFD700" rx="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="SassaGold logo">
+  <defs>
+    <!-- Metallic gold gradient (vertical, simulates shiny surface) -->
+    <linearGradient id="goldMetal" x1="100" y1="52" x2="100" y2="168"
+                    gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FFF8C0"/>
+      <stop offset="12%"  stop-color="#FFD700"/>
+      <stop offset="32%"  stop-color="#B8860B"/>
+      <stop offset="50%"  stop-color="#FFE040"/>
+      <stop offset="68%"  stop-color="#DAA520"/>
+      <stop offset="85%"  stop-color="#9A7000"/>
+      <stop offset="100%" stop-color="#5C3D00"/>
+    </linearGradient>
+
+    <!-- Diagonal specular highlight (top-left to bottom-right) -->
+    <linearGradient id="shine" x1="48" y1="52" x2="152" y2="168"
+                    gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="30%"  stop-color="#FFFFFF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Drop shadow beneath the letter -->
+    <filter id="dropShadow" x="-25%" y="-25%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8"
+                    flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- 3D extrusion: stacked offset layers from deep shadow to near-surface -->
+  <text x="106" y="171" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="150" font-weight="bold" fill="#0D0500">S</text>
+  <text x="105" y="170" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="150" font-weight="bold" fill="#1C0A00">S</text>
+  <text x="104" y="169" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="150" font-weight="bold" fill="#301400">S</text>
+  <text x="103" y="168" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="150" font-weight="bold" fill="#4A2000">S</text>
+  <text x="102" y="167" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="150" font-weight="bold" fill="#6B3200">S</text>
+  <text x="101" y="166" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="150" font-weight="bold" fill="#8B4800">S</text>
+
+  <!-- Main gold face with drop shadow -->
+  <text x="100" y="165" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="150" font-weight="bold"
+        fill="url(#goldMetal)"
+        filter="url(#dropShadow)">S</text>
+
+  <!-- Specular shine overlay -->
+  <text x="100" y="165" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="150" font-weight="bold"
+        fill="url(#shine)">S</text>
 </svg>
