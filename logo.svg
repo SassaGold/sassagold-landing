@@ -15,9 +15,6 @@
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="240" height="240" fill="black"/>
-
   <!-- 3D Gold S -->
   <path d="M160 60c-40-40-100-10-100 30s60 40 100 70c40 30 0 70-60 40"
         fill="none"
