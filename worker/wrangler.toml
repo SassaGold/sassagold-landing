@@ -1,0 +1,12 @@
+name = "sassagold-waitlist"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# KV namespace for waitlist emails + analytics
+# To create: wrangler kv namespace create WAITLIST
+# Then replace the id values below with the output IDs.
+[[kv_namespaces]]
+binding = "WAITLIST"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_YOUR_PREVIEW_KV_NAMESPACE_ID"
