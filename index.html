@@ -326,7 +326,7 @@
         });
         const data = await res.json();
 
-        if (res.ok && data.ok) {
+        if (res.ok && data.success) {
           msg.className   = 'success';
           msg.textContent = data.message ?? "You're on the list! 🎉";
           document.getElementById('email-input').value = '';
