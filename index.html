@@ -762,7 +762,7 @@
         });
         const data = await res.json();
 
-        if (res.ok && data.success) {
+        if (res.ok && data.ok) {
           msg.className   = 'success';
           msg.textContent = data.message ?? "You're on the list! 🎉";
           document.getElementById('email-input').value = '';
