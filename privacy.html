@@ -8,123 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    :root {
-      --gold:       #C49A00;
-      --gold-light: #FFF8E1;
-      --gold-border: rgba(196,154,0,0.25);
-      --text-primary:   #111111;
-      --text-secondary: #444444;
-      --text-muted:     #888888;
-      --bg:      #FFFFFF;
-      --bg-soft: #FAFAF8;
-      --border:  #E8E8E8;
-    }
-
-    * { box-sizing: border-box; }
-    body {
-      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text-primary);
-      margin: 0;
-    }
-    a { text-decoration: none; color: inherit; }
-
-    .gold-divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(196,154,0,.3), transparent);
-    }
-
-    .text-gold { color: var(--gold); }
-
-    .section-label {
-      display: inline-block;
-      font-size: .72rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: .85rem;
-    }
-
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .back-link {
-      color: var(--gold);
-      font-size: .9rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      transition: opacity .2s;
-    }
-    .back-link:hover { opacity: .75; }
-
-    .prose h2 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-top: 2.5rem;
-      margin-bottom: .75rem;
-      padding-bottom: .4rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .prose h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-top: 1.5rem;
-      margin-bottom: .5rem;
-    }
-    .prose p {
-      color: var(--text-secondary);
-      line-height: 1.85;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    .prose ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      color: var(--text-secondary);
-      line-height: 1.85;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    .prose ul li { margin-bottom: .4rem; }
-    .prose a { color: var(--gold); text-decoration: underline; }
-    .prose strong { color: var(--text-primary); font-weight: 600; }
-
-    .site-footer {
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      font-size: .875rem;
-      background: #F3F2EE;
-      border-top: 1px solid var(--border);
-    }
-    .footer-inner { display: flex; flex-direction: column; align-items: center; gap: .75rem; }
-    .footer-logo { color: var(--gold); font-weight: 800; font-size: 1.15rem; }
-    .footer-nav { display: flex; gap: 1.5rem; }
-    .footer-link { color: #888; transition: color .2s; }
-    .footer-link:hover { color: var(--gold); }
-    .footer-copy { color: #aaa; }
-  </style>
+  <link rel="stylesheet" href="site.css" />
 </head>
 
 <body>
@@ -133,7 +17,25 @@
   <nav class="site-nav">
     <div class="nav-inner">
       <a href="/" style="color: var(--gold); font-weight: 800; font-size: 1.25rem; letter-spacing: -.03em;">SassaGold</a>
-      <a href="/" class="back-link">← Back to home</a>
+      <div class="nav-links">
+        <a href="/features.html"    class="nav-link">Features</a>
+        <a href="/screenshots.html" class="nav-link">Screenshots</a>
+        <a href="/about.html"       class="nav-link">About</a>
+        <a href="/support.html"     class="nav-link">Support</a>
+        <a href="/#waitlist" class="btn-gold" style="padding:.55rem 1.4rem; border-radius:9999px; font-size:.9rem;">
+          Get notified
+        </a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="this.closest('.site-nav').querySelector('.mobile-menu').classList.toggle('open'); this.classList.toggle('open');">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/features.html"    class="mobile-menu-link">Features</a>
+      <a href="/screenshots.html" class="mobile-menu-link">Screenshots</a>
+      <a href="/about.html"       class="mobile-menu-link">About</a>
+      <a href="/support.html"     class="mobile-menu-link">Support</a>
+      <a href="/#waitlist"        class="mobile-menu-link" style="color:var(--gold);font-weight:700;">Get notified →</a>
     </div>
   </nav>
 
@@ -250,10 +152,11 @@
     <div class="footer-inner">
       <span class="footer-logo">SassaGold</span>
       <nav class="footer-nav">
-        <a href="/#about"       class="footer-link">About</a>
-        <a href="/#features"    class="footer-link">Features</a>
-        <a href="/#support"     class="footer-link">Support</a>
-        <a href="/privacy.html" class="footer-link" style="color: var(--gold);">Privacy</a>
+        <a href="/about.html"       class="footer-link">About</a>
+        <a href="/features.html"    class="footer-link">Features</a>
+        <a href="/screenshots.html" class="footer-link">Screenshots</a>
+        <a href="/support.html"     class="footer-link">Support</a>
+        <a href="/privacy.html"     class="footer-link" style="color: var(--gold);">Privacy</a>
       </nav>
       <p class="footer-copy">© 2026 SassaGold. All rights reserved.</p>
     </div>

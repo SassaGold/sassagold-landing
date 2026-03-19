@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — SassaGold</title>
+  <meta name="description" content="Explore all SassaGold features: local points of interest, emergency tools, multilingual support, offline mode, automatic updates, and a clean UI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+</head>
+
+<body>
+
+  <!-- ── Nav ───────────────────────────────────────────────────────────────── -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SassaGold</a>
+      <div class="nav-links">
+        <a href="/features.html"    class="nav-link active">Features</a>
+        <a href="/screenshots.html" class="nav-link">Screenshots</a>
+        <a href="/about.html"       class="nav-link">About</a>
+        <a href="/support.html"     class="nav-link">Support</a>
+        <a href="/#waitlist" class="btn-gold" style="padding:.55rem 1.4rem; border-radius:9999px; font-size:.9rem;">
+          Get notified
+        </a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="this.closest('.site-nav').querySelector('.mobile-menu').classList.toggle('open'); this.classList.toggle('open');">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/features.html"    class="mobile-menu-link active">Features</a>
+      <a href="/screenshots.html" class="mobile-menu-link">Screenshots</a>
+      <a href="/about.html"       class="mobile-menu-link">About</a>
+      <a href="/support.html"     class="mobile-menu-link">Support</a>
+      <a href="/#waitlist"        class="mobile-menu-link" style="color:var(--gold);font-weight:700;">Get notified →</a>
+    </div>
+  </nav>
+
+  <!-- ── Page hero ─────────────────────────────────────────────────────────── -->
+  <header class="page-hero">
+    <div class="page-hero-inner fade-up">
+      <span class="section-label">What's inside</span>
+      <h1 class="page-hero-title">
+        Features built for<br /><span class="text-gold">real travel</span>
+      </h1>
+      <p class="page-hero-sub">
+        Everything you need for safer, smarter travel — no ads, no clutter, just the tools that matter.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── Feature blocks ────────────────────────────────────────────────────── -->
+  <main style="padding: 0 1.5rem;">
+    <div class="section-inner">
+
+      <!-- 1. Local Points of Interest -->
+      <div class="feature-block fade-up">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">🗺️</div>
+          <h2 class="feature-block-title">Local Points of Interest</h2>
+          <p class="feature-block-body">
+            Find everything you need nearby — fuel stations, rest areas, restaurants, hospitals,
+            convenience stores, and more. Each point of interest shows clean, readable details so
+            you always know what's available and how far away it is.
+          </p>
+          <ul style="color:var(--text-secondary); font-size:1rem; line-height:1.8; padding-left:1.25rem; margin:0;">
+            <li>Fuel stations &amp; service areas</li>
+            <li>Hospitals &amp; pharmacies</li>
+            <li>Restaurants &amp; convenience stores</li>
+            <li>Parking areas &amp; rest stops</li>
+            <li>ATMs &amp; banks</li>
+          </ul>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(-2deg);">
+            <div class="screen">
+              <div class="screen-header">SassaGold</div>
+              <div class="screen-label">NEARBY PLACES</div>
+              <div class="screen-row">
+                <span class="screen-emoji">⛽</span>
+                <div>
+                  <div class="screen-title">Fuel Station</div>
+                  <div class="screen-sub">2.4 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🍔</span>
+                <div>
+                  <div class="screen-title">Restaurant</div>
+                  <div class="screen-sub">3.1 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🏥</span>
+                <div>
+                  <div class="screen-title">Hospital</div>
+                  <div class="screen-sub">5.8 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🏪</span>
+                <div>
+                  <div class="screen-title">Convenience Store</div>
+                  <div class="screen-sub">6.2 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🅿️</span>
+                <div>
+                  <div class="screen-title">Parking Area</div>
+                  <div class="screen-sub">7.0 km away</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Emergency Tools -->
+      <div class="feature-block reversed fade-up delay-1">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">🚨</div>
+          <h2 class="feature-block-title">Emergency Tools</h2>
+          <p class="feature-block-body">
+            In an emergency, every second matters. SassaGold gives you instant access to local
+            emergency numbers, step-by-step instructions, and location-aware information — all
+            available even when you're offline.
+          </p>
+          <ul style="color:var(--text-secondary); font-size:1rem; line-height:1.8; padding-left:1.25rem; margin:0;">
+            <li>Local emergency numbers (police, ambulance, fire)</li>
+            <li>European emergency number 112</li>
+            <li>Coast guard &amp; mountain rescue</li>
+            <li>Location-aware contact info</li>
+            <li>Works offline — always available</li>
+          </ul>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(2deg);">
+            <div class="screen tall">
+              <div class="screen-header">Emergency</div>
+              <div class="screen-emerg-banner">
+                <div style="font-size:26px; margin-bottom:4px;">🚨</div>
+                <div style="font-size:10px; color:#ef4444; font-weight:700;">Emergency Services</div>
+                <div style="font-size:8px; color:rgba(255,255,255,.35); margin-top:2px;">Location-aware info</div>
+              </div>
+              <div class="screen-label">LOCAL NUMBERS</div>
+              <div class="screen-row-between">
+                <span class="screen-title">Police</span>
+                <span class="screen-num">110</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Ambulance</span>
+                <span class="screen-num">113</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Fire Brigade</span>
+                <span class="screen-num">110</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">European Emergency</span>
+                <span class="screen-num">112</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Coast Guard</span>
+                <span class="screen-num">120</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Multilingual Support -->
+      <div class="feature-block fade-up">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">🌐</div>
+          <h2 class="feature-block-title">Multilingual Support</h2>
+          <p class="feature-block-body">
+            SassaGold speaks your language. Switch instantly between five fully translated languages —
+            the app remembers your preference so you never have to set it again.
+          </p>
+          <div class="lang-badges" style="margin-bottom:1.25rem;">
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇳🇴 Norwegian</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇩🇰 Danish</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇸🇪 Swedish</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇳🇱 Dutch</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇬🇧 English</span>
+          </div>
+          <p class="feature-block-body" style="margin:0;">
+            All content — menus, labels, emergency information — is available in your chosen language.
+          </p>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(-2deg);">
+            <div class="screen">
+              <div class="screen-header">Settings</div>
+              <div class="screen-label">LANGUAGE</div>
+              <div class="screen-row active">
+                <span class="screen-emoji" style="font-size:14px;">🇬🇧</span>
+                <span class="screen-title" style="flex:1;">English</span>
+                <span class="screen-active-badge">✓</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇴</span>
+                <span class="screen-title" style="opacity:.6;">Norwegian</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇩🇰</span>
+                <span class="screen-title" style="opacity:.6;">Danish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇸🇪</span>
+                <span class="screen-title" style="opacity:.6;">Swedish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇱</span>
+                <span class="screen-title" style="opacity:.6;">Dutch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Offline-Friendly -->
+      <div class="feature-block reversed fade-up delay-1">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">📡</div>
+          <h2 class="feature-block-title">Offline&#8209;Friendly</h2>
+          <p class="feature-block-body">
+            Remote areas often have spotty or no signal. SassaGold is designed from the ground up to
+            work without a reliable connection. Essential data is cached on your device so you stay
+            informed even when the internet isn't available.
+          </p>
+          <ul style="color:var(--text-secondary); font-size:1rem; line-height:1.8; padding-left:1.25rem; margin:0;">
+            <li>Emergency tools always available offline</li>
+            <li>Previously loaded POIs cached locally</li>
+            <li>Language settings stored on device</li>
+            <li>No mobile data required for core features</li>
+          </ul>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(2deg);">
+            <div class="screen">
+              <div class="screen-header">Status</div>
+              <div class="screen-label">CONNECTIVITY</div>
+              <div class="screen-row-between" style="background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.25);">
+                <div>
+                  <div class="screen-title">Emergency Tools</div>
+                  <div class="screen-sub">Always available</div>
+                </div>
+                <span class="screen-online">✓ Ready</span>
+              </div>
+              <div class="screen-row-between" style="background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.25);">
+                <div>
+                  <div class="screen-title">Cached POIs</div>
+                  <div class="screen-sub">Last sync: 2h ago</div>
+                </div>
+                <span class="screen-online">✓ Ready</span>
+              </div>
+              <div class="screen-row-between">
+                <div>
+                  <div class="screen-title">Live updates</div>
+                  <div class="screen-sub">Needs connection</div>
+                </div>
+                <span style="font-size:8px; color:rgba(255,255,255,.4);">Offline</span>
+              </div>
+              <div class="screen-label" style="margin-top:6px;">OFFLINE CACHE</div>
+              <div class="screen-row-between">
+                <span class="screen-title">Stored locations</span>
+                <span class="screen-num">142</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Languages</span>
+                <span class="screen-num">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Automatic Updates -->
+      <div class="feature-block fade-up">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">🔄</div>
+          <h2 class="feature-block-title">Automatic Updates</h2>
+          <p class="feature-block-body">
+            You don't have to think about keeping SassaGold current. The app silently checks for new
+            content and improvements whenever a connection is available — so your points of interest,
+            emergency numbers, and app experience stay up to date without any action from you.
+          </p>
+          <ul style="color:var(--text-secondary); font-size:1rem; line-height:1.8; padding-left:1.25rem; margin:0;">
+            <li>Background sync when connected</li>
+            <li>New POIs added automatically</li>
+            <li>No manual refresh required</li>
+            <li>Zero disruption to your journey</li>
+          </ul>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(-2deg);">
+            <div class="screen">
+              <div class="screen-header">Updates</div>
+              <div class="screen-label">BACKGROUND SYNC</div>
+              <div class="screen-row-between">
+                <div>
+                  <div class="screen-title">Auto-update</div>
+                  <div class="screen-sub">Runs in background</div>
+                </div>
+                <span class="screen-online">On</span>
+              </div>
+              <div class="screen-label" style="margin-top:6px;">RECENT UPDATES</div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">✓</span>
+                <div>
+                  <div class="screen-title">14 new POIs added</div>
+                  <div class="screen-sub">Today, 09:14</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">✓</span>
+                <div>
+                  <div class="screen-title">Emergency numbers updated</div>
+                  <div class="screen-sub">Yesterday, 22:01</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">✓</span>
+                <div>
+                  <div class="screen-title">App content refreshed</div>
+                  <div class="screen-sub">2 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Clean, Simple UI -->
+      <div class="feature-block reversed fade-up delay-1">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">🧭</div>
+          <h2 class="feature-block-title">Clean, Simple UI</h2>
+          <p class="feature-block-body">
+            Travel apps are often bloated with ads, notifications, and unnecessary features.
+            SassaGold takes the opposite approach — a minimal, focused interface that shows you
+            exactly what you need and nothing you don't.
+          </p>
+          <ul style="color:var(--text-secondary); font-size:1rem; line-height:1.8; padding-left:1.25rem; margin:0;">
+            <li>Zero ads, zero tracking</li>
+            <li>No account or sign-up required</li>
+            <li>Fast to open, easy to navigate</li>
+            <li>Designed for use while on the move</li>
+            <li>Scandinavian simplicity — nothing superfluous</li>
+          </ul>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(2deg);">
+            <div class="screen">
+              <div class="screen-header">SassaGold</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:4px;">
+                <div style="background:rgba(196,154,0,.1); border:1px solid rgba(196,154,0,.25); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">🗺️</div>
+                  <div class="screen-title">Places</div>
+                </div>
+                <div style="background:rgba(239,68,68,.08); border:1px solid rgba(239,68,68,.2); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">🚨</div>
+                  <div class="screen-title">Emergency</div>
+                </div>
+                <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">🌐</div>
+                  <div class="screen-title">Language</div>
+                </div>
+                <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">⚙️</div>
+                  <div class="screen-title">Settings</div>
+                </div>
+              </div>
+              <div class="screen-label" style="margin-top:8px; text-align:center;">NO ADS · NO CLUTTER · NO ACCOUNT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="gold-divider" style="margin-top:2rem;"></div>
+
+  <!-- ── Bottom CTA ─────────────────────────────────────────────────────────── -->
+  <section style="padding:80px 1.5rem; background:var(--bg-soft); text-align:center;">
+    <div style="max-width:560px; margin:0 auto;">
+      <span class="section-label">Coming Soon</span>
+      <h2 style="font-size:2.2rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;">
+        Ready to travel <span class="text-gold">smarter</span>?
+      </h2>
+      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.7;">
+        SassaGold is launching on Google Play. Be the first to know when it's live.
+      </p>
+      <a href="/#waitlist" class="btn-gold" style="padding:1rem 2.5rem; border-radius:9999px; font-size:1rem;">
+        Get notified at launch
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">SassaGold</span>
+      <nav class="footer-nav">
+        <a href="/about.html"       class="footer-link">About</a>
+        <a href="/features.html"    class="footer-link" style="color:var(--gold);">Features</a>
+        <a href="/screenshots.html" class="footer-link">Screenshots</a>
+        <a href="/support.html"     class="footer-link">Support</a>
+        <a href="/privacy.html"     class="footer-link">Privacy</a>
+      </nav>
+      <p class="footer-copy">© 2026 SassaGold. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

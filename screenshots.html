@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screenshots — SassaGold</title>
+  <meta name="description" content="See SassaGold in action — screenshots of the home screen, points of interest, emergency tools, settings, and language switching." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+</head>
+
+<body>
+
+  <!-- ── Nav ───────────────────────────────────────────────────────────────── -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SassaGold</a>
+      <div class="nav-links">
+        <a href="/features.html"    class="nav-link">Features</a>
+        <a href="/screenshots.html" class="nav-link active">Screenshots</a>
+        <a href="/about.html"       class="nav-link">About</a>
+        <a href="/support.html"     class="nav-link">Support</a>
+        <a href="/#waitlist" class="btn-gold" style="padding:.55rem 1.4rem; border-radius:9999px; font-size:.9rem;">
+          Get notified
+        </a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="this.closest('.site-nav').querySelector('.mobile-menu').classList.toggle('open'); this.classList.toggle('open');">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/features.html"    class="mobile-menu-link">Features</a>
+      <a href="/screenshots.html" class="mobile-menu-link active">Screenshots</a>
+      <a href="/about.html"       class="mobile-menu-link">About</a>
+      <a href="/support.html"     class="mobile-menu-link">Support</a>
+      <a href="/#waitlist"        class="mobile-menu-link" style="color:var(--gold);font-weight:700;">Get notified →</a>
+    </div>
+  </nav>
+
+  <!-- ── Page hero ─────────────────────────────────────────────────────────── -->
+  <header class="page-hero">
+    <div class="page-hero-inner fade-up">
+      <span class="section-label">App preview</span>
+      <h1 class="page-hero-title">
+        See <span class="text-gold">SassaGold</span> in action
+      </h1>
+      <p class="page-hero-sub">
+        A clean, focused interface designed for travelers on the move. Tap any screen to enlarge.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── Filter tabs ───────────────────────────────────────────────────────── -->
+  <section style="padding:60px 1.5rem 0;">
+    <div class="section-inner">
+      <div class="tab-filter" role="tablist">
+        <button class="tab-btn active" data-filter="all"       onclick="filterScreens('all',       this)" role="tab">All</button>
+        <button class="tab-btn"        data-filter="home"      onclick="filterScreens('home',      this)" role="tab">Home</button>
+        <button class="tab-btn"        data-filter="poi"       onclick="filterScreens('poi',       this)" role="tab">Points of Interest</button>
+        <button class="tab-btn"        data-filter="emergency" onclick="filterScreens('emergency', this)" role="tab">Emergency</button>
+        <button class="tab-btn"        data-filter="settings"  onclick="filterScreens('settings',  this)" role="tab">Settings</button>
+        <button class="tab-btn"        data-filter="language"  onclick="filterScreens('language',  this)" role="tab">Language</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Screenshots grid ──────────────────────────────────────────────────── -->
+  <section style="padding:0 1.5rem 100px;">
+    <div class="section-inner">
+      <div class="screenshots-grid" id="screenshots-grid">
+
+        <!-- Home screen -->
+        <div class="screenshot-item" data-category="home" onclick="openModal('home')">
+          <div class="phone-frame">
+            <div class="screen">
+              <div class="screen-header">SassaGold</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:4px;">
+                <div style="background:rgba(196,154,0,.1); border:1px solid rgba(196,154,0,.25); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">🗺️</div>
+                  <div class="screen-title">Places</div>
+                </div>
+                <div style="background:rgba(239,68,68,.08); border:1px solid rgba(239,68,68,.2); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">🚨</div>
+                  <div class="screen-title">Emergency</div>
+                </div>
+                <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">🌐</div>
+                  <div class="screen-title">Language</div>
+                </div>
+                <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">⚙️</div>
+                  <div class="screen-title">Settings</div>
+                </div>
+              </div>
+              <div class="screen-label" style="text-align:center; margin-top:6px;">SassaGold — Travel Companion</div>
+            </div>
+          </div>
+          <span class="screenshot-label">Home Screen</span>
+        </div>
+
+        <!-- POI list -->
+        <div class="screenshot-item" data-category="poi" onclick="openModal('poi')">
+          <div class="phone-frame">
+            <div class="screen">
+              <div class="screen-header">Nearby Places</div>
+              <div class="screen-label">AROUND YOU</div>
+              <div class="screen-row">
+                <span class="screen-emoji">⛽</span>
+                <div>
+                  <div class="screen-title">Fuel Station</div>
+                  <div class="screen-sub">2.4 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🍔</span>
+                <div>
+                  <div class="screen-title">Restaurant</div>
+                  <div class="screen-sub">3.1 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🏥</span>
+                <div>
+                  <div class="screen-title">Hospital</div>
+                  <div class="screen-sub">5.8 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🏪</span>
+                <div>
+                  <div class="screen-title">Convenience Store</div>
+                  <div class="screen-sub">6.2 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🅿️</span>
+                <div>
+                  <div class="screen-title">Parking Area</div>
+                  <div class="screen-sub">7.0 km away</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="screenshot-label">Points of Interest</span>
+        </div>
+
+        <!-- POI detail -->
+        <div class="screenshot-item" data-category="poi" onclick="openModal('poi-detail')">
+          <div class="phone-frame">
+            <div class="screen">
+              <div class="screen-header">⛽ Fuel Station</div>
+              <div class="screen-label">DETAILS</div>
+              <div class="screen-row-between">
+                <span class="screen-title">Distance</span>
+                <span style="font-size:10px; font-weight:600; color:var(--gold-btn);">2.4 km</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Type</span>
+                <span class="screen-sub">Fuel Station</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Status</span>
+                <span class="screen-online">Open</span>
+              </div>
+              <div class="screen-label" style="margin-top:6px;">NEARBY</div>
+              <div class="screen-row">
+                <span class="screen-emoji">🏪</span>
+                <div>
+                  <div class="screen-title">Convenience Store</div>
+                  <div class="screen-sub">At the station</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">☕</span>
+                <div>
+                  <div class="screen-title">Coffee available</div>
+                  <div class="screen-sub">Inside</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="screenshot-label">POI Detail</span>
+        </div>
+
+        <!-- Emergency screen -->
+        <div class="screenshot-item" data-category="emergency" onclick="openModal('emergency')">
+          <div class="phone-frame featured">
+            <div class="screen tall">
+              <div class="screen-header">Emergency</div>
+              <div class="screen-emerg-banner">
+                <div style="font-size:26px; margin-bottom:4px;">🚨</div>
+                <div style="font-size:10px; color:#ef4444; font-weight:700;">Emergency Services</div>
+                <div style="font-size:8px; color:rgba(255,255,255,.35); margin-top:2px;">Location-aware info</div>
+              </div>
+              <div class="screen-label">LOCAL NUMBERS</div>
+              <div class="screen-row-between">
+                <span class="screen-title">Police</span>
+                <span class="screen-num">110</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Ambulance</span>
+                <span class="screen-num">113</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Fire Brigade</span>
+                <span class="screen-num">110</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">European Emergency</span>
+                <span class="screen-num">112</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Coast Guard</span>
+                <span class="screen-num">120</span>
+              </div>
+            </div>
+          </div>
+          <span class="screenshot-label">Emergency Screen</span>
+        </div>
+
+        <!-- Settings -->
+        <div class="screenshot-item" data-category="settings" onclick="openModal('settings')">
+          <div class="phone-frame">
+            <div class="screen">
+              <div class="screen-header">Settings</div>
+              <div class="screen-label">APP</div>
+              <div class="screen-row-between">
+                <div>
+                  <div class="screen-title">Auto-update</div>
+                  <div class="screen-sub">Sync when connected</div>
+                </div>
+                <span class="screen-online">On</span>
+              </div>
+              <div class="screen-row-between">
+                <div>
+                  <div class="screen-title">Offline cache</div>
+                  <div class="screen-sub">142 locations stored</div>
+                </div>
+                <span class="screen-online">Ready</span>
+              </div>
+              <div class="screen-label" style="margin-top:6px;">ABOUT</div>
+              <div class="screen-row-between">
+                <span class="screen-title">Version</span>
+                <span class="screen-sub">1.0.0</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Privacy</span>
+                <span style="font-size:9px; color:var(--gold-btn);">View →</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Support</span>
+                <span style="font-size:9px; color:var(--gold-btn);">Contact →</span>
+              </div>
+            </div>
+          </div>
+          <span class="screenshot-label">Settings</span>
+        </div>
+
+        <!-- Language switching -->
+        <div class="screenshot-item" data-category="language settings" onclick="openModal('language')">
+          <div class="phone-frame">
+            <div class="screen">
+              <div class="screen-header">Language</div>
+              <div class="screen-label">SELECT YOUR LANGUAGE</div>
+              <div class="screen-row active">
+                <span class="screen-emoji" style="font-size:14px;">🇬🇧</span>
+                <span class="screen-title" style="flex:1;">English</span>
+                <span class="screen-active-badge">✓ Active</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇴</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Norwegian</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇩🇰</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Danish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇸🇪</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Swedish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇱</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Dutch</span>
+              </div>
+              <div class="screen-label" style="margin-top:6px; text-align:center; opacity:.4;">Your choice is remembered</div>
+            </div>
+          </div>
+          <span class="screenshot-label">Language Switching</span>
+        </div>
+
+      </div><!-- /screenshots-grid -->
+    </div>
+  </section>
+
+  <!-- ── Lightbox modal ────────────────────────────────────────────────────── -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content" id="modal-content">
+      <button class="modal-close" onclick="closeModalBtn()" aria-label="Close">✕</button>
+      <!-- Enlarged phone frame is injected here by JS -->
+    </div>
+  </div>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── CTA ────────────────────────────────────────────────────────────────── -->
+  <section style="padding:80px 1.5rem; background:var(--bg); text-align:center;">
+    <div style="max-width:560px; margin:0 auto;">
+      <span class="section-label">Coming Soon</span>
+      <h2 style="font-size:2.2rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;">
+        Want to see it live?
+      </h2>
+      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.7;">
+        SassaGold is launching on Google Play. Sign up to be notified the moment it's available.
+      </p>
+      <a href="/#waitlist" class="btn-gold" style="padding:1rem 2.5rem; border-radius:9999px; font-size:1rem;">
+        Get notified at launch
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">SassaGold</span>
+      <nav class="footer-nav">
+        <a href="/about.html"       class="footer-link">About</a>
+        <a href="/features.html"    class="footer-link">Features</a>
+        <a href="/screenshots.html" class="footer-link" style="color:var(--gold);">Screenshots</a>
+        <a href="/support.html"     class="footer-link">Support</a>
+        <a href="/privacy.html"     class="footer-link">Privacy</a>
+      </nav>
+      <p class="footer-copy">© 2026 SassaGold. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* ── Category filter ─────────────────────────────────────────────────── */
+    function filterScreens(category, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('#screenshots-grid .screenshot-item').forEach(item => {
+        const cats = item.dataset.category || '';
+        item.style.display = (category === 'all' || cats.includes(category)) ? '' : 'none';
+      });
+    }
+
+    /* ── Modal ───────────────────────────────────────────────────────────── */
+    /* Clone the clicked phone frame into the modal for enlargement */
+    function openModal(id) {
+      const overlay = document.getElementById('modal-overlay');
+      const content = document.getElementById('modal-content');
+
+      /* Find the screen item matching the click */
+      const items = document.querySelectorAll('#screenshots-grid .screenshot-item');
+      let cloneTarget = null;
+      items.forEach(item => {
+        const cat = item.dataset.category || '';
+        if (
+          (id === 'home'       && cat === 'home')       ||
+          (id === 'poi'        && cat === 'poi' && !item.querySelector('.screen-emerg-banner'))  ||
+          (id === 'poi-detail' && cat === 'poi' && item.querySelectorAll('.screen-row-between').length > 0 && !item.querySelector('.screen-emerg-banner')) ||
+          (id === 'emergency'  && cat === 'emergency')  ||
+          (id === 'settings'   && cat === 'settings' && !cat.includes('language')) ||
+          (id === 'language'   && cat.includes('language'))
+        ) {
+          if (!cloneTarget) cloneTarget = item;
+        }
+      });
+
+      if (!cloneTarget) {
+        /* Fallback: find by position in grid */
+        const map = { home: 0, poi: 1, 'poi-detail': 2, emergency: 3, settings: 4, language: 5 };
+        cloneTarget = items[map[id] ?? 0];
+      }
+
+      if (!cloneTarget) return;
+
+      /* Remove old cloned content (keep close button) */
+      const closeBtn = content.querySelector('.modal-close');
+      content.innerHTML = '';
+      content.appendChild(closeBtn);
+
+      const phoneClone = cloneTarget.querySelector('.phone-frame').cloneNode(true);
+      /* Scale up the phone frame */
+      phoneClone.style.transform = 'none';
+      phoneClone.style.cursor = 'default';
+      content.appendChild(phoneClone);
+
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+      if (e.target === document.getElementById('modal-overlay')) closeModalBtn();
+    }
+    function closeModalBtn() {
+      document.getElementById('modal-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalBtn(); });
+  </script>
+
+</body>
+</html>

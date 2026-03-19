@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — SassaGold</title>
+  <meta name="description" content="SassaGold Support — contact us at support@sassagold.com and find answers to frequently asked questions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+  <style>
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: 0 4px 24px var(--shadow-sm);
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .contact-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 1rem;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.25rem;
+    }
+    .contact-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 .5rem;
+    }
+    .contact-body {
+      font-size: .95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0 0 1.25rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Nav ───────────────────────────────────────────────────────────────── -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SassaGold</a>
+      <div class="nav-links">
+        <a href="/features.html"    class="nav-link">Features</a>
+        <a href="/screenshots.html" class="nav-link">Screenshots</a>
+        <a href="/about.html"       class="nav-link">About</a>
+        <a href="/support.html"     class="nav-link active">Support</a>
+        <a href="/#waitlist" class="btn-gold" style="padding:.55rem 1.4rem; border-radius:9999px; font-size:.9rem;">
+          Get notified
+        </a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="this.closest('.site-nav').querySelector('.mobile-menu').classList.toggle('open'); this.classList.toggle('open');">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/features.html"    class="mobile-menu-link">Features</a>
+      <a href="/screenshots.html" class="mobile-menu-link">Screenshots</a>
+      <a href="/about.html"       class="mobile-menu-link">About</a>
+      <a href="/support.html"     class="mobile-menu-link active">Support</a>
+      <a href="/#waitlist"        class="mobile-menu-link" style="color:var(--gold);font-weight:700;">Get notified →</a>
+    </div>
+  </nav>
+
+  <!-- ── Page hero ─────────────────────────────────────────────────────────── -->
+  <header class="page-hero">
+    <div class="page-hero-inner fade-up">
+      <span class="section-label">Help center</span>
+      <h1 class="page-hero-title">
+        We're here to <span class="text-gold">help</span>
+      </h1>
+      <p class="page-hero-sub">
+        Have a question or need assistance? Reach out any time — or find answers in the FAQ below.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── Contact ───────────────────────────────────────────────────────────── -->
+  <section style="padding:80px 1.5rem;">
+    <div class="section-inner">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; max-width:720px; margin:0 auto;">
+
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <h2 class="contact-title">Email Support</h2>
+          <p class="contact-body">
+            Send us an email and we'll get back to you as soon as possible.
+            Response time is typically within 1–2 business days.
+          </p>
+          <a href="mailto:support@sassagold.com" class="support-email">
+            support@sassagold.com
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">🔒</div>
+          <h2 class="contact-title">Privacy Questions</h2>
+          <p class="contact-body">
+            Questions about data, privacy, or your rights?
+            Read our privacy policy or contact us with specific concerns.
+          </p>
+          <a href="/privacy.html" class="support-email">
+            Read Privacy Policy →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── FAQ ───────────────────────────────────────────────────────────────── -->
+  <section style="padding:80px 1.5rem 100px;">
+    <div class="section-inner">
+      <div class="section-hd">
+        <span class="section-label">Common questions</span>
+        <h2 class="section-title">Frequently Asked <span class="text-gold">Questions</span></h2>
+        <p class="section-sub">Can't find your answer? Email us at <a href="mailto:support@sassagold.com" style="color:var(--gold);">support@sassagold.com</a></p>
+      </div>
+
+      <div style="max-width:720px; margin:0 auto;">
+
+        <details class="faq-item">
+          <summary>How do I change the language?</summary>
+          <div class="faq-answer">
+            Open the app and tap <strong>Settings</strong>, then select <strong>Language</strong>.
+            You'll see a list of all supported languages — tap one to switch instantly.
+            SassaGold supports Norwegian, Danish, Swedish, Dutch, and English.
+            Your choice is saved automatically and remembered every time you open the app.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Why am I not seeing certain points of interest?</summary>
+          <div class="faq-answer">
+            Points of interest are updated automatically when your device has an internet connection.
+            If you're in an area with limited or no coverage, some POIs may not be visible until the
+            app syncs. Previously loaded POIs are cached locally and will still appear even offline.
+            Try refreshing the list when you regain connectivity.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does the app work offline?</summary>
+          <div class="faq-answer">
+            Yes. SassaGold is designed to work with limited or no connectivity. Core features —
+            including all emergency tools and previously cached local information — remain available
+            offline. You can access emergency numbers, view saved POIs, and use the app in your
+            chosen language without any internet connection.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How often does the app update its content?</summary>
+          <div class="faq-answer">
+            The app checks for new content and improvements automatically in the background,
+            whenever a connection is available. You don't need to do anything — SassaGold handles
+            updates silently. There's no need to manually refresh or reinstall the app to get
+            the latest information.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need to create an account?</summary>
+          <div class="faq-answer">
+            No. SassaGold requires no account, no sign-up, and no login. You install it, open it,
+            and it works. Your language preference and cached data are stored locally on your device —
+            not on any server.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What emergency numbers does the app show?</summary>
+          <div class="faq-answer">
+            SassaGold shows local emergency numbers for the region you're in, including police,
+            ambulance, fire brigade, coast guard, and the pan-European emergency number 112.
+            The information is curated for the Scandinavian and European regions the app currently
+            supports.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is my location data shared or stored?</summary>
+          <div class="faq-answer">
+            No. SassaGold does not collect, store, or transmit your location data to any server.
+            The app may use your device's location to show nearby points of interest — but this
+            is processed entirely on your device and never sent anywhere. See our
+            <a href="/privacy.html">Privacy Policy</a> for full details.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Which devices and Android versions are supported?</summary>
+          <div class="faq-answer">
+            SassaGold is designed for Android devices running Android 8.0 (Oreo) or later.
+            The app is optimized for modern smartphones and tablets. iOS support is not currently
+            planned, but may be considered in the future.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do I report a bug or request a feature?</summary>
+          <div class="faq-answer">
+            Email us at <a href="mailto:support@sassagold.com">support@sassagold.com</a> with
+            a description of the issue or your idea. We read every message and genuinely appreciate
+            feedback — it helps make the app better for everyone.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">SassaGold</span>
+      <nav class="footer-nav">
+        <a href="/about.html"       class="footer-link">About</a>
+        <a href="/features.html"    class="footer-link">Features</a>
+        <a href="/screenshots.html" class="footer-link">Screenshots</a>
+        <a href="/support.html"     class="footer-link" style="color:var(--gold);">Support</a>
+        <a href="/privacy.html"     class="footer-link">Privacy</a>
+      </nav>
+      <p class="footer-copy">© 2026 SassaGold. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
