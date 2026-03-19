@@ -10,3 +10,10 @@ compatibility_flags = ["nodejs_compat"]
 binding = "WAITLIST"
 id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
 preview_id = "REPLACE_WITH_YOUR_PREVIEW_KV_NAMESPACE_ID"
+
+# Confirmation-email secrets — set via `wrangler secret put` or the
+# Cloudflare dashboard (Workers → Settings → Variables & Secrets).
+# The worker degrades gracefully when these are absent.
+#
+#   wrangler secret put RESEND_API_KEY   # your Resend API key
+#   wrangler secret put FROM_EMAIL       # e.g. "SassaGold <waitlist@sassagold.com>"

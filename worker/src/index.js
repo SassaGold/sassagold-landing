@@ -11,6 +11,10 @@
  *     email:<address>  → JSON { email, joinedAt, position }
  *     count            → stringified integer
  *     pageview:<YYYY-MM-DD> → stringified integer (90-day TTL)
+ *
+ * Environment variables (set via wrangler secret or Cloudflare dashboard)
+ *   RESEND_API_KEY  — Resend API key for sending confirmation emails
+ *   FROM_EMAIL      — Sender address, e.g. "SassaGold <waitlist@sassagold.com>"
  */
 
 const CORS_HEADERS = {
@@ -43,8 +47,53 @@ function isValidEmail(email) {
   return true;
 }
 
+/**
+ * Send a confirmation email to a newly registered subscriber via Resend.
+ * Fails silently when RESEND_API_KEY is not configured so the worker still
+ * works in development / before an email provider is connected.
+ */
+async function sendConfirmationEmail(env, email) {
+  const apiKey = env.RESEND_API_KEY;
+  if (!apiKey) return;
+
+  const from = env.FROM_EMAIL ?? 'SassaGold <waitlist@sassagold.com>';
+
+  try {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from,
+        to: [email],
+        subject: "You're on the SassaGold waitlist! 🎉",
+        html: `
+          <div style="font-family:sans-serif;max-width:480px;margin:0 auto;color:#111">
+            <h2 style="color:#B8860B">Welcome to SassaGold!</h2>
+            <p>You're officially on the waitlist. We'll reach out the moment we launch.</p>
+            <p>Stay tuned — something amazing is coming.</p>
+            <p style="color:#666;font-size:.85rem">
+              You received this because you signed up at sassagold.com.<br/>
+              If that wasn't you, you can safely ignore this email.
+            </p>
+            <p><em>— The SassaGold Team</em></p>
+          </div>
+        `,
+      }),
+    });
+    if (!res.ok) {
+      const body = await res.text();
+      console.error(`Resend error ${res.status} for ${email}: ${body}`);
+    }
+  } catch (err) {
+    console.error(`Failed to send confirmation email to ${email}:`, err);
+  }
+}
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const { pathname } = url;
 
@@ -71,7 +120,7 @@ export default {
       // Deduplicate
       const existing = await env.WAITLIST.get(`email:${email}`);
       if (existing) {
-        return jsonResponse({ ok: true, message: "You're already on the list!" });
+        return jsonResponse({ success: true, message: "You're already on the list!" });
       }
 
       // Increment counter
@@ -88,8 +137,11 @@ export default {
       );
       await env.WAITLIST.put('count', String(position));
 
+      // Fire-and-forget — a failed email must not block the success response.
+      ctx.waitUntil(sendConfirmationEmail(env, email));
+
       return jsonResponse({
-        ok: true,
+        success: true,
         message: "You're on the list! We'll be in touch.",
         position,
       });
