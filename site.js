@@ -13,6 +13,22 @@
     var nav = document.querySelector('.site-nav');
     if (!nav) return;
 
+    // Toggle open/close when the hamburger is clicked
+    var hamburger = nav.querySelector('.nav-hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', function () {
+        var menu = nav.querySelector('.mobile-menu');
+        if (!menu) return;
+        var isOpen = menu.classList.contains('open');
+        if (isOpen) {
+          closeNav(nav);
+        } else {
+          menu.classList.add('open');
+          hamburger.classList.add('open');
+        }
+      });
+    }
+
     // Close when a mobile menu link is clicked
     nav.querySelectorAll('.mobile-menu-link').forEach(function (link) {
       link.addEventListener('click', function () { closeNav(nav); });

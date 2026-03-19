@@ -170,7 +170,7 @@
           Get notified
         </a>
       </div>
-      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
+      <button class="nav-hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -631,6 +631,7 @@
 
       <form id="waitlist-form" style="display:flex; flex-direction:column; gap:1rem;">
         <div style="display:flex; flex-direction:column; gap:.75rem;">
+          <label for="email-input" class="sr-only">Email address</label>
           <input id="email-input"
                  type="email"
                  placeholder="your@email.com"
@@ -751,22 +752,6 @@
   </footer>
 
   <script>
-    /* ── Mobile menu ─────────────────────────────────────────────────────── */
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      const btn  = document.querySelector('.nav-hamburger');
-      menu.classList.toggle('open');
-      btn.classList.toggle('open');
-    }
-    document.addEventListener('click', function(e) {
-      const menu = document.getElementById('mobile-menu');
-      const btn  = document.querySelector('.nav-hamburger');
-      if (!menu.contains(e.target) && !btn.contains(e.target) && menu.classList.contains('open')) {
-        menu.classList.remove('open');
-        btn.classList.remove('open');
-      }
-    });
-
     /* ── Cloudflare Worker base URL ─────────────────────────────────────────
      * When the Worker is deployed, update this to your workers.dev URL, e.g.:
      *   const API = 'https://sassagold-waitlist.YOUR_SUBDOMAIN.workers.dev';

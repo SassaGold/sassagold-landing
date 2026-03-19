@@ -143,6 +143,10 @@ export default {
 
     // ── POST /api/pageview ────────────────────────────────────────────────────
     if (pathname === '/api/pageview' && request.method === 'POST') {
+      const ip = request.headers.get('CF-Connecting-IP') ?? 'unknown';
+      if (await isRateLimited(env, ip)) {
+        return jsonResponse({ ok: true }, 200, cors); // silently cap — no need to surface errors to analytics
+      }
       const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
       const key = `pageview:${today}`;
       const current = parseInt((await env.WAITLIST.get(key)) ?? '0', 10);
