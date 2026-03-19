@@ -5,145 +5,472 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SassaGold — Your Smart Travel Companion</title>
   <meta name="description" content="SassaGold gives you real‑time travel insights, emergency tools, local information, and a clean, intuitive interface designed for travelers who want clarity, not clutter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* ── Design tokens ───────────────────────────────────────────────────── */
     :root {
-      --gold:       #FFD700;
-      --gold-light: #FFF4C2;
-      --gold-dark:  #B8860B;
+      --gold:        #C49A00;
+      --gold-btn:    #D4A017;
+      --gold-light:  #FFF8E1;
+      --gold-border: rgba(196,154,0,0.25);
+      --text-primary:   #111111;
+      --text-secondary: #555555;
+      --text-muted:     #999999;
+      --bg:       #FFFFFF;
+      --bg-soft:  #FAFAF8;
+      --bg-muted: #F3F2EE;
+      --border:   #E8E8E8;
+      --shadow-sm: rgba(0,0,0,0.06);
+      --shadow-md: rgba(0,0,0,0.10);
     }
 
-    /* ── Keyframes ───────────────────────────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
+    /* ── Base ────────────────────────────────────────────────────────────── */
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      margin: 0;
     }
-    @keyframes logoGlow {
-      0%, 100% { filter: drop-shadow(0 0 10px rgba(255,215,0,.45)); }
-      50%       { filter: drop-shadow(0 0 28px rgba(255,215,0,.9)); }
-    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Gold accent text ────────────────────────────────────────────────── */
+    .text-gold { color: var(--gold); }
 
     /* ── Entrance animations ─────────────────────────────────────────────── */
-    .fade-up            { opacity: 0; animation: fadeUp .8s ease forwards; }
-    .fade-up.delay-1    { animation-delay: .15s; }
-    .fade-up.delay-2    { animation-delay: .30s; }
-    .fade-up.delay-3    { animation-delay: .45s; }
-    .fade-up.delay-4    { animation-delay: .60s; }
-    .fade-up.delay-5    { animation-delay: .75s; }
-
-    /* ── Logo pulse ──────────────────────────────────────────────────────── */
-    .logo-glow { animation: logoGlow 3s ease-in-out infinite; }
-
-    /* ── Gold gradient text ──────────────────────────────────────────────── */
-    .text-gold {
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 40%, var(--gold-dark) 70%, #FFE680 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
+    .fade-up            { opacity: 0; animation: fadeUp .75s ease forwards; }
+    .fade-up.delay-1    { animation-delay: .10s; }
+    .fade-up.delay-2    { animation-delay: .25s; }
+    .fade-up.delay-3    { animation-delay: .40s; }
+    .fade-up.delay-4    { animation-delay: .55s; }
 
     /* ── Gold CTA button ─────────────────────────────────────────────────── */
     .btn-gold {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: #000;
-      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold-btn);
+      color: #111;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
       transition: transform .2s, box-shadow .2s;
     }
     .btn-gold:hover:not(:disabled) {
       transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 8px 32px rgba(255,215,0,.35);
+      box-shadow: 0 10px 36px rgba(196,154,0,0.35);
     }
     .btn-gold:disabled { opacity: .7; cursor: not-allowed; }
 
     /* ── Outlined secondary button ───────────────────────────────────────── */
     .btn-outline {
-      border: 1px solid rgba(255,215,0,.45);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--gold);
       color: var(--gold);
       font-weight: 600;
-      transition: background .2s, box-shadow .2s, transform .2s;
+      background: transparent;
+      transition: background .2s, transform .2s;
     }
     .btn-outline:hover {
-      background: rgba(255,215,0,.08);
-      box-shadow: 0 4px 20px rgba(255,215,0,.2);
+      background: var(--gold-light);
       transform: translateY(-2px);
     }
 
-    /* ── Glassmorphism feature cards ─────────────────────────────────────── */
-    .glass-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,215,0,.15);
-      border-top: 2px solid var(--gold);
-      border-radius: 1rem;
-      transition: border-color .3s, transform .3s;
+    /* ── Sticky nav ──────────────────────────────────────────────────────── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
-    .glass-card:hover {
-      border-color: rgba(255,215,0,.5);
-      transform: translateY(-4px);
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: -.03em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-size: .9rem;
+      font-weight: 500;
+    }
+    .nav-link {
+      color: var(--text-secondary);
+      transition: color .2s;
+    }
+    .nav-link:hover { color: var(--text-primary); }
+
+    /* ── Gold horizontal divider ─────────────────────────────────────────── */
+    .gold-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(196,154,0,.3), transparent);
     }
 
-    /* ── About / info panel ──────────────────────────────────────────────── */
-    .info-panel {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,215,0,.12);
+    /* ── Section label ───────────────────────────────────────────────────── */
+    .section-label {
+      display: inline-block;
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: .85rem;
+    }
+
+    /* ── Hero section ────────────────────────────────────────────────────── */
+    .hero-section {
+      padding: 120px 1.5rem;
+      background: var(--bg);
+    }
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-headline {
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+      letter-spacing: -.035em;
+      margin: 0 0 1.25rem;
+    }
+    .hero-subheadline {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0 0 2.5rem;
+      max-width: 480px;
+    }
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .hero-phone-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .phone-svg {
+      filter: drop-shadow(0 36px 72px rgba(0,0,0,0.18));
+      transform: rotate(3deg);
+      max-width: 100%;
+      width: 300px;
+    }
+
+    /* ── Feature cards ───────────────────────────────────────────────────── */
+    .features-section {
+      padding: 100px 1.5rem;
+      background: var(--bg-soft);
+    }
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: #fff;
+      border: 1px solid var(--border);
       border-radius: 1rem;
       padding: 2rem;
+      box-shadow: 0 2px 12px var(--shadow-sm);
+      transition: transform .3s, box-shadow .3s;
+      text-align: left;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px var(--shadow-md);
+    }
+    .feature-icon {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 .6rem;
+    }
+    .feature-body {
+      font-size: .95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0;
     }
 
-    /* ── Waitlist input ──────────────────────────────────────────────────── */
+    /* ── Language badges ─────────────────────────────────────────────────── */
+    .lang-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      padding: .2rem .7rem;
+      border-radius: 9999px;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      font-size: .8rem;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .lang-badges { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
+
+    /* ── Screenshots section ─────────────────────────────────────────────── */
+    .screenshots-section {
+      padding: 100px 1.5rem;
+      background: var(--bg);
+    }
+    .screenshots-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .screenshot-item { display: flex; flex-direction: column; align-items: center; gap: .85rem; }
+    .screenshot-item.featured { transform: translateY(-20px); }
+    .phone-frame {
+      border-radius: 2.5rem;
+      overflow: hidden;
+      background: #14141e;
+      position: relative;
+      border: 8px solid #222;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.18);
+    }
+    .phone-frame.featured {
+      box-shadow: 0 32px 80px rgba(0,0,0,0.22), 0 0 0 2px var(--gold-btn);
+    }
+    .screenshot-label {
+      font-size: .85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    /* Screen inner content */
+    .screen {
+      width: 200px;
+      height: 400px;
+      background: #14141e;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-family: 'Inter', sans-serif;
+    }
+    .screen.tall { height: 430px; }
+    .screen-header {
+      text-align: center;
+      padding: 8px 0 10px;
+      border-bottom: 1px solid rgba(212,160,23,.2);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold-btn);
+    }
+    .screen-label {
+      font-size: 8px;
+      color: rgba(255,255,255,.35);
+      letter-spacing: 1.5px;
+      margin-top: 2px;
+    }
+    .screen-row {
+      background: rgba(255,255,255,.05);
+      border-radius: 8px;
+      padding: 9px 11px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .screen-row-between {
+      background: rgba(255,255,255,.05);
+      border-radius: 8px;
+      padding: 8px 11px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .screen-row.active {
+      background: rgba(196,154,0,.14);
+      border: 1px solid rgba(196,154,0,.3);
+    }
+    .screen-emoji { font-size: 18px; line-height: 1; }
+    .screen-title { font-size: 10px; font-weight: 600; color: rgba(255,255,255,.85); }
+    .screen-sub   { font-size: 8px;  color: rgba(255,255,255,.4); }
+    .screen-num   { font-size: 12px; font-weight: 700; color: var(--gold-btn); }
+    .screen-active-badge {
+      font-size: 8px; color: var(--gold-btn); font-weight: 600;
+    }
+    .screen-online { font-size: 8px; color: #22c55e; font-weight: 600; }
+    .screen-emerg-banner {
+      background: rgba(239,68,68,.1);
+      border: 1px solid rgba(239,68,68,.3);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* ── About section ───────────────────────────────────────────────────── */
+    .about-section {
+      padding: 100px 1.5rem;
+      background: var(--bg-soft);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.15;
+      letter-spacing: -.03em;
+      margin: 0 0 1.5rem;
+    }
+    .about-body {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0 0 1rem;
+    }
+    .about-caption {
+      font-size: .9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin: 0 0 1.75rem;
+    }
+    .audience-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .audience-tag {
+      display: inline-block;
+      padding: .35rem 1rem;
+      border-radius: 9999px;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      font-size: .9rem;
+      font-weight: 500;
+    }
+    .about-graphic {
+      background: #fff;
+      border-radius: 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+    }
+
+    /* ── Waitlist section ────────────────────────────────────────────────── */
+    .waitlist-section {
+      padding: 100px 1.5rem;
+      background: var(--bg);
+    }
+    .waitlist-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
     .waitlist-input {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.15);
-      color: #fff;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      color: var(--text-primary);
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border-radius: 9999px;
+      font-size: 1rem;
+      font-family: inherit;
       transition: border-color .2s, box-shadow .2s;
     }
-    .waitlist-input::placeholder { color: rgba(255,255,255,.4); }
+    .waitlist-input::placeholder { color: var(--text-muted); }
     .waitlist-input:focus {
       outline: none;
-      border-color: rgba(255,215,0,.6);
-      box-shadow: 0 0 0 3px rgba(255,215,0,.12);
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(196,154,0,0.12);
     }
-
-    /* ── Form feedback message ───────────────────────────────────────────── */
-    #form-message         { min-height: 1.5rem; font-size: .9rem; }
-    #form-message.success { color: #4ade80; }
-    #form-message.error   { color: #f87171; }
-
-    /* ── Waitlist count badge ────────────────────────────────────────────── */
+    #form-message { min-height: 1.5rem; font-size: .9rem; text-align: center; }
+    #form-message.success { color: #16a34a; }
+    #form-message.error   { color: #dc2626; }
     .count-badge {
       display: inline-flex;
       align-items: center;
       gap: .4rem;
-      padding: .3rem 1rem;
+      padding: .3rem 1.1rem;
       border-radius: 9999px;
-      background: rgba(255,215,0,.08);
-      border: 1px solid rgba(255,215,0,.25);
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
       font-size: .85rem;
       color: var(--gold);
+      font-weight: 600;
     }
 
-    /* ── Audience pill tags ──────────────────────────────────────────────── */
-    .audience-tag {
-      display: inline-block;
-      padding: .35rem .9rem;
-      border-radius: 9999px;
-      background: rgba(255,215,0,.08);
-      border: 1px solid rgba(255,215,0,.22);
-      color: var(--gold-light);
-      font-size: .9rem;
+    /* ── Support section ─────────────────────────────────────────────────── */
+    .support-section {
+      padding: 100px 1.5rem;
+      background: var(--bg-soft);
     }
+    .support-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .support-email {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-bottom: 2px solid var(--gold-border);
+      padding-bottom: 2px;
+      transition: border-color .2s;
+    }
+    .support-email:hover { border-color: var(--gold); }
 
     /* ── FAQ accordion ───────────────────────────────────────────────────── */
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: .75rem;
+      margin-bottom: .75rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px var(--shadow-sm);
+    }
     .faq-item summary {
       cursor: pointer;
       list-style: none;
-      padding: 1rem 1.25rem;
+      padding: 1.1rem 1.25rem;
       font-weight: 600;
-      color: var(--gold-light);
+      color: var(--text-primary);
       display: flex;
       justify-content: space-between;
       align-items: center;
       transition: color .2s;
+      font-size: .95rem;
     }
     .faq-item summary::-webkit-details-marker { display: none; }
     .faq-item summary::after {
@@ -157,195 +484,234 @@
     .faq-item[open] summary::after { transform: rotate(45deg); }
     .faq-item[open] summary { color: var(--gold); }
     .faq-answer {
-      padding: 0 1.25rem 1rem;
-      color: rgba(255,255,255,.65);
+      padding: 0 1.25rem 1.1rem;
+      color: var(--text-secondary);
       line-height: 1.7;
-    }
-    .faq-item {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,215,0,.12);
-      border-radius: .75rem;
-      margin-bottom: .75rem;
-      overflow: hidden;
+      font-size: .95rem;
     }
 
-    /* ── Language badge list ─────────────────────────────────────────────── */
-    .lang-badge {
-      display: inline-flex;
+    /* ── Privacy teaser ──────────────────────────────────────────────────── */
+    .privacy-section {
+      padding: 80px 1.5rem;
+      background: var(--bg);
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────────── */
+    .site-footer {
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: .875rem;
+      background: var(--bg-muted);
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: .4rem;
-      padding: .25rem .8rem;
-      border-radius: 9999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      font-size: .85rem;
-      color: rgba(255,255,255,.75);
+      gap: .75rem;
     }
-
-    /* ── Particle canvas (behind hero) ──────────────────────────────────── */
-    #particles {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-
-    /* ── Gold horizontal divider ─────────────────────────────────────────── */
-    .gold-divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255,215,0,.35), transparent);
-    }
-
-    /* ── Section label ───────────────────────────────────────────────────── */
-    .section-label {
-      display: inline-block;
-      font-size: .75rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: .75;
-      margin-bottom: .75rem;
-    }
-
-    /* ── Footer nav link hover ───────────────────────────────────────────── */
-    .footer-link { transition: color .2s; }
+    .footer-logo { color: var(--gold); font-weight: 800; font-size: 1.15rem; }
+    .footer-nav { display: flex; gap: 1.5rem; }
+    .footer-link { color: #888; transition: color .2s; }
     .footer-link:hover { color: var(--gold); }
+    .footer-copy { color: #aaa; }
+
+    /* ── Responsive ──────────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-phone-wrap { order: -1; }
+      .hero-subheadline { max-width: 100%; margin-inline: auto; }
+      .hero-cta-group { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; }
+      .nav-links .nav-link { display: none; }
+    }
+    @media (max-width: 580px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .hero-section { padding: 80px 1.25rem; }
+    }
   </style>
 </head>
 
-<body class="bg-black text-white">
+<body>
 
-  <!-- ── Hero ───────────────────────────────────────────────────────────────── -->
-  <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
-    <!-- Gold particle field -->
-    <canvas id="particles"></canvas>
-
-    <div class="relative z-10 flex flex-col items-center">
-      <!-- Logo -->
-      <svg class="w-28 mb-8 logo-glow fade-up" viewBox="0 0 200 200"
-           xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SassaGold logo">
-        <text x="100" y="165" text-anchor="middle"
-              font-family="Georgia, 'Times New Roman', serif"
-              font-size="160" font-weight="bold" fill="#FFD700">S</text>
-      </svg>
-
-      <!-- Headline -->
-      <h1 class="text-5xl md:text-7xl font-bold mb-3 fade-up delay-1">
-        <span class="text-gold">SassaGold</span>
-      </h1>
-
-      <p class="text-xl md:text-2xl text-gray-300 mb-3 fade-up delay-2">
-        Your Smart Travel Companion
-      </p>
-
-      <p class="text-lg text-gray-400 max-w-2xl mb-10 fade-up delay-3">
-        Navigate safer. Travel smarter. Stay informed everywhere you go.
-      </p>
-
-      <!-- CTA -->
-      <div class="flex flex-col items-center gap-4 fade-up delay-4">
-        <span class="btn-gold px-8 py-4 rounded-full text-lg inline-flex items-center gap-3 cursor-default select-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M3.18 23.76c.3.17.64.24.98.21l12.37-11.97L3.18.24A1.6 1.6 0 0 0 2 1.76v20.48c0 .6.44 1.35 1.18 1.52zM16.53 12 5.12 23.42l10.29-5.94L16.53 12zm3.84-2.22L17.3 8.1 15.9 12l1.4 3.9 2.54-1.48a1.6 1.6 0 0 0 0-2.64h.03zM5.12.58 16.53 12l-1.12 3.48-10.3-5.94L5.12.58z"/>
-          </svg>
-          Coming soon on Google Play
-        </span>
-        <a href="#waitlist" class="btn-outline px-6 py-3 rounded-full text-base">
-          Get notified at launch
+  <!-- ── Nav ───────────────────────────────────────────────────────────────── -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SassaGold</a>
+      <div class="nav-links">
+        <a href="#features"    class="nav-link">Features</a>
+        <a href="#screenshots" class="nav-link">Screenshots</a>
+        <a href="#about"       class="nav-link">About</a>
+        <a href="#support"     class="nav-link">Support</a>
+        <a href="#waitlist"
+           class="btn-gold"
+           style="padding: .55rem 1.4rem; border-radius: 9999px; font-size: .9rem;">
+          Get notified
         </a>
       </div>
+    </div>
+  </nav>
 
-      <div class="mt-12 opacity-50 fade-up delay-5">
-        <p class="text-sm tracking-widest uppercase">Launching on Android</p>
+  <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+  <section class="hero-section">
+    <div class="hero-inner">
+
+      <!-- Left: text -->
+      <div class="fade-up">
+        <span class="section-label">Travel Companion App</span>
+        <h1 class="hero-headline">
+          Your smart<br />travel companion —<br /><span class="text-gold">SassaGold</span>
+        </h1>
+        <p class="hero-subheadline">
+          Navigate safer. Travel smarter. Emergency tools, local info, and offline-ready features — in one clean app.
+        </p>
+        <div class="hero-cta-group">
+          <span class="btn-gold"
+                style="padding: 1rem 2rem; border-radius: 9999px; font-size: 1rem; gap: .6rem; user-select: none; cursor: default;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3.18 23.76c.3.17.64.24.98.21l12.37-11.97L3.18.24A1.6 1.6 0 0 0 2 1.76v20.48c0 .6.44 1.35 1.18 1.52zM16.53 12 5.12 23.42l10.29-5.94L16.53 12zm3.84-2.22L17.3 8.1 15.9 12l1.4 3.9 2.54-1.48a1.6 1.6 0 0 0 0-2.64h.03zM5.12.58 16.53 12l-1.12 3.48-10.3-5.94L5.12.58z"/>
+            </svg>
+            Coming soon on Google Play
+          </span>
+          <a href="#waitlist"
+             class="btn-outline"
+             style="padding: 1rem 1.75rem; border-radius: 9999px; font-size: 1rem;">
+            Get notified at launch
+          </a>
+        </div>
+        <p style="font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted);">
+          Launching on Android
+        </p>
       </div>
+
+      <!-- Right: phone mockup -->
+      <div class="hero-phone-wrap fade-up delay-2">
+        <svg class="phone-svg" width="300" height="600" viewBox="0 0 300 600"
+             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SassaGold app mockup">
+
+          <!-- Phone shell -->
+          <rect x="0" y="0" width="300" height="600" rx="44" ry="44" fill="#1c1c1e"/>
+          <!-- Side buttons -->
+          <rect x="-3" y="120" width="6" height="40" rx="3" fill="#2a2a2c"/>
+          <rect x="-3" y="170" width="6" height="70" rx="3" fill="#2a2a2c"/>
+          <rect x="297" y="140" width="6" height="80" rx="3" fill="#2a2a2c"/>
+          <!-- Screen bezel -->
+          <rect x="6" y="6" width="288" height="588" rx="38" ry="38" fill="#14141e"/>
+          <!-- Dynamic island -->
+          <rect x="108" y="14" width="84" height="24" rx="12" fill="#0e0e18"/>
+
+          <!-- Status row -->
+          <text x="22" y="30" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="rgba(255,255,255,.5)">9:41</text>
+          <text x="246" y="30" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,.4)">●●●</text>
+
+          <!-- App header -->
+          <rect x="14" y="48" width="272" height="60" rx="14" fill="rgba(196,154,0,.12)"/>
+          <text x="30" y="74" font-family="Inter,sans-serif" font-size="14" font-weight="800" fill="#D4A017">SassaGold</text>
+          <text x="30" y="94" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,.45)">Travel Companion</text>
+          <circle cx="268" cy="78" r="18" fill="rgba(196,154,0,.15)"/>
+          <text x="268" y="83" font-family="sans-serif" font-size="16" fill="#D4A017" text-anchor="middle">✦</text>
+
+          <!-- Section label -->
+          <text x="22" y="138" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.35)" letter-spacing="1.5">NEARBY PLACES</text>
+
+          <!-- POI card 1 -->
+          <rect x="14" y="148" width="130" height="96" rx="12" fill="rgba(255,255,255,.04)"/>
+          <text x="32" y="177" font-family="sans-serif" font-size="22" fill="#D4A017">⛽</text>
+          <text x="30" y="198" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,.88)">Fuel Station</text>
+          <text x="30" y="214" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">2.4 km away</text>
+          <text x="30" y="230" font-family="Inter,sans-serif" font-size="8" fill="#D4A017">→ Open now</text>
+
+          <!-- POI card 2 -->
+          <rect x="156" y="148" width="130" height="96" rx="12" fill="rgba(255,255,255,.04)"/>
+          <text x="174" y="177" font-family="sans-serif" font-size="22" fill="#D4A017">🚨</text>
+          <text x="172" y="198" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,.88)">Emergency</text>
+          <text x="172" y="214" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">Local numbers</text>
+          <text x="172" y="230" font-family="Inter,sans-serif" font-size="8" fill="#ef4444">● Available</text>
+
+          <!-- POI card 3 -->
+          <rect x="14" y="256" width="130" height="96" rx="12" fill="rgba(255,255,255,.04)"/>
+          <text x="32" y="285" font-family="sans-serif" font-size="22" fill="#D4A017">🌐</text>
+          <text x="30" y="306" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,.88)">Languages</text>
+          <text x="30" y="322" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">5 supported</text>
+          <text x="30" y="338" font-family="Inter,sans-serif" font-size="8" fill="#D4A017">→ Switch</text>
+
+          <!-- POI card 4 -->
+          <rect x="156" y="256" width="130" height="96" rx="12" fill="rgba(255,255,255,.04)"/>
+          <text x="174" y="285" font-family="sans-serif" font-size="22" fill="#D4A017">📡</text>
+          <text x="172" y="306" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,.88)">Offline Mode</text>
+          <text x="172" y="322" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">Works anywhere</text>
+          <text x="172" y="338" font-family="Inter,sans-serif" font-size="8" fill="#22c55e">● Ready</text>
+
+          <!-- Section label 2 -->
+          <text x="22" y="380" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.35)" letter-spacing="1.5">QUICK ACCESS</text>
+
+          <!-- Quick action row -->
+          <rect x="14" y="390" width="130" height="50" rx="12" fill="rgba(196,154,0,.1)"/>
+          <text x="32" y="422" font-family="sans-serif" font-size="18" fill="#D4A017">🏥</text>
+          <text x="58" y="412" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,.8)">Hospital</text>
+          <text x="58" y="427" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.35)">5.8 km</text>
+
+          <rect x="156" y="390" width="130" height="50" rx="12" fill="rgba(255,255,255,.04)"/>
+          <text x="174" y="422" font-family="sans-serif" font-size="18" fill="#D4A017">🏪</text>
+          <text x="200" y="412" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,.8)">Shop</text>
+          <text x="200" y="427" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.35)">6.2 km</text>
+
+          <!-- Bottom nav bar -->
+          <rect x="14" y="548" width="272" height="42" rx="14" fill="rgba(255,255,255,.04)"/>
+          <text x="62"  y="573" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#D4A017">🏠</text>
+          <text x="117" y="573" font-family="sans-serif" font-size="16" text-anchor="middle" fill="rgba(255,255,255,.35)">🗺️</text>
+          <text x="183" y="573" font-family="sans-serif" font-size="16" text-anchor="middle" fill="rgba(255,255,255,.35)">🚨</text>
+          <text x="238" y="573" font-family="sans-serif" font-size="16" text-anchor="middle" fill="rgba(255,255,255,.35)">⚙️</text>
+
+          <!-- Screen border glow -->
+          <rect x="6" y="6" width="288" height="588" rx="38" ry="38"
+                fill="none" stroke="rgba(196,154,0,.25)" stroke-width="1"/>
+        </svg>
+      </div>
+
     </div>
   </section>
 
   <div class="gold-divider"></div>
 
-  <!-- ── About ──────────────────────────────────────────────────────────────── -->
-  <section id="about" class="py-24 px-6 bg-gradient-to-b from-black to-gray-900">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="section-label">About the App</span>
-        <h2 class="text-4xl font-bold">
-          What is <span class="text-gold">SassaGold</span>?
+  <!-- ── Features ──────────────────────────────────────────────────────────── -->
+  <section id="features" class="features-section">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 4rem;">
+        <span class="section-label">Key Features</span>
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+          Everything you need,<br /><span class="text-gold">nothing you don't</span>
         </h2>
+        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0;">
+          Built for the road. Designed for clarity.
+        </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- What it is -->
-        <div class="info-panel md:col-span-3">
-          <p class="text-gray-300 text-lg leading-relaxed">
-            SassaGold is a modern travel companion app built to help you stay safe, informed, and prepared —
-            whether you're exploring a new city or navigating remote areas. It combines essential tools like
-            emergency information, local points of interest, multilingual support, and offline‑friendly features
-            into one seamless experience.
-          </p>
-          <p class="text-gray-400 mt-4 leading-relaxed">
-            Built for reliability. Designed for simplicity. Ready for your next journey.
-          </p>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🗺️</div>
+          <h3 class="feature-title">Local Points of Interest</h3>
+          <p class="feature-body">Find essential locations — fuel stations, rest areas, emergency points, and more — with clean, readable details.</p>
         </div>
 
-        <!-- Who it's for -->
-        <div class="info-panel">
-          <h3 class="text-xl font-semibold mb-4 text-gold">Who is it for?</h3>
-          <ul class="space-y-2 text-gray-300">
-            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Travelers</li>
-            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Road‑trippers</li>
-            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Outdoor explorers</li>
-            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> People who want quick access to reliable local info</li>
-            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Anyone who values safety and clarity while on the move</li>
-          </ul>
+        <div class="feature-card">
+          <div class="feature-icon">🚨</div>
+          <h3 class="feature-title">Emergency Tools</h3>
+          <p class="feature-body">Quick access to emergency numbers, instructions, and location‑aware information when you need it most.</p>
         </div>
 
-        <!-- Why it exists -->
-        <div class="info-panel md:col-span-2">
-          <h3 class="text-xl font-semibold mb-4 text-gold">Why it exists</h3>
-          <p class="text-gray-300 leading-relaxed mb-3">
-            Travel apps are often bloated, slow, or overloaded with ads.
-          </p>
-          <p class="text-gray-300 leading-relaxed">
-            SassaGold focuses on <strong class="text-white">speed, clarity, and trust</strong> —
-            giving you the information you need without distractions.
-            No ads. No clutter. Just the tools that matter when you're on the move.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="gold-divider"></div>
-
-  <!-- ── Features ───────────────────────────────────────────────────────────── -->
-  <section id="features" class="py-24 px-6 bg-black">
-    <div class="max-w-5xl mx-auto text-center">
-      <span class="section-label">Key Features</span>
-      <h2 class="text-4xl font-bold mb-4">
-        Everything you need, <span class="text-gold">nothing you don't</span>
-      </h2>
-      <p class="text-gray-500 text-lg mb-16">Built for the road. Designed for clarity.</p>
-
-      <div class="grid md:grid-cols-3 gap-8">
-
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">🗺️</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Local Points of Interest</h3>
-          <p class="text-gray-400">Find essential locations like fuel stations, rest areas, emergency points, and more — with clean, readable details.</p>
-        </div>
-
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">🚨</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Emergency Tools</h3>
-          <p class="text-gray-400">Quick access to emergency numbers, instructions, and location‑aware information when you need it most.</p>
-        </div>
-
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">🌐</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Multilingual Support</h3>
-          <p class="text-gray-400 mb-4">Fully translated and ready to use. Switch languages instantly — and the app remembers your choice.</p>
-          <div class="flex flex-wrap gap-2">
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3 class="feature-title">Multilingual Support</h3>
+          <p class="feature-body">Fully translated and ready to use. Switch languages instantly — and the app remembers your choice.</p>
+          <div class="lang-badges">
             <span class="lang-badge">🇳🇴 Norwegian</span>
             <span class="lang-badge">🇩🇰 Danish</span>
             <span class="lang-badge">🇸🇪 Swedish</span>
@@ -354,22 +720,22 @@
           </div>
         </div>
 
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">📡</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Offline‑Friendly</h3>
-          <p class="text-gray-400">Designed to work even with limited connectivity. Essential information available without a signal.</p>
+        <div class="feature-card">
+          <div class="feature-icon">📡</div>
+          <h3 class="feature-title">Offline‑Friendly</h3>
+          <p class="feature-body">Designed to work even with limited connectivity. Essential information available without a signal.</p>
         </div>
 
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">🔄</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Automatic Updates</h3>
-          <p class="text-gray-400">The app checks for new content and improvements automatically, so you always have the latest information.</p>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3 class="feature-title">Automatic Updates</h3>
+          <p class="feature-body">The app checks for new content and improvements automatically, so you always have the latest information.</p>
         </div>
 
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">🧭</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Clean, Simple UI</h3>
-          <p class="text-gray-400">No ads. No clutter. Just the information you need — presented clearly, designed for travelers in motion.</p>
+        <div class="feature-card">
+          <div class="feature-icon">🧭</div>
+          <h3 class="feature-title">Clean, Simple UI</h3>
+          <p class="feature-body">No ads. No clutter. Just the information you need — presented clearly, designed for travelers in motion.</p>
         </div>
 
       </div>
@@ -378,65 +744,304 @@
 
   <div class="gold-divider"></div>
 
-  <!-- ── Waitlist ────────────────────────────────────────────────────────────── -->
-  <section id="waitlist" class="py-24 px-6 bg-gradient-to-b from-black to-gray-900">
-    <div class="max-w-xl mx-auto text-center">
+  <!-- ── Screenshots ────────────────────────────────────────────────────────── -->
+  <section id="screenshots" class="screenshots-section">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 4rem;">
+        <span class="section-label">App Preview</span>
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+          See it in <span class="text-gold">action</span>
+        </h2>
+        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0;">
+          A clean, focused interface designed for travelers on the move.
+        </p>
+      </div>
+
+      <div class="screenshots-row">
+
+        <!-- Screen 1: POI -->
+        <div class="screenshot-item">
+          <div class="phone-frame">
+            <div class="screen">
+              <div class="screen-header">SassaGold</div>
+              <div class="screen-label">NEARBY PLACES</div>
+              <div class="screen-row">
+                <span class="screen-emoji">⛽</span>
+                <div>
+                  <div class="screen-title">Fuel Station</div>
+                  <div class="screen-sub">2.4 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🍔</span>
+                <div>
+                  <div class="screen-title">Restaurant</div>
+                  <div class="screen-sub">3.1 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🏥</span>
+                <div>
+                  <div class="screen-title">Hospital</div>
+                  <div class="screen-sub">5.8 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🏪</span>
+                <div>
+                  <div class="screen-title">Convenience Store</div>
+                  <div class="screen-sub">6.2 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🅿️</span>
+                <div>
+                  <div class="screen-title">Parking Area</div>
+                  <div class="screen-sub">7.0 km away</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="screenshot-label">Points of Interest</span>
+        </div>
+
+        <!-- Screen 2: Emergency (featured, center) -->
+        <div class="screenshot-item featured">
+          <div class="phone-frame featured">
+            <div class="screen tall">
+              <div class="screen-header">Emergency</div>
+              <div class="screen-emerg-banner">
+                <div style="font-size:26px; margin-bottom:4px;">🚨</div>
+                <div style="font-size:10px; color:#ef4444; font-weight:700;">Emergency Services</div>
+                <div style="font-size:8px; color:rgba(255,255,255,.35); margin-top:2px;">Location-aware info</div>
+              </div>
+              <div class="screen-label">LOCAL NUMBERS</div>
+              <div class="screen-row-between">
+                <span class="screen-title">Police</span>
+                <span class="screen-num">110</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Ambulance</span>
+                <span class="screen-num">113</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Fire Brigade</span>
+                <span class="screen-num">110</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">European Emergency</span>
+                <span class="screen-num">112</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Coast Guard</span>
+                <span class="screen-num">120</span>
+              </div>
+            </div>
+          </div>
+          <span class="screenshot-label">Emergency Screen</span>
+        </div>
+
+        <!-- Screen 3: Settings / Language -->
+        <div class="screenshot-item">
+          <div class="phone-frame">
+            <div class="screen">
+              <div class="screen-header">Settings</div>
+              <div class="screen-label">LANGUAGE</div>
+              <div class="screen-row active">
+                <span class="screen-emoji" style="font-size:14px;">🇬🇧</span>
+                <span class="screen-title" style="flex:1;">English</span>
+                <span class="screen-active-badge">✓</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇴</span>
+                <span class="screen-title" style="opacity:.6;">Norwegian</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇩🇰</span>
+                <span class="screen-title" style="opacity:.6;">Danish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇸🇪</span>
+                <span class="screen-title" style="opacity:.6;">Swedish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇱</span>
+                <span class="screen-title" style="opacity:.6;">Dutch</span>
+              </div>
+              <div class="screen-label" style="margin-top:4px;">APP</div>
+              <div class="screen-row-between">
+                <span class="screen-title">Auto-update</span>
+                <span class="screen-online">On</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Offline cache</span>
+                <span class="screen-online">Ready</span>
+              </div>
+            </div>
+          </div>
+          <span class="screenshot-label">Language &amp; Settings</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── About ──────────────────────────────────────────────────────────────── -->
+  <section id="about" class="about-section">
+    <div class="section-inner">
+      <div class="about-grid">
+
+        <!-- Left: text -->
+        <div>
+          <span class="section-label">About the App</span>
+          <h2 class="about-title">
+            What is <span class="text-gold">SassaGold</span>?
+          </h2>
+          <p class="about-body">
+            SassaGold is a modern travel companion app built to help you stay safe, informed, and prepared —
+            whether you're exploring a new city or navigating remote areas.
+          </p>
+          <p class="about-body">
+            It combines essential tools like emergency information, local points of interest,
+            multilingual support, and offline-friendly features into one seamless experience.
+          </p>
+          <p class="about-caption">
+            Built for reliability. Designed for simplicity. Ready for your next journey.
+          </p>
+          <div class="audience-tags">
+            <span class="audience-tag">✈️ Travelers</span>
+            <span class="audience-tag">🚗 Road-trippers</span>
+            <span class="audience-tag">🏕️ Outdoor explorers</span>
+            <span class="audience-tag">🌍 Wanderers</span>
+          </div>
+        </div>
+
+        <!-- Right: travel illustration -->
+        <div class="about-graphic">
+          <svg width="320" height="280" viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Travel map illustration">
+            <!-- Outer glow circle -->
+            <circle cx="160" cy="140" r="120" fill="var(--gold-light)" opacity="0.6"/>
+            <circle cx="160" cy="140" r="85"  fill="var(--gold-light)" opacity="0.45"/>
+            <circle cx="160" cy="140" r="50"  fill="var(--gold-light)" opacity="0.3"/>
+
+            <!-- Compass grid lines -->
+            <line x1="160" y1="28"  x2="160" y2="252" stroke="var(--gold)" stroke-width="1.5" opacity="0.3" stroke-dasharray="4,6"/>
+            <line x1="48"  y1="140" x2="272" y2="140" stroke="var(--gold)" stroke-width="1.5" opacity="0.3" stroke-dasharray="4,6"/>
+            <line x1="80"  y1="60"  x2="240" y2="220" stroke="var(--gold)" stroke-width="1"   opacity="0.15" stroke-dasharray="4,8"/>
+            <line x1="240" y1="60"  x2="80"  y2="220" stroke="var(--gold)" stroke-width="1"   opacity="0.15" stroke-dasharray="4,8"/>
+
+            <!-- Cardinal direction labels -->
+            <text x="160" y="22"  text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="var(--gold)" opacity="0.9">N</text>
+            <text x="160" y="264" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--gold)" opacity="0.5">S</text>
+            <text x="40"  y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--gold)" opacity="0.5">W</text>
+            <text x="280" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--gold)" opacity="0.5">E</text>
+
+            <!-- Compass rose center -->
+            <polygon points="160,68  166,120 154,120" fill="var(--gold)" opacity="0.95"/>
+            <polygon points="160,212 166,160 154,160" fill="var(--gold)" opacity="0.4"/>
+            <polygon points="68,140  120,134 120,146"  fill="var(--gold)" opacity="0.6"/>
+            <polygon points="252,140 200,134 200,146"  fill="var(--gold)" opacity="0.6"/>
+            <circle cx="160" cy="140" r="14" fill="white" stroke="var(--gold)" stroke-width="2.5"/>
+            <circle cx="160" cy="140" r="6"  fill="var(--gold)"/>
+
+            <!-- Route dashed line -->
+            <path d="M90,90 Q140,60 200,110 Q230,140 180,190 Q155,215 130,195"
+                  stroke="var(--gold)" stroke-width="2" fill="none"
+                  stroke-dasharray="7,5" opacity="0.65"/>
+
+            <!-- Location pin 1 -->
+            <circle cx="90"  cy="90"  r="12" fill="white" stroke="var(--gold)" stroke-width="2.5"/>
+            <circle cx="90"  cy="90"  r="5"  fill="var(--gold)"/>
+            <line x1="90" y1="102" x2="90" y2="115" stroke="var(--gold)" stroke-width="2.5"/>
+
+            <!-- Location pin 2 -->
+            <circle cx="200" cy="108" r="12" fill="white" stroke="var(--gold)" stroke-width="2.5"/>
+            <circle cx="200" cy="108" r="5"  fill="var(--gold)"/>
+            <line x1="200" y1="120" x2="200" y2="133" stroke="var(--gold)" stroke-width="2.5"/>
+
+            <!-- Location pin 3 (current/highlighted) -->
+            <circle cx="130" cy="193" r="14" fill="var(--gold)" opacity="0.2"/>
+            <circle cx="130" cy="193" r="12" fill="white" stroke="var(--gold)" stroke-width="2.5"/>
+            <circle cx="130" cy="193" r="5"  fill="var(--gold)"/>
+            <line x1="130" y1="205" x2="130" y2="218" stroke="var(--gold)" stroke-width="2.5"/>
+
+            <!-- Small airplane -->
+            <g transform="translate(162,80) rotate(50)">
+              <ellipse cx="0" cy="0" rx="13" ry="5" fill="var(--gold)" opacity="0.85"/>
+              <polygon points="0,-14 4,0 -4,0" fill="var(--gold)" opacity="0.85"/>
+              <line x1="-10" y1="2" x2="10" y2="2" stroke="var(--gold)" stroke-width="2.5" opacity="0.85"/>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── Waitlist ───────────────────────────────────────────────────────────── -->
+  <section id="waitlist" class="waitlist-section">
+    <div class="waitlist-inner">
       <span class="section-label">Early Access</span>
-      <h2 class="text-4xl font-bold mb-4">
-        Be the <span class="text-gold">First to Know</span>
+      <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+        Be the <span class="text-gold">first to know</span>
       </h2>
-      <p class="text-gray-400 mb-6">
+      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem;">
         Get notified when SassaGold launches on Google Play. No spam, unsubscribe any time.
       </p>
 
-      <!-- Live count badge — hidden until a real count is returned -->
-      <div id="count-display" class="flex justify-center mb-8" hidden>
+      <div id="count-display" style="display:flex; justify-content:center; margin-bottom:1.75rem;" hidden>
         <span class="count-badge">
           <span aria-hidden="true">✦</span>
           <span id="count-num">0</span> people already waiting
         </span>
       </div>
 
-      <form id="waitlist-form" class="flex flex-col gap-4">
-        <div class="flex flex-col md:flex-row gap-4">
+      <form id="waitlist-form" style="display:flex; flex-direction:column; gap:1rem;">
+        <div style="display:flex; flex-direction:column; gap:.75rem;">
           <input id="email-input"
                  type="email"
                  placeholder="your@email.com"
                  required
                  autocomplete="email"
-                 class="waitlist-input px-6 py-4 rounded-full w-full flex-1" />
+                 class="waitlist-input" />
           <button type="submit"
                   id="submit-btn"
-                  class="px-8 py-4 btn-gold rounded-full whitespace-nowrap">
+                  class="btn-gold"
+                  style="padding:1rem 2rem; border-radius:9999px; font-size:1rem; width:100%;">
             Notify Me
           </button>
         </div>
-        <p id="form-message" class="text-center" aria-live="polite"></p>
+        <p id="form-message" aria-live="polite"></p>
       </form>
     </div>
   </section>
 
   <div class="gold-divider"></div>
 
-  <!-- ── Support ─────────────────────────────────────────────────────────────── -->
-  <section id="support" class="py-24 px-6 bg-black">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12">
+  <!-- ── Support ────────────────────────────────────────────────────────────── -->
+  <section id="support" class="support-section">
+    <div class="support-inner">
+      <div style="text-align:center; margin-bottom:3rem;">
         <span class="section-label">Support</span>
-        <h2 class="text-4xl font-bold">
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
           We're here to <span class="text-gold">help</span>
         </h2>
-        <p class="text-gray-400 mt-4">
+        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 1.25rem;">
           Have a question or need assistance? Reach out any time.
         </p>
-        <a href="mailto:support@sassagold.com"
-           class="inline-block mt-6 text-gold font-semibold text-lg hover:underline">
+        <a href="mailto:support@sassagold.com" class="support-email">
           support@sassagold.com
         </a>
       </div>
 
-      <!-- FAQ -->
-      <h3 class="text-2xl font-semibold mb-6 text-center">Frequently Asked Questions</h3>
+      <h3 style="font-size:1.5rem; font-weight:700; color:var(--text-primary); margin:0 0 1.5rem; text-align:center;">
+        Frequently Asked Questions
+      </h3>
 
       <details class="faq-item">
         <summary>How do I change the language?</summary>
@@ -476,38 +1081,40 @@
 
   <div class="gold-divider"></div>
 
-  <!-- ── Privacy teaser ──────────────────────────────────────────────────────── -->
-  <section id="privacy" class="py-16 px-6 bg-gradient-to-b from-black to-gray-900">
-    <div class="max-w-2xl mx-auto text-center">
+  <!-- ── Privacy teaser ─────────────────────────────────────────────────────── -->
+  <section id="privacy" class="privacy-section">
+    <div style="max-width:640px; margin:0 auto; text-align:center;">
       <span class="section-label">Privacy</span>
-      <h2 class="text-3xl font-bold mb-4">
+      <h2 style="font-size:2.25rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
         Your privacy <span class="text-gold">matters</span>
       </h2>
-      <p class="text-gray-400 leading-relaxed mb-3">
+      <p style="color:var(--text-secondary); font-size:1.05rem; line-height:1.75; margin:0 0 .75rem;">
         SassaGold does not collect personal data, does not track your identity,
         and does not share information with third parties.
       </p>
-      <p class="text-gray-500 leading-relaxed mb-8">
+      <p style="color:var(--text-muted); font-size:1rem; line-height:1.75; margin:0 0 2.5rem;">
         The app only processes the minimum data required to function,
         such as language settings and cached content.
       </p>
-      <a href="/privacy.html" class="btn-outline px-6 py-3 rounded-full inline-block">
+      <a href="/privacy.html"
+         class="btn-outline"
+         style="padding:.9rem 2rem; border-radius:9999px; font-size:1rem;">
         Read the full Privacy Policy →
       </a>
     </div>
   </section>
 
   <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
-  <footer class="py-10 text-center text-gray-600 text-sm border-t border-gray-900">
-    <div class="flex flex-col items-center gap-3">
-      <span class="text-gold font-semibold text-base">SassaGold</span>
-      <nav class="flex gap-6 text-gray-500">
-        <a href="#about"    class="footer-link">About</a>
-        <a href="#features" class="footer-link">Features</a>
-        <a href="#support"  class="footer-link">Support</a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">SassaGold</span>
+      <nav class="footer-nav">
+        <a href="#about"        class="footer-link">About</a>
+        <a href="#features"     class="footer-link">Features</a>
+        <a href="#support"      class="footer-link">Support</a>
         <a href="/privacy.html" class="footer-link">Privacy</a>
       </nav>
-      <p>© 2026 SassaGold. All rights reserved.</p>
+      <p class="footer-copy">© 2026 SassaGold. All rights reserved.</p>
     </div>
   </footer>
 
@@ -519,58 +1126,6 @@
      * keep the relative path below unchanged.
      */
     const API = '/api';
-
-    /* ── Gold particle field ──────────────────────────────────────────────── */
-    (function () {
-      const canvas = document.getElementById('particles');
-      const ctx = canvas.getContext('2d');
-      let W, H, particles;
-
-      function resize() {
-        W = canvas.width  = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
-      }
-
-      function mkParticle() {
-        return {
-          x: Math.random() * W,
-          y: Math.random() * H,
-          r: Math.random() * 1.2 + 0.3,
-          v: Math.random() * 0.25 + 0.08,
-          o: Math.random() * 0.45 + 0.15,
-        };
-      }
-
-      function init() {
-        resize();
-        // Scale particle count by device capability: fewer on low-end / mobile
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        const cores = navigator.hardwareConcurrency ?? 2;
-        const count = isMobile ? 40 : cores <= 2 ? 60 : 110;
-        particles = Array.from({ length: count }, mkParticle);
-      }
-
-      function frame() {
-        ctx.clearRect(0, 0, W, H);
-        for (const p of particles) {
-          p.y -= p.v;
-          if (p.y < -2) { p.y = H + 2; p.x = Math.random() * W; }
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255,215,0,${p.o})`;
-          ctx.fill();
-        }
-        requestAnimationFrame(frame);
-      }
-
-      window.addEventListener('resize', () => {
-        resize();
-        for (const p of particles) p.x = Math.random() * W;
-      });
-
-      init();
-      frame();
-    }());
 
     /* ── Live waitlist count ─────────────────────────────────────────────── */
     (async function loadCount() {
@@ -588,9 +1143,9 @@
     /* ── Waitlist form submission ────────────────────────────────────────── */
     document.getElementById('waitlist-form').addEventListener('submit', async function (e) {
       e.preventDefault();
-      const email  = document.getElementById('email-input').value.trim();
-      const btn    = document.getElementById('submit-btn');
-      const msg    = document.getElementById('form-message');
+      const email = document.getElementById('email-input').value.trim();
+      const btn   = document.getElementById('submit-btn');
+      const msg   = document.getElementById('form-message');
 
       btn.disabled    = true;
       btn.textContent = 'Joining…';
@@ -628,5 +1183,6 @@
     /* ── Analytics pageview ping ─────────────────────────────────────────── */
     fetch(`${API}/pageview`, { method: 'POST' }).catch(() => {});
   </script>
+
 </body>
 </html>
