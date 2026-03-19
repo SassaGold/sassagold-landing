@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SassaGold — Coming Soon</title>
+  <title>SassaGold — Your Smart Travel Companion</title>
+  <meta name="description" content="SassaGold gives you real‑time travel insights, emergency tools, local information, and a clean, intuitive interface designed for travelers who want clarity, not clutter." />
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* ── Design tokens ───────────────────────────────────────────────────── */
@@ -29,6 +30,7 @@
     .fade-up.delay-2    { animation-delay: .30s; }
     .fade-up.delay-3    { animation-delay: .45s; }
     .fade-up.delay-4    { animation-delay: .60s; }
+    .fade-up.delay-5    { animation-delay: .75s; }
 
     /* ── Logo pulse ──────────────────────────────────────────────────────── */
     .logo-glow { animation: logoGlow 3s ease-in-out infinite; }
@@ -54,6 +56,19 @@
     }
     .btn-gold:disabled { opacity: .7; cursor: not-allowed; }
 
+    /* ── Outlined secondary button ───────────────────────────────────────── */
+    .btn-outline {
+      border: 1px solid rgba(255,215,0,.45);
+      color: var(--gold);
+      font-weight: 600;
+      transition: background .2s, box-shadow .2s, transform .2s;
+    }
+    .btn-outline:hover {
+      background: rgba(255,215,0,.08);
+      box-shadow: 0 4px 20px rgba(255,215,0,.2);
+      transform: translateY(-2px);
+    }
+
     /* ── Glassmorphism feature cards ─────────────────────────────────────── */
     .glass-card {
       background: rgba(255,255,255,.04);
@@ -65,6 +80,14 @@
     .glass-card:hover {
       border-color: rgba(255,215,0,.5);
       transform: translateY(-4px);
+    }
+
+    /* ── About / info panel ──────────────────────────────────────────────── */
+    .info-panel {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,215,0,.12);
+      border-radius: 1rem;
+      padding: 2rem;
     }
 
     /* ── Waitlist input ──────────────────────────────────────────────────── */
@@ -99,6 +122,66 @@
       color: var(--gold);
     }
 
+    /* ── Audience pill tags ──────────────────────────────────────────────── */
+    .audience-tag {
+      display: inline-block;
+      padding: .35rem .9rem;
+      border-radius: 9999px;
+      background: rgba(255,215,0,.08);
+      border: 1px solid rgba(255,215,0,.22);
+      color: var(--gold-light);
+      font-size: .9rem;
+    }
+
+    /* ── FAQ accordion ───────────────────────────────────────────────────── */
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 1rem 1.25rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color .2s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      color: var(--gold);
+      transition: transform .25s;
+      flex-shrink: 0;
+      margin-left: .75rem;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item[open] summary { color: var(--gold); }
+    .faq-answer {
+      padding: 0 1.25rem 1rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.7;
+    }
+    .faq-item {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,215,0,.12);
+      border-radius: .75rem;
+      margin-bottom: .75rem;
+      overflow: hidden;
+    }
+
+    /* ── Language badge list ─────────────────────────────────────────────── */
+    .lang-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .25rem .8rem;
+      border-radius: 9999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      font-size: .85rem;
+      color: rgba(255,255,255,.75);
+    }
+
     /* ── Particle canvas (behind hero) ──────────────────────────────────── */
     #particles {
       position: absolute;
@@ -113,6 +196,21 @@
       height: 1px;
       background: linear-gradient(to right, transparent, rgba(255,215,0,.35), transparent);
     }
+
+    /* ── Section label ───────────────────────────────────────────────────── */
+    .section-label {
+      display: inline-block;
+      font-size: .75rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .75;
+      margin-bottom: .75rem;
+    }
+
+    /* ── Footer nav link hover ───────────────────────────────────────────── */
+    .footer-link { transition: color .2s; }
+    .footer-link:hover { color: var(--gold); }
   </style>
 </head>
 
@@ -133,23 +231,87 @@
       </svg>
 
       <!-- Headline -->
-      <h1 class="text-5xl md:text-7xl font-bold mb-4 fade-up delay-1">
+      <h1 class="text-5xl md:text-7xl font-bold mb-3 fade-up delay-1">
         <span class="text-gold">SassaGold</span>
       </h1>
 
-      <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mb-10 fade-up delay-2">
-        A new way to explore, connect, and experience the world around you.
-        Something powerful is coming.
+      <p class="text-xl md:text-2xl text-gray-300 mb-3 fade-up delay-2">
+        Your Smart Travel Companion
+      </p>
+
+      <p class="text-lg text-gray-400 max-w-2xl mb-10 fade-up delay-3">
+        Navigate safer. Travel smarter. Stay informed everywhere you go.
       </p>
 
       <!-- CTA -->
-      <a href="#waitlist"
-         class="px-8 py-4 btn-gold rounded-full text-lg fade-up delay-3">
-        Join the Waitlist
-      </a>
+      <div class="flex flex-col items-center gap-4 fade-up delay-4">
+        <span class="btn-gold px-8 py-4 rounded-full text-lg inline-flex items-center gap-3 cursor-default select-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3.18 23.76c.3.17.64.24.98.21l12.37-11.97L3.18.24A1.6 1.6 0 0 0 2 1.76v20.48c0 .6.44 1.35 1.18 1.52zM16.53 12 5.12 23.42l10.29-5.94L16.53 12zm3.84-2.22L17.3 8.1 15.9 12l1.4 3.9 2.54-1.48a1.6 1.6 0 0 0 0-2.64h.03zM5.12.58 16.53 12l-1.12 3.48-10.3-5.94L5.12.58z"/>
+          </svg>
+          Coming soon on Google Play
+        </span>
+        <a href="#waitlist" class="btn-outline px-6 py-3 rounded-full text-base">
+          Get notified at launch
+        </a>
+      </div>
 
-      <div class="mt-12 opacity-50 fade-up delay-4">
-        <p class="text-sm tracking-widest uppercase">Launching soon on iOS · Android · Web</p>
+      <div class="mt-12 opacity-50 fade-up delay-5">
+        <p class="text-sm tracking-widest uppercase">Launching on Android</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── About ──────────────────────────────────────────────────────────────── -->
+  <section id="about" class="py-24 px-6 bg-gradient-to-b from-black to-gray-900">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="section-label">About the App</span>
+        <h2 class="text-4xl font-bold">
+          What is <span class="text-gold">SassaGold</span>?
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- What it is -->
+        <div class="info-panel md:col-span-3">
+          <p class="text-gray-300 text-lg leading-relaxed">
+            SassaGold is a modern travel companion app built to help you stay safe, informed, and prepared —
+            whether you're exploring a new city or navigating remote areas. It combines essential tools like
+            emergency information, local points of interest, multilingual support, and offline‑friendly features
+            into one seamless experience.
+          </p>
+          <p class="text-gray-400 mt-4 leading-relaxed">
+            Built for reliability. Designed for simplicity. Ready for your next journey.
+          </p>
+        </div>
+
+        <!-- Who it's for -->
+        <div class="info-panel">
+          <h3 class="text-xl font-semibold mb-4 text-gold">Who is it for?</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Travelers</li>
+            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Road‑trippers</li>
+            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Outdoor explorers</li>
+            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> People who want quick access to reliable local info</li>
+            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Anyone who values safety and clarity while on the move</li>
+          </ul>
+        </div>
+
+        <!-- Why it exists -->
+        <div class="info-panel md:col-span-2">
+          <h3 class="text-xl font-semibold mb-4 text-gold">Why it exists</h3>
+          <p class="text-gray-300 leading-relaxed mb-3">
+            Travel apps are often bloated, slow, or overloaded with ads.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            SassaGold focuses on <strong class="text-white">speed, clarity, and trust</strong> —
+            giving you the information you need without distractions.
+            No ads. No clutter. Just the tools that matter when you're on the move.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -157,31 +319,59 @@
   <div class="gold-divider"></div>
 
   <!-- ── Features ───────────────────────────────────────────────────────────── -->
-  <section class="py-24 px-6 bg-gradient-to-b from-black to-gray-900">
+  <section id="features" class="py-24 px-6 bg-black">
     <div class="max-w-5xl mx-auto text-center">
+      <span class="section-label">Key Features</span>
       <h2 class="text-4xl font-bold mb-4">
-        What to <span class="text-gold">Expect</span>
+        Everything you need, <span class="text-gold">nothing you don't</span>
       </h2>
-      <p class="text-gray-500 text-lg mb-16">Built from the ground up for the next generation.</p>
+      <p class="text-gray-500 text-lg mb-16">Built for the road. Designed for clarity.</p>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="glass-card p-8">
-          <div class="text-3xl mb-4">⚡</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Lightning Fast</h3>
-          <p class="text-gray-400">Built for speed and smooth experiences across all devices.</p>
+
+        <div class="glass-card p-8 text-left">
+          <div class="text-3xl mb-4">🗺️</div>
+          <h3 class="text-xl font-semibold mb-3 text-gold">Local Points of Interest</h3>
+          <p class="text-gray-400">Find essential locations like fuel stations, rest areas, emergency points, and more — with clean, readable details.</p>
         </div>
 
-        <div class="glass-card p-8">
-          <div class="text-3xl mb-4">🧠</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Intelligently Smart</h3>
-          <p class="text-gray-400">Powered by modern tech to help you do more with less effort.</p>
+        <div class="glass-card p-8 text-left">
+          <div class="text-3xl mb-4">🚨</div>
+          <h3 class="text-xl font-semibold mb-3 text-gold">Emergency Tools</h3>
+          <p class="text-gray-400">Quick access to emergency numbers, instructions, and location‑aware information when you need it most.</p>
         </div>
 
-        <div class="glass-card p-8">
-          <div class="text-3xl mb-4">✨</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Beautifully Designed</h3>
-          <p class="text-gray-400">A clean, modern interface designed for clarity and delight.</p>
+        <div class="glass-card p-8 text-left">
+          <div class="text-3xl mb-4">🌐</div>
+          <h3 class="text-xl font-semibold mb-3 text-gold">Multilingual Support</h3>
+          <p class="text-gray-400 mb-4">Fully translated and ready to use. Switch languages instantly — and the app remembers your choice.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="lang-badge">🇳🇴 Norwegian</span>
+            <span class="lang-badge">🇩🇰 Danish</span>
+            <span class="lang-badge">🇸🇪 Swedish</span>
+            <span class="lang-badge">🇳🇱 Dutch</span>
+            <span class="lang-badge">🇬🇧 English</span>
+          </div>
         </div>
+
+        <div class="glass-card p-8 text-left">
+          <div class="text-3xl mb-4">📡</div>
+          <h3 class="text-xl font-semibold mb-3 text-gold">Offline‑Friendly</h3>
+          <p class="text-gray-400">Designed to work even with limited connectivity. Essential information available without a signal.</p>
+        </div>
+
+        <div class="glass-card p-8 text-left">
+          <div class="text-3xl mb-4">🔄</div>
+          <h3 class="text-xl font-semibold mb-3 text-gold">Automatic Updates</h3>
+          <p class="text-gray-400">The app checks for new content and improvements automatically, so you always have the latest information.</p>
+        </div>
+
+        <div class="glass-card p-8 text-left">
+          <div class="text-3xl mb-4">🧭</div>
+          <h3 class="text-xl font-semibold mb-3 text-gold">Clean, Simple UI</h3>
+          <p class="text-gray-400">No ads. No clutter. Just the information you need — presented clearly, designed for travelers in motion.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -189,13 +379,14 @@
   <div class="gold-divider"></div>
 
   <!-- ── Waitlist ────────────────────────────────────────────────────────────── -->
-  <section id="waitlist" class="py-24 px-6 bg-black">
+  <section id="waitlist" class="py-24 px-6 bg-gradient-to-b from-black to-gray-900">
     <div class="max-w-xl mx-auto text-center">
+      <span class="section-label">Early Access</span>
       <h2 class="text-4xl font-bold mb-4">
         Be the <span class="text-gold">First to Know</span>
       </h2>
       <p class="text-gray-400 mb-6">
-        Join the waitlist and get exclusive early access.
+        Get notified when SassaGold launches on Google Play. No spam, unsubscribe any time.
       </p>
 
       <!-- Live count badge — hidden until a real count is returned -->
@@ -222,14 +413,102 @@
         </div>
         <p id="form-message" class="text-center" aria-live="polite"></p>
       </form>
+    </div>
+  </section>
 
-      <p class="text-gray-600 text-sm mt-6">No spam. Unsubscribe any time.</p>
+  <div class="gold-divider"></div>
+
+  <!-- ── Support ─────────────────────────────────────────────────────────────── -->
+  <section id="support" class="py-24 px-6 bg-black">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="section-label">Support</span>
+        <h2 class="text-4xl font-bold">
+          We're here to <span class="text-gold">help</span>
+        </h2>
+        <p class="text-gray-400 mt-4">
+          Have a question or need assistance? Reach out any time.
+        </p>
+        <a href="mailto:support@sassagold.com"
+           class="inline-block mt-6 text-gold font-semibold text-lg hover:underline">
+          support@sassagold.com
+        </a>
+      </div>
+
+      <!-- FAQ -->
+      <h3 class="text-2xl font-semibold mb-6 text-center">Frequently Asked Questions</h3>
+
+      <details class="faq-item">
+        <summary>How do I change the language?</summary>
+        <div class="faq-answer">
+          Open the app's settings menu and select your preferred language from the list.
+          SassaGold supports Norwegian, Danish, Swedish, Dutch, and English — and remembers your choice for future sessions.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why am I not seeing certain points of interest?</summary>
+        <div class="faq-answer">
+          Points of interest are updated automatically when your device has a connection.
+          If you're in an area with limited coverage, some POIs may not be visible until the app syncs.
+          Try refreshing when you regain connectivity.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does the app work offline?</summary>
+        <div class="faq-answer">
+          Yes. SassaGold is designed to work with limited or no connectivity.
+          Core features — including emergency tools and previously cached local information — remain available offline.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How often does the app update?</summary>
+        <div class="faq-answer">
+          The app checks for new content and improvements automatically in the background.
+          You don't need to manually trigger updates — SassaGold handles it for you whenever a connection is available.
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── Privacy teaser ──────────────────────────────────────────────────────── -->
+  <section id="privacy" class="py-16 px-6 bg-gradient-to-b from-black to-gray-900">
+    <div class="max-w-2xl mx-auto text-center">
+      <span class="section-label">Privacy</span>
+      <h2 class="text-3xl font-bold mb-4">
+        Your privacy <span class="text-gold">matters</span>
+      </h2>
+      <p class="text-gray-400 leading-relaxed mb-3">
+        SassaGold does not collect personal data, does not track your identity,
+        and does not share information with third parties.
+      </p>
+      <p class="text-gray-500 leading-relaxed mb-8">
+        The app only processes the minimum data required to function,
+        such as language settings and cached content.
+      </p>
+      <a href="/privacy.html" class="btn-outline px-6 py-3 rounded-full inline-block">
+        Read the full Privacy Policy →
+      </a>
     </div>
   </section>
 
   <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
   <footer class="py-10 text-center text-gray-600 text-sm border-t border-gray-900">
-    © 2026 SassaGold. All rights reserved.
+    <div class="flex flex-col items-center gap-3">
+      <span class="text-gold font-semibold text-base">SassaGold</span>
+      <nav class="flex gap-6 text-gray-500">
+        <a href="#about"    class="footer-link">About</a>
+        <a href="#features" class="footer-link">Features</a>
+        <a href="#support"  class="footer-link">Support</a>
+        <a href="/privacy.html" class="footer-link">Privacy</a>
+      </nav>
+      <p>© 2026 SassaGold. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
