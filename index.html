@@ -20,6 +20,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="site.css" />
   <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#C49A00" />
+  <link rel="canonical" href="https://sassagold.com/" />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://sassagold.com/#website",
+        "url": "https://sassagold.com/",
+        "name": "SassaGold",
+        "description": "Your smart travel companion"
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://sassagold.com/#app",
+        "name": "SassaGold",
+        "description": "Real-time travel insights, emergency tools, local information, and a clean interface designed for travelers who want clarity, not clutter.",
+        "operatingSystem": "Android",
+        "applicationCategory": "TravelApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "url": "https://sassagold.com/"
+      }
+    ]
+  }
+  </script>
   <style>
     /* ── Hero (home-page specific) ────────────────────────────────────────── */
     .hero-section {
@@ -712,6 +744,7 @@
         <a href="/screenshots.html" class="footer-link">Screenshots</a>
         <a href="/support.html"     class="footer-link">Support</a>
         <a href="/privacy.html"     class="footer-link">Privacy</a>
+        <a href="/terms.html"       class="footer-link">Terms</a>
       </nav>
       <p class="footer-copy">© 2026 SassaGold. All rights reserved.</p>
     </div>
@@ -798,6 +831,6 @@
     /* ── Analytics pageview ping ─────────────────────────────────────────── */
     fetch(`${API}/pageview`, { method: 'POST' }).catch(() => {});
   </script>
-
+  <script src="/site.js"></script>
 </body>
 </html>
