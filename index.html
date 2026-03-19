@@ -5,10 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SassaGold — Your Smart Travel Companion</title>
   <meta name="description" content="SassaGold gives you real‑time travel insights, emergency tools, local information, and a clean, intuitive interface designed for travelers who want clarity, not clutter." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="SassaGold" />
+  <meta property="og:url"         content="https://sassagold.com/" />
+  <meta property="og:title"       content="SassaGold — Your Smart Travel Companion" />
+  <meta property="og:description" content="SassaGold gives you real‑time travel insights, emergency tools, local information, and a clean, intuitive interface designed for travelers who want clarity, not clutter." />
+  <meta property="og:image"       content="https://sassagold.com/og-image.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="SassaGold — Your Smart Travel Companion" />
+  <meta name="twitter:description" content="SassaGold gives you real‑time travel insights, emergency tools, local information, and a clean, intuitive interface designed for travelers who want clarity, not clutter." />
+  <meta name="twitter:image"       content="https://sassagold.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="site.css" />
+  <link rel="manifest" href="/site.webmanifest" />
   <style>
     /* ── Hero (home-page specific) ────────────────────────────────────────── */
     .hero-section {
@@ -110,8 +121,10 @@
 
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ── Nav ───────────────────────────────────────────────────────────────── -->
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="/" class="nav-logo">SassaGold</a>
       <div class="nav-links">
@@ -139,7 +152,7 @@
   </nav>
 
   <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
-  <section class="hero-section">
+  <section id="main-content" class="hero-section">
     <div class="hero-inner">
 
       <!-- Left: text -->

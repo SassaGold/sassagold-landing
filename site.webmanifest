@@ -1,0 +1,16 @@
+{
+  "name": "SassaGold",
+  "short_name": "SassaGold",
+  "description": "Your smart travel companion",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FFFFFF",
+  "theme_color": "#C49A00",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

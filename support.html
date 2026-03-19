@@ -5,10 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support — SassaGold</title>
   <meta name="description" content="SassaGold Support — contact us at support@sassagold.com and find answers to frequently asked questions." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="SassaGold" />
+  <meta property="og:url"         content="https://sassagold.com/support.html" />
+  <meta property="og:title"       content="Support — SassaGold" />
+  <meta property="og:description" content="SassaGold Support — contact us at support@sassagold.com and find answers to frequently asked questions." />
+  <meta property="og:image"       content="https://sassagold.com/og-image.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Support — SassaGold" />
+  <meta name="twitter:description" content="SassaGold Support — contact us at support@sassagold.com and find answers to frequently asked questions." />
+  <meta name="twitter:image"       content="https://sassagold.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="site.css" />
+  <link rel="manifest" href="/site.webmanifest" />
   <style>
     .contact-card {
       background: #fff;
@@ -49,8 +60,10 @@
 
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ── Nav ───────────────────────────────────────────────────────────────── -->
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="/" class="nav-logo">SassaGold</a>
       <div class="nav-links">
@@ -76,7 +89,7 @@
   </nav>
 
   <!-- ── Page hero ─────────────────────────────────────────────────────────── -->
-  <header class="page-hero">
+  <header id="main-content" class="page-hero">
     <div class="page-hero-inner fade-up">
       <span class="section-label">Help center</span>
       <h1 class="page-hero-title">
@@ -218,6 +231,63 @@
             Email us at <a href="mailto:support@sassagold.com">support@sassagold.com</a> with
             a description of the issue or your idea. We read every message and genuinely appreciate
             feedback — it helps make the app better for everyone.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does SassaGold have any ads or in-app purchases?</summary>
+          <div class="faq-answer">
+            No. SassaGold is completely free, contains no advertisements, and has no in-app
+            purchases. There are no premium tiers, subscriptions, or hidden costs of any kind.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do I use the emergency tools?</summary>
+          <div class="faq-answer">
+            Tap the <strong>Emergency</strong> tab at the bottom of the app. You'll see local
+            emergency numbers (police, ambulance, fire brigade, coast guard) for the region you're
+            currently in. Tap any number to dial directly. The emergency tab is always accessible,
+            even when the rest of the app is offline.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I use SassaGold without enabling location / GPS?</summary>
+          <div class="faq-answer">
+            Yes. Location permission is entirely optional. Without it, the app displays curated
+            points of interest for the region you have selected in Settings rather than
+            automatically showing nearby places. All other features — emergency numbers, language
+            switching, and offline content — work fully without location access.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do I update the app to the latest version?</summary>
+          <div class="faq-answer">
+            SassaGold updates are delivered through the Google Play Store. If you have automatic
+            updates enabled, your device will update the app in the background. Otherwise, open the
+            Play Store, search for SassaGold, and tap <strong>Update</strong> if one is available.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Will reinstalling the app delete my settings?</summary>
+          <div class="faq-answer">
+            Uninstalling SassaGold clears locally cached content and your language preference.
+            After reinstalling, simply open Settings and choose your preferred language again —
+            the app will re-cache local content the next time you're connected to the internet.
+            No account or backup is required.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is SassaGold's battery and data usage?</summary>
+          <div class="faq-answer">
+            SassaGold is designed to be lightweight. It does not run continuous background services
+            or use push notifications, so battery impact is minimal. Data usage is limited to
+            occasional background syncs when new content is available — typically a few kilobytes
+            per update. No data is consumed when you're using cached content offline.
           </div>
         </details>
 
