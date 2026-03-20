@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screenshots — SassaGold</title>
+  <meta name="description" content="See Where Am I in action — screenshots of the home screen, biker POIs, SOS emergency tools, trip logger, settings, and language switching." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="SassaGold" />
+  <meta property="og:url"         content="https://sassagold.com/screenshots.html" />
+  <meta property="og:title"       content="Screenshots — SassaGold" />
+  <meta property="og:description" content="See SassaGold in action — screenshots of the home screen, points of interest, emergency tools, settings, and language switching." />
+  <meta property="og:image"       content="https://sassagold.com/og-image.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Screenshots — SassaGold" />
+  <meta name="twitter:description" content="See SassaGold in action — screenshots of the home screen, points of interest, emergency tools, settings, and language switching." />
+  <meta name="twitter:image"       content="https://sassagold.com/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#C49A00" />
+  <link rel="canonical" href="https://sassagold.com/screenshots.html" />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ── Nav ───────────────────────────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SassaGold</a>
+      <div class="nav-links">
+        <a href="/features.html"    class="nav-link">Features</a>
+        <a href="/screenshots.html" class="nav-link active">Screenshots</a>
+        <a href="/about.html"       class="nav-link">About</a>
+        <a href="/support.html"     class="nav-link">Support</a>
+        <a href="/#waitlist" class="btn-gold" style="padding:.55rem 1.4rem; border-radius:9999px; font-size:.9rem;">
+          Get notified
+        </a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/features.html"    class="mobile-menu-link">Features</a>
+      <a href="/screenshots.html" class="mobile-menu-link active">Screenshots</a>
+      <a href="/about.html"       class="mobile-menu-link">About</a>
+      <a href="/support.html"     class="mobile-menu-link">Support</a>
+      <a href="/#waitlist"        class="mobile-menu-link" style="color:var(--gold);font-weight:700;">Get notified →</a>
+    </div>
+  </nav>
+
+  <!-- ── Page hero ─────────────────────────────────────────────────────────── -->
+  <header id="main-content" class="page-hero">
+    <div class="page-hero-inner fade-up">
+      <span class="section-label">App preview</span>
+      <h1 class="page-hero-title">
+        See <span class="text-gold">Where Am I</span> in action
+      </h1>
+      <p class="page-hero-sub">
+        A clean, focused interface designed for riders on the road. Tap any screen to enlarge.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── Filter tabs ───────────────────────────────────────────────────────── -->
+  <section style="padding:60px 1.5rem 0;">
+    <div class="section-inner">
+      <div class="tab-filter" role="tablist">
+        <button class="tab-btn active" data-filter="all"       onclick="filterScreens('all',       this)" role="tab">All</button>
+        <button class="tab-btn"        data-filter="home"      onclick="filterScreens('home',      this)" role="tab">Rider HQ</button>
+        <button class="tab-btn"        data-filter="trip"      onclick="filterScreens('trip',      this)" role="tab">Trip Logger</button>
+        <button class="tab-btn"        data-filter="garage"    onclick="filterScreens('garage',    this)" role="tab">The Garage</button>
+        <button class="tab-btn"        data-filter="emergency" onclick="filterScreens('emergency', this)" role="tab">Emergency</button>
+        <button class="tab-btn"        data-filter="settings"  onclick="filterScreens('settings',  this)" role="tab">Settings</button>
+        <button class="tab-btn"        data-filter="language"  onclick="filterScreens('language',  this)" role="tab">Language</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Screenshots grid ──────────────────────────────────────────────────── -->
+  <section style="padding:0 1.5rem 100px;">
+    <div class="section-inner">
+      <div class="screenshots-grid" id="screenshots-grid">
+
+        <!-- Rider HQ -->
+        <div class="screenshot-item" data-category="home" onclick="openLightbox(this)">
+          <div class="phone-frame">
+            <img src="assets/screenshots/Rider HQ.png" alt="Rider HQ screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
+          </div>
+          <span class="screenshot-label">Rider HQ</span>
+        </div>
+
+        <!-- Trip Logger -->
+        <div class="screenshot-item" data-category="trip" onclick="openLightbox(this)">
+          <div class="phone-frame">
+            <img src="assets/screenshots/Trip Logger.jpg" alt="Trip Logger screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
+          </div>
+          <span class="screenshot-label">Trip Logger</span>
+        </div>
+
+        <!-- The Garage -->
+        <div class="screenshot-item" data-category="garage" onclick="openLightbox(this)">
+          <div class="phone-frame">
+            <img src="assets/screenshots/The Garage.jpg" alt="The Garage screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
+          </div>
+          <span class="screenshot-label">The Garage</span>
+        </div>
+
+        <!-- Emergency screen -->
+        <div class="screenshot-item" data-category="emergency" onclick="openLightbox(this)">
+          <div class="phone-frame featured">
+            <img src="assets/screenshots/Emergency tab.jpg" alt="SOS Emergency screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
+          </div>
+          <span class="screenshot-label">SOS Screen</span>
+        </div>
+
+        <!-- Settings -->
+        <div class="screenshot-item" data-category="settings" onclick="openLightbox(this)">
+          <div class="phone-frame">
+            <img src="assets/screenshots/Settings1.png" alt="Settings screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
+          </div>
+          <span class="screenshot-label">Settings</span>
+        </div>
+
+        <!-- Language switching -->
+        <div class="screenshot-item" data-category="language settings" onclick="openLightbox(this)">
+          <div class="phone-frame">
+            <div class="screen">
+              <div class="screen-header">Language</div>
+              <div class="screen-label">SELECT YOUR LANGUAGE</div>
+              <div class="screen-row active">
+                <span class="screen-emoji" style="font-size:14px;">🇬🇧</span>
+                <span class="screen-title" style="flex:1;">English</span>
+                <span class="screen-active-badge">✓ Active</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇪🇸</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Spanish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇩🇪</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">German</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇫🇷</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">French</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇮🇸</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Icelandic</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇴</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Norwegian</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇩🇰</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Danish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇸🇪</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Swedish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇱</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Dutch</span>
+              </div>
+              <div class="screen-label" style="margin-top:4px; text-align:center; opacity:.4;">9 languages · Your choice is remembered</div>
+            </div>
+          </div>
+          <span class="screenshot-label">9 Languages</span>
+        </div>
+
+      </div><!-- /screenshots-grid -->
+    </div>
+  </section>
+
+  <!-- ── Lightbox modal ────────────────────────────────────────────────────── -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content" id="modal-content">
+      <button class="modal-close" onclick="closeModalBtn()" aria-label="Close">✕</button>
+      <!-- Enlarged phone frame is injected here by JS -->
+    </div>
+  </div>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── CTA ────────────────────────────────────────────────────────────────── -->
+  <section style="padding:80px 1.5rem; background:var(--bg); text-align:center;">
+    <div style="max-width:560px; margin:0 auto;">
+      <span class="section-label">Coming Soon</span>
+      <h2 style="font-size:2.2rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;">
+        Want to see it live?
+      </h2>
+      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.7;">
+        Where Am I is launching on Google Play. Sign up to be notified the moment it's available.
+      </p>
+      <a href="/#waitlist" class="btn-gold" style="padding:1rem 2.5rem; border-radius:9999px; font-size:1rem;">
+        Get notified at launch
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">SassaGold</span>
+      <nav class="footer-nav">
+        <a href="/about.html"       class="footer-link">About</a>
+        <a href="/features.html"    class="footer-link">Features</a>
+        <a href="/screenshots.html" class="footer-link" style="color:var(--gold);">Screenshots</a>
+        <a href="/support.html"     class="footer-link">Support</a>
+        <a href="/privacy.html"     class="footer-link">Privacy</a>
+        <a href="/terms.html"       class="footer-link">Terms</a>
+      </nav>
+      <p class="footer-copy">© 2026 SassaGold. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* ── Category filter ─────────────────────────────────────────────────── */
+    function filterScreens(category, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('#screenshots-grid .screenshot-item').forEach(item => {
+        const cats = item.dataset.category || '';
+        item.style.display = (category === 'all' || cats.includes(category)) ? '' : 'none';
+      });
+    }
+
+    /* ── Lightbox ────────────────────────────────────────────────────────── */
+    function openLightbox(el) {
+      const overlay = document.getElementById('modal-overlay');
+      const content = document.getElementById('modal-content');
+      const closeBtn = content.querySelector('.modal-close');
+      content.innerHTML = '';
+      content.appendChild(closeBtn);
+
+      const img = el.querySelector('img');
+      if (img) {
+        const bigImg = document.createElement('img');
+        bigImg.src = img.src;
+        bigImg.alt = img.alt;
+        bigImg.className = 'modal-img';
+        content.appendChild(bigImg);
+      } else {
+        /* Fallback for HTML-based screens (e.g. Language) */
+        const phoneClone = el.querySelector('.phone-frame').cloneNode(true);
+        phoneClone.style.transform = 'none';
+        phoneClone.style.cursor = 'default';
+        content.appendChild(phoneClone);
+      }
+
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+      if (e.target === document.getElementById('modal-overlay')) closeModalBtn();
+    }
+    function closeModalBtn() {
+      document.getElementById('modal-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalBtn(); });
+  </script>
+  <script src="/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "SassaGold",
+  "short_name": "SassaGold",
+  "description": "Your smart ride companion for motorcyclists",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FFFFFF",
+  "theme_color": "#C49A00",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

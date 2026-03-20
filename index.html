@@ -3,261 +3,349 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SassaGold — Your Smart Travel Companion</title>
-  <meta name="description" content="SassaGold gives you real‑time travel insights, emergency tools, local information, and a clean, intuitive interface designed for travelers who want clarity, not clutter." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>SassaGold — Where Am I, Your Smart Ride Companion</title>
+  <meta name="description" content="Where Am I is the motorcycle companion app by SassaGold: live weather, biker POIs, trip logger, SOS emergency tools, and offline-ready features — all in one clean, clutter-free app." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="SassaGold" />
+  <meta property="og:url"         content="https://sassagold.com/" />
+  <meta property="og:title"       content="SassaGold — Your Smart Ride Companion" />
+  <meta property="og:description" content="SassaGold is the motorcycle companion app for riders: fuel stops, emergency tools, offline-ready features, and local info — all in one clean, clutter-free app." />
+  <meta property="og:image"       content="https://sassagold.com/og-image.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="SassaGold — Your Smart Ride Companion" />
+  <meta name="twitter:description" content="SassaGold is the motorcycle companion app for riders: fuel stops, emergency tools, offline-ready features, and local info — all in one clean, clutter-free app." />
+  <meta name="twitter:image"       content="https://sassagold.com/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#C49A00" />
+  <link rel="canonical" href="https://sassagold.com/" />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://sassagold.com/#website",
+        "url": "https://sassagold.com/",
+        "name": "SassaGold",
+        "description": "Your smart ride companion for motorcyclists — Where Am I by SassaGold"
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://sassagold.com/#app",
+        "name": "Where Am I",
+        "description": "The motorcycle companion app — fuel stops, emergency tools, biker-friendly POIs, and offline-ready features designed for riders who want clarity, not clutter.",
+        "operatingSystem": "Android",
+        "applicationCategory": "SportsApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "url": "https://sassagold.com/"
+      }
+    ]
+  }
+  </script>
   <style>
-    /* ── Design tokens ───────────────────────────────────────────────────── */
-    :root {
-      --gold:       #FFD700;
-      --gold-light: #FFF4C2;
-      --gold-dark:  #B8860B;
+    /* ── Hero (home-page specific) ────────────────────────────────────────── */
+    .hero-section {
+      padding: 120px 1.5rem;
+      background: var(--bg);
     }
-
-    /* ── Keyframes ───────────────────────────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes logoGlow {
-      0%, 100% { filter: drop-shadow(0 0 10px rgba(255,215,0,.45)); }
-      50%       { filter: drop-shadow(0 0 28px rgba(255,215,0,.9)); }
-    }
-
-    /* ── Entrance animations ─────────────────────────────────────────────── */
-    .fade-up            { opacity: 0; animation: fadeUp .8s ease forwards; }
-    .fade-up.delay-1    { animation-delay: .15s; }
-    .fade-up.delay-2    { animation-delay: .30s; }
-    .fade-up.delay-3    { animation-delay: .45s; }
-    .fade-up.delay-4    { animation-delay: .60s; }
-    .fade-up.delay-5    { animation-delay: .75s; }
-
-    /* ── Logo pulse ──────────────────────────────────────────────────────── */
-    .logo-glow { animation: logoGlow 3s ease-in-out infinite; }
-
-    /* ── Gold gradient text ──────────────────────────────────────────────── */
-    .text-gold {
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 40%, var(--gold-dark) 70%, #FFE680 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* ── Gold CTA button ─────────────────────────────────────────────────── */
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: #000;
-      font-weight: 600;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .btn-gold:hover:not(:disabled) {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 8px 32px rgba(255,215,0,.35);
-    }
-    .btn-gold:disabled { opacity: .7; cursor: not-allowed; }
-
-    /* ── Outlined secondary button ───────────────────────────────────────── */
-    .btn-outline {
-      border: 1px solid rgba(255,215,0,.45);
-      color: var(--gold);
-      font-weight: 600;
-      transition: background .2s, box-shadow .2s, transform .2s;
-    }
-    .btn-outline:hover {
-      background: rgba(255,215,0,.08);
-      box-shadow: 0 4px 20px rgba(255,215,0,.2);
-      transform: translateY(-2px);
-    }
-
-    /* ── Glassmorphism feature cards ─────────────────────────────────────── */
-    .glass-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,215,0,.15);
-      border-top: 2px solid var(--gold);
-      border-radius: 1rem;
-      transition: border-color .3s, transform .3s;
-    }
-    .glass-card:hover {
-      border-color: rgba(255,215,0,.5);
-      transform: translateY(-4px);
-    }
-
-    /* ── About / info panel ──────────────────────────────────────────────── */
-    .info-panel {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,215,0,.12);
-      border-radius: 1rem;
-      padding: 2rem;
-    }
-
-    /* ── Waitlist input ──────────────────────────────────────────────────── */
-    .waitlist-input {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.15);
-      color: #fff;
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .waitlist-input::placeholder { color: rgba(255,255,255,.4); }
-    .waitlist-input:focus {
-      outline: none;
-      border-color: rgba(255,215,0,.6);
-      box-shadow: 0 0 0 3px rgba(255,215,0,.12);
-    }
-
-    /* ── Form feedback message ───────────────────────────────────────────── */
-    #form-message         { min-height: 1.5rem; font-size: .9rem; }
-    #form-message.success { color: #4ade80; }
-    #form-message.error   { color: #f87171; }
-
-    /* ── Waitlist count badge ────────────────────────────────────────────── */
-    .count-badge {
-      display: inline-flex;
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
       align-items: center;
-      gap: .4rem;
-      padding: .3rem 1rem;
-      border-radius: 9999px;
-      background: rgba(255,215,0,.08);
-      border: 1px solid rgba(255,215,0,.25);
-      font-size: .85rem;
-      color: var(--gold);
     }
-
-    /* ── Audience pill tags ──────────────────────────────────────────────── */
-    .audience-tag {
-      display: inline-block;
-      padding: .35rem .9rem;
-      border-radius: 9999px;
-      background: rgba(255,215,0,.08);
-      border: 1px solid rgba(255,215,0,.22);
-      color: var(--gold-light);
-      font-size: .9rem;
+    .hero-headline {
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+      letter-spacing: -.035em;
+      margin: 0 0 1.25rem;
     }
-
-    /* ── FAQ accordion ───────────────────────────────────────────────────── */
-    .faq-item summary {
-      cursor: pointer;
-      list-style: none;
-      padding: 1rem 1.25rem;
-      font-weight: 600;
-      color: var(--gold-light);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: color .2s;
-    }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
-      content: '+';
-      font-size: 1.3rem;
-      color: var(--gold);
-      transition: transform .25s;
-      flex-shrink: 0;
-      margin-left: .75rem;
-    }
-    .faq-item[open] summary::after { transform: rotate(45deg); }
-    .faq-item[open] summary { color: var(--gold); }
-    .faq-answer {
-      padding: 0 1.25rem 1rem;
-      color: rgba(255,255,255,.65);
+    .hero-subheadline {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
       line-height: 1.7;
+      margin: 0 0 2.5rem;
+      max-width: 480px;
     }
-    .faq-item {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,215,0,.12);
-      border-radius: .75rem;
-      margin-bottom: .75rem;
-      overflow: hidden;
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
-
-    /* ── Language badge list ─────────────────────────────────────────────── */
-    .lang-badge {
-      display: inline-flex;
+    .hero-phone-wrap {
+      display: flex;
+      justify-content: center;
       align-items: center;
-      gap: .4rem;
-      padding: .25rem .8rem;
-      border-radius: 9999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      font-size: .85rem;
-      color: rgba(255,255,255,.75);
     }
-
-    /* ── Particle canvas (behind hero) ──────────────────────────────────── */
-    #particles {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
+    .hero-phone-frame {
+      border-radius: 2.75rem;
+      overflow: hidden;
+      border: 9px solid #222;
+      box-shadow: 0 36px 72px rgba(0,0,0,0.22);
+      transform: rotate(3deg);
+      max-width: 100%;
+      width: 270px;
+      display: block;
+      line-height: 0;
     }
-
-    /* ── Gold horizontal divider ─────────────────────────────────────────── */
-    .gold-divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255,215,0,.35), transparent);
+    .hero-phone-frame img {
+      width: 270px;
+      height: auto;
+      display: block;
     }
+    /* ── Home sections ────────────────────────────────────────────────────── */
+    .features-section    { padding: 100px 1.5rem; background: var(--bg-soft); }
+    .screenshots-section { padding: 100px 1.5rem; background: var(--bg); }
+    .about-section       { padding: 100px 1.5rem; background: var(--bg-soft); }
+    .waitlist-section    { padding: 100px 1.5rem; background: var(--bg); }
+    .support-section     { padding: 100px 1.5rem; background: var(--bg-soft); }
+    .privacy-section     { padding: 80px  1.5rem; background: var(--bg); }
 
-    /* ── Section label ───────────────────────────────────────────────────── */
-    .section-label {
-      display: inline-block;
-      font-size: .75rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: .75;
-      margin-bottom: .75rem;
+    .waitlist-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+    .support-inner  { max-width: 720px; margin: 0 auto; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
     }
-
-    /* ── Footer nav link hover ───────────────────────────────────────────── */
-    .footer-link { transition: color .2s; }
-    .footer-link:hover { color: var(--gold); }
+    .about-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.15;
+      letter-spacing: -.03em;
+      margin: 0 0 1.5rem;
+    }
+    .about-body {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0 0 1rem;
+    }
+    .about-caption {
+      font-size: .9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin: 0 0 1.75rem;
+    }
+    /* ── Responsive (home-page) ──────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-phone-wrap { order: -1; }
+      .hero-subheadline { max-width: 100%; margin-inline: auto; }
+      .hero-cta-group { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 580px) {
+      .hero-section { padding: 80px 1.25rem; }
+    }
   </style>
 </head>
 
-<body class="bg-black text-white">
+<body>
 
-  <!-- ── Hero ───────────────────────────────────────────────────────────────── -->
-  <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
-    <!-- Gold particle field -->
-    <canvas id="particles"></canvas>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <div class="relative z-10 flex flex-col items-center">
-      <!-- Logo -->
-      <svg class="w-28 mb-8 logo-glow fade-up" viewBox="0 0 200 200"
-           xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SassaGold logo">
-        <text x="100" y="165" text-anchor="middle"
-              font-family="Georgia, 'Times New Roman', serif"
-              font-size="160" font-weight="bold" fill="#FFD700">S</text>
-      </svg>
-
-      <!-- Headline -->
-      <h1 class="text-5xl md:text-7xl font-bold mb-3 fade-up delay-1">
-        <span class="text-gold">SassaGold</span>
-      </h1>
-
-      <p class="text-xl md:text-2xl text-gray-300 mb-3 fade-up delay-2">
-        Your Smart Travel Companion
-      </p>
-
-      <p class="text-lg text-gray-400 max-w-2xl mb-10 fade-up delay-3">
-        Navigate safer. Travel smarter. Stay informed everywhere you go.
-      </p>
-
-      <!-- CTA -->
-      <div class="flex flex-col items-center gap-4 fade-up delay-4">
-        <span class="btn-gold px-8 py-4 rounded-full text-lg inline-flex items-center gap-3 cursor-default select-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M3.18 23.76c.3.17.64.24.98.21l12.37-11.97L3.18.24A1.6 1.6 0 0 0 2 1.76v20.48c0 .6.44 1.35 1.18 1.52zM16.53 12 5.12 23.42l10.29-5.94L16.53 12zm3.84-2.22L17.3 8.1 15.9 12l1.4 3.9 2.54-1.48a1.6 1.6 0 0 0 0-2.64h.03zM5.12.58 16.53 12l-1.12 3.48-10.3-5.94L5.12.58z"/>
-          </svg>
-          Coming soon on Google Play
-        </span>
-        <a href="#waitlist" class="btn-outline px-6 py-3 rounded-full text-base">
-          Get notified at launch
+  <!-- ── Nav ───────────────────────────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SassaGold</a>
+      <div class="nav-links">
+        <a href="/features.html"    class="nav-link">Features</a>
+        <a href="/screenshots.html" class="nav-link">Screenshots</a>
+        <a href="/about.html"       class="nav-link">About</a>
+        <a href="/support.html"     class="nav-link">Support</a>
+        <a href="#waitlist"
+           class="btn-gold"
+           style="padding: .55rem 1.4rem; border-radius: 9999px; font-size: .9rem;">
+          Get notified
         </a>
       </div>
+      <button class="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/features.html"    class="mobile-menu-link">Features</a>
+      <a href="/screenshots.html" class="mobile-menu-link">Screenshots</a>
+      <a href="/about.html"       class="mobile-menu-link">About</a>
+      <a href="/support.html"     class="mobile-menu-link">Support</a>
+      <a href="#waitlist"         class="mobile-menu-link" style="color:var(--gold); font-weight:700;">Get notified →</a>
+    </div>
+  </nav>
 
-      <div class="mt-12 opacity-50 fade-up delay-5">
-        <p class="text-sm tracking-widest uppercase">Launching on Android</p>
+  <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+  <section id="main-content" class="hero-section">
+    <div class="hero-inner">
+
+      <!-- Left: text -->
+      <div class="fade-up">
+        <span class="section-label">Motorcycle Companion App</span>
+        <h1 class="hero-headline">
+          Your smart<br />ride companion —<br /><span class="text-gold">Where Am I</span>
+        </h1>
+        <p class="hero-subheadline">
+          Explore. Ride. Discover. Live weather, biker POIs, trip logger, and SOS tools — built for motorcyclists, in one clean app.
+        </p>
+        <div class="hero-cta-group">
+          <span class="btn-gold"
+                style="padding: 1rem 2rem; border-radius: 9999px; font-size: 1rem; gap: .6rem; user-select: none; cursor: default;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3.18 23.76c.3.17.64.24.98.21l12.37-11.97L3.18.24A1.6 1.6 0 0 0 2 1.76v20.48c0 .6.44 1.35 1.18 1.52zM16.53 12 5.12 23.42l10.29-5.94L16.53 12zm3.84-2.22L17.3 8.1 15.9 12l1.4 3.9 2.54-1.48a1.6 1.6 0 0 0 0-2.64h.03zM5.12.58 16.53 12l-1.12 3.48-10.3-5.94L5.12.58z"/>
+            </svg>
+            Coming soon on Google Play
+          </span>
+          <a href="#waitlist"
+             class="btn-outline"
+             style="padding: 1rem 1.75rem; border-radius: 9999px; font-size: 1rem;">
+            Get notified at launch
+          </a>
+        </div>
+        <p style="font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted);">
+          Launching on Android
+        </p>
+      </div>
+
+      <!-- Right: phone mockup -->
+      <div class="hero-phone-wrap fade-up delay-2">
+        <div class="hero-phone-frame">
+          <img src="assets/screenshots/Rider HQ.png" alt="Where Am I — Rider HQ screen" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── Features ──────────────────────────────────────────────────────────── -->
+  <section id="features" class="features-section">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 4rem;">
+        <span class="section-label">Key Features</span>
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+          Everything you need,<br /><span class="text-gold">nothing you don't</span>
+        </h2>
+        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0;">
+          Built for the road. Designed for riders.
+        </p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🗺️</div>
+          <h3 class="feature-title">Biker-Friendly POIs</h3>
+          <p class="feature-body">Find fuel stations, motorcycle workshops, rest areas, and biker cafés nearby — with clean, readable details built for riders.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🚨</div>
+          <h3 class="feature-title">Emergency Tools</h3>
+          <p class="feature-body">Quick access to emergency numbers, roadside assistance contacts, and location‑aware information when you need it most.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3 class="feature-title">9 Languages</h3>
+          <p class="feature-body">Full interface in English, Spanish, German, French, Icelandic, Norwegian, Swedish, Danish, and Dutch. Switch instantly — remembered forever.</p>
+          <div class="lang-badges">
+            <span class="lang-badge">🇬🇧 EN</span>
+            <span class="lang-badge">🇪🇸 ES</span>
+            <span class="lang-badge">🇩🇪 DE</span>
+            <span class="lang-badge">🇫🇷 FR</span>
+            <span class="lang-badge">🇮🇸 IS</span>
+            <span class="lang-badge">🇳🇴 NO</span>
+            <span class="lang-badge">🇩🇰 DK</span>
+            <span class="lang-badge">🇸🇪 SE</span>
+            <span class="lang-badge">🇳🇱 NL</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📡</div>
+          <h3 class="feature-title">Offline‑Friendly</h3>
+          <p class="feature-body">Remote routes often have no signal. Where Am I works without a connection — essential data is cached on your device.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📏</div>
+          <h3 class="feature-title">Trip Logger</h3>
+          <p class="feature-body">Record your rides with a live speed gauge, real-time distance counter, and GPS route tracking. All ride history is saved on-device — never uploaded anywhere.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🧭</div>
+          <h3 class="feature-title">Clean, Rider-Focused UI</h3>
+          <p class="feature-body">No ads. No clutter. Just the information you need — glanceable and fast, designed for bikers on the move.</p>
+        </div>
+
+      </div>
+      <div style="text-align:center; margin-top:3rem;">
+        <a href="/features.html" class="section-more">View all features →</a>
+      </div>
+    </div>
+  </section>─────────────────────────────────────────────────────── -->
+  <section id="screenshots" class="screenshots-section">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 4rem;">
+        <span class="section-label">App Preview</span>
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+          See it in <span class="text-gold">action</span>
+        </h2>
+        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0;">
+          A clean, focused interface designed for riders on the road.
+        </p>
+      </div>
+
+      <div class="screenshots-row">
+
+        <!-- Screen 1: Rider HQ -->
+        <div class="screenshot-item">
+          <div class="phone-frame">
+            <img src="assets/screenshots/Rider HQ.png" alt="Rider HQ screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
+          </div>
+          <span class="screenshot-label">Rider HQ</span>
+        </div>
+
+        <!-- Screen 2: SOS / Emergency (featured, center) -->
+        <div class="screenshot-item featured">
+          <div class="phone-frame featured">
+            <img src="assets/screenshots/Emergency tab.jpg" alt="SOS Emergency screen" style="width:200px; height:430px; object-fit:cover; display:block;" />
+          </div>
+          <span class="screenshot-label">SOS Screen</span>
+        </div>
+
+        <!-- Screen 3: Settings -->
+        <div class="screenshot-item">
+          <div class="phone-frame">
+            <img src="assets/screenshots/Settings1.png" alt="Settings screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
+          </div>
+          <span class="screenshot-label">Settings</span>
+        </div>
+
+      </div>
+      <div style="text-align:center; margin-top:3rem;">
+        <a href="/screenshots.html" class="section-more">View all screenshots →</a>
       </div>
     </div>
   </section>
@@ -265,111 +353,93 @@
   <div class="gold-divider"></div>
 
   <!-- ── About ──────────────────────────────────────────────────────────────── -->
-  <section id="about" class="py-24 px-6 bg-gradient-to-b from-black to-gray-900">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="section-label">About the App</span>
-        <h2 class="text-4xl font-bold">
-          What is <span class="text-gold">SassaGold</span>?
-        </h2>
-      </div>
+  <section id="about" class="about-section">
+    <div class="section-inner">
+      <div class="about-grid">
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- What it is -->
-        <div class="info-panel md:col-span-3">
-          <p class="text-gray-300 text-lg leading-relaxed">
-            SassaGold is a modern travel companion app built to help you stay safe, informed, and prepared —
-            whether you're exploring a new city or navigating remote areas. It combines essential tools like
-            emergency information, local points of interest, multilingual support, and offline‑friendly features
-            into one seamless experience.
+        <!-- Left: text -->
+        <div>
+          <span class="section-label">About the App</span>
+          <h2 class="about-title">
+            What is <span class="text-gold">Where Am I</span>?
+          </h2>
+          <p class="about-body">
+            Where Am I is a motorcycle companion app built to help riders stay safe, informed, and prepared —
+            whether you're touring a new country or navigating remote back roads.
           </p>
-          <p class="text-gray-400 mt-4 leading-relaxed">
-            Built for reliability. Designed for simplicity. Ready for your next journey.
+          <p class="about-body">
+            It combines live weather, rider HQ dashboard, food stops, crash pads, roadside attractions,
+            garage services, a trip logger, and SOS emergency tools into one seamless experience.
           </p>
-        </div>
-
-        <!-- Who it's for -->
-        <div class="info-panel">
-          <h3 class="text-xl font-semibold mb-4 text-gold">Who is it for?</h3>
-          <ul class="space-y-2 text-gray-300">
-            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Travelers</li>
-            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Road‑trippers</li>
-            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Outdoor explorers</li>
-            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> People who want quick access to reliable local info</li>
-            <li class="flex items-start gap-2"><span class="text-gold mt-1">✦</span> Anyone who values safety and clarity while on the move</li>
-          </ul>
-        </div>
-
-        <!-- Why it exists -->
-        <div class="info-panel md:col-span-2">
-          <h3 class="text-xl font-semibold mb-4 text-gold">Why it exists</h3>
-          <p class="text-gray-300 leading-relaxed mb-3">
-            Travel apps are often bloated, slow, or overloaded with ads.
+          <p class="about-caption">
+            Built for reliability. Designed for simplicity. Ready for your next ride.
           </p>
-          <p class="text-gray-300 leading-relaxed">
-            SassaGold focuses on <strong class="text-white">speed, clarity, and trust</strong> —
-            giving you the information you need without distractions.
-            No ads. No clutter. Just the tools that matter when you're on the move.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="gold-divider"></div>
-
-  <!-- ── Features ───────────────────────────────────────────────────────────── -->
-  <section id="features" class="py-24 px-6 bg-black">
-    <div class="max-w-5xl mx-auto text-center">
-      <span class="section-label">Key Features</span>
-      <h2 class="text-4xl font-bold mb-4">
-        Everything you need, <span class="text-gold">nothing you don't</span>
-      </h2>
-      <p class="text-gray-500 text-lg mb-16">Built for the road. Designed for clarity.</p>
-
-      <div class="grid md:grid-cols-3 gap-8">
-
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">🗺️</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Local Points of Interest</h3>
-          <p class="text-gray-400">Find essential locations like fuel stations, rest areas, emergency points, and more — with clean, readable details.</p>
-        </div>
-
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">🚨</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Emergency Tools</h3>
-          <p class="text-gray-400">Quick access to emergency numbers, instructions, and location‑aware information when you need it most.</p>
-        </div>
-
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">🌐</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Multilingual Support</h3>
-          <p class="text-gray-400 mb-4">Fully translated and ready to use. Switch languages instantly — and the app remembers your choice.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="lang-badge">🇳🇴 Norwegian</span>
-            <span class="lang-badge">🇩🇰 Danish</span>
-            <span class="lang-badge">🇸🇪 Swedish</span>
-            <span class="lang-badge">🇳🇱 Dutch</span>
-            <span class="lang-badge">🇬🇧 English</span>
+          <div class="audience-tags">
+            <span class="audience-tag">🏍️ Riders</span>
+            <span class="audience-tag">🛣️ Tourers</span>
+            <span class="audience-tag">🧭 Adventure bikers</span>
+            <span class="audience-tag">🗺️ Route explorers</span>
           </div>
+          <a href="/about.html" class="section-more" style="margin-top:1.5rem;">Learn more about Where Am I →</a>
         </div>
 
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">📡</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Offline‑Friendly</h3>
-          <p class="text-gray-400">Designed to work even with limited connectivity. Essential information available without a signal.</p>
-        </div>
+        <!-- Right: travel illustration -->
+        <div class="about-graphic">
+          <svg width="320" height="280" viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Biker route map illustration">
+            <!-- Outer glow circle -->
+            <circle cx="160" cy="140" r="120" fill="var(--gold-light)" opacity="0.6"/>
+            <circle cx="160" cy="140" r="85"  fill="var(--gold-light)" opacity="0.45"/>
+            <circle cx="160" cy="140" r="50"  fill="var(--gold-light)" opacity="0.3"/>
 
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">🔄</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Automatic Updates</h3>
-          <p class="text-gray-400">The app checks for new content and improvements automatically, so you always have the latest information.</p>
-        </div>
+            <!-- Compass grid lines -->
+            <line x1="160" y1="28"  x2="160" y2="252" stroke="var(--gold)" stroke-width="1.5" opacity="0.3" stroke-dasharray="4,6"/>
+            <line x1="48"  y1="140" x2="272" y2="140" stroke="var(--gold)" stroke-width="1.5" opacity="0.3" stroke-dasharray="4,6"/>
+            <line x1="80"  y1="60"  x2="240" y2="220" stroke="var(--gold)" stroke-width="1"   opacity="0.15" stroke-dasharray="4,8"/>
+            <line x1="240" y1="60"  x2="80"  y2="220" stroke="var(--gold)" stroke-width="1"   opacity="0.15" stroke-dasharray="4,8"/>
 
-        <div class="glass-card p-8 text-left">
-          <div class="text-3xl mb-4">🧭</div>
-          <h3 class="text-xl font-semibold mb-3 text-gold">Clean, Simple UI</h3>
-          <p class="text-gray-400">No ads. No clutter. Just the information you need — presented clearly, designed for travelers in motion.</p>
+            <!-- Cardinal direction labels -->
+            <text x="160" y="22"  text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="var(--gold)" opacity="0.9">N</text>
+            <text x="160" y="264" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--gold)" opacity="0.5">S</text>
+            <text x="40"  y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--gold)" opacity="0.5">W</text>
+            <text x="280" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--gold)" opacity="0.5">E</text>
+
+            <!-- Compass rose center -->
+            <polygon points="160,68  166,120 154,120" fill="var(--gold)" opacity="0.95"/>
+            <polygon points="160,212 166,160 154,160" fill="var(--gold)" opacity="0.4"/>
+            <polygon points="68,140  120,134 120,146"  fill="var(--gold)" opacity="0.6"/>
+            <polygon points="252,140 200,134 200,146"  fill="var(--gold)" opacity="0.6"/>
+            <circle cx="160" cy="140" r="14" fill="white" stroke="var(--gold)" stroke-width="2.5"/>
+            <circle cx="160" cy="140" r="6"  fill="var(--gold)"/>
+
+            <!-- Route dashed line -->
+            <path d="M90,90 Q140,60 200,110 Q230,140 180,190 Q155,215 130,195"
+                  stroke="var(--gold)" stroke-width="2" fill="none"
+                  stroke-dasharray="7,5" opacity="0.65"/>
+
+            <!-- Location pin 1 -->
+            <circle cx="90"  cy="90"  r="12" fill="white" stroke="var(--gold)" stroke-width="2.5"/>
+            <circle cx="90"  cy="90"  r="5"  fill="var(--gold)"/>
+            <line x1="90" y1="102" x2="90" y2="115" stroke="var(--gold)" stroke-width="2.5"/>
+
+            <!-- Location pin 2 -->
+            <circle cx="200" cy="108" r="12" fill="white" stroke="var(--gold)" stroke-width="2.5"/>
+            <circle cx="200" cy="108" r="5"  fill="var(--gold)"/>
+            <line x1="200" y1="120" x2="200" y2="133" stroke="var(--gold)" stroke-width="2.5"/>
+
+            <!-- Location pin 3 (current/highlighted) -->
+            <circle cx="130" cy="193" r="14" fill="var(--gold)" opacity="0.2"/>
+            <circle cx="130" cy="193" r="12" fill="white" stroke="var(--gold)" stroke-width="2.5"/>
+            <circle cx="130" cy="193" r="5"  fill="var(--gold)"/>
+            <line x1="130" y1="205" x2="130" y2="218" stroke="var(--gold)" stroke-width="2.5"/>
+
+            <!-- Small airplane -->
+            <g transform="translate(162,80) rotate(50)">
+              <ellipse cx="0" cy="0" rx="13" ry="5" fill="var(--gold)" opacity="0.85"/>
+              <polygon points="0,-14 4,0 -4,0" fill="var(--gold)" opacity="0.85"/>
+              <line x1="-10" y1="2" x2="10" y2="2" stroke="var(--gold)" stroke-width="2.5" opacity="0.85"/>
+            </g>
+          </svg>
         </div>
 
       </div>
@@ -378,71 +448,74 @@
 
   <div class="gold-divider"></div>
 
-  <!-- ── Waitlist ────────────────────────────────────────────────────────────── -->
-  <section id="waitlist" class="py-24 px-6 bg-gradient-to-b from-black to-gray-900">
-    <div class="max-w-xl mx-auto text-center">
+  <!-- ── Waitlist ───────────────────────────────────────────────────────────── -->
+  <section id="waitlist" class="waitlist-section">
+    <div class="waitlist-inner">
       <span class="section-label">Early Access</span>
-      <h2 class="text-4xl font-bold mb-4">
-        Be the <span class="text-gold">First to Know</span>
+      <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+        Be the <span class="text-gold">first to know</span>
       </h2>
-      <p class="text-gray-400 mb-6">
-        Get notified when SassaGold launches on Google Play. No spam, unsubscribe any time.
+      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem;">
+        Get notified when Where Am I launches on Google Play. No spam, unsubscribe any time.
       </p>
 
-      <!-- Live count badge — hidden until a real count is returned -->
-      <div id="count-display" class="flex justify-center mb-8" hidden>
+      <div id="count-display" style="display:flex; justify-content:center; margin-bottom:1.75rem;" hidden>
         <span class="count-badge">
           <span aria-hidden="true">✦</span>
           <span id="count-num">0</span> people already waiting
         </span>
       </div>
 
-      <form id="waitlist-form" class="flex flex-col gap-4">
-        <div class="flex flex-col md:flex-row gap-4">
+      <form id="waitlist-form" style="display:flex; flex-direction:column; gap:1rem;">
+        <div style="display:flex; flex-direction:column; gap:.75rem;">
+          <label for="email-input" class="sr-only">Email address</label>
           <input id="email-input"
                  type="email"
                  placeholder="your@email.com"
                  required
                  autocomplete="email"
-                 class="waitlist-input px-6 py-4 rounded-full w-full flex-1" />
+                 class="waitlist-input" />
           <button type="submit"
                   id="submit-btn"
-                  class="px-8 py-4 btn-gold rounded-full whitespace-nowrap">
+                  class="btn-gold"
+                  style="padding:1rem 2rem; border-radius:9999px; font-size:1rem; width:100%;">
             Notify Me
           </button>
         </div>
-        <p id="form-message" class="text-center" aria-live="polite"></p>
+        <p id="form-message" aria-live="polite"></p>
       </form>
     </div>
   </section>
 
   <div class="gold-divider"></div>
 
-  <!-- ── Support ─────────────────────────────────────────────────────────────── -->
-  <section id="support" class="py-24 px-6 bg-black">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12">
+  <!-- ── Support ────────────────────────────────────────────────────────────── -->
+  <section id="support" class="support-section">
+    <div class="support-inner">
+      <div style="text-align:center; margin-bottom:3rem;">
         <span class="section-label">Support</span>
-        <h2 class="text-4xl font-bold">
+        <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
           We're here to <span class="text-gold">help</span>
         </h2>
-        <p class="text-gray-400 mt-4">
+        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 1.25rem;">
           Have a question or need assistance? Reach out any time.
         </p>
-        <a href="mailto:support@sassagold.com"
-           class="inline-block mt-6 text-gold font-semibold text-lg hover:underline">
+        <a href="mailto:support@sassagold.com" class="support-email">
           support@sassagold.com
         </a>
+        <br /><br />
+        <a href="/support.html" class="section-more" style="display:inline-flex;">View all support options →</a>
       </div>
 
-      <!-- FAQ -->
-      <h3 class="text-2xl font-semibold mb-6 text-center">Frequently Asked Questions</h3>
+      <h3 style="font-size:1.5rem; font-weight:700; color:var(--text-primary); margin:0 0 1.5rem; text-align:center;">
+        Frequently Asked Questions
+      </h3>
 
       <details class="faq-item">
         <summary>How do I change the language?</summary>
         <div class="faq-answer">
           Open the app's settings menu and select your preferred language from the list.
-          SassaGold supports Norwegian, Danish, Swedish, Dutch, and English — and remembers your choice for future sessions.
+          Where Am I supports English, Spanish, German, French, Icelandic, Norwegian, Swedish, Danish, and Dutch — and remembers your choice for future sessions.
         </div>
       </details>
 
@@ -458,7 +531,7 @@
       <details class="faq-item">
         <summary>Does the app work offline?</summary>
         <div class="faq-answer">
-          Yes. SassaGold is designed to work with limited or no connectivity.
+          Yes. Where Am I is designed to work with limited or no connectivity.
           Core features — including emergency tools and previously cached local information — remain available offline.
         </div>
       </details>
@@ -467,7 +540,7 @@
         <summary>How often does the app update?</summary>
         <div class="faq-answer">
           The app checks for new content and improvements automatically in the background.
-          You don't need to manually trigger updates — SassaGold handles it for you whenever a connection is available.
+          You don't need to manually trigger updates — the app handles it for you whenever a connection is available.
         </div>
       </details>
 
@@ -476,38 +549,42 @@
 
   <div class="gold-divider"></div>
 
-  <!-- ── Privacy teaser ──────────────────────────────────────────────────────── -->
-  <section id="privacy" class="py-16 px-6 bg-gradient-to-b from-black to-gray-900">
-    <div class="max-w-2xl mx-auto text-center">
+  <!-- ── Privacy teaser ─────────────────────────────────────────────────────── -->
+  <section id="privacy" class="privacy-section">
+    <div style="max-width:640px; margin:0 auto; text-align:center;">
       <span class="section-label">Privacy</span>
-      <h2 class="text-3xl font-bold mb-4">
+      <h2 style="font-size:2.25rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
         Your privacy <span class="text-gold">matters</span>
       </h2>
-      <p class="text-gray-400 leading-relaxed mb-3">
-        SassaGold does not collect personal data, does not track your identity,
+      <p style="color:var(--text-secondary); font-size:1.05rem; line-height:1.75; margin:0 0 .75rem;">
+        Where Am I does not collect personal data, does not track your identity,
         and does not share information with third parties.
       </p>
-      <p class="text-gray-500 leading-relaxed mb-8">
+      <p style="color:var(--text-muted); font-size:1rem; line-height:1.75; margin:0 0 2.5rem;">
         The app only processes the minimum data required to function,
         such as language settings and cached content.
       </p>
-      <a href="/privacy.html" class="btn-outline px-6 py-3 rounded-full inline-block">
+      <a href="/privacy.html"
+         class="btn-outline"
+         style="padding:.9rem 2rem; border-radius:9999px; font-size:1rem;">
         Read the full Privacy Policy →
       </a>
     </div>
   </section>
 
   <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
-  <footer class="py-10 text-center text-gray-600 text-sm border-t border-gray-900">
-    <div class="flex flex-col items-center gap-3">
-      <span class="text-gold font-semibold text-base">SassaGold</span>
-      <nav class="flex gap-6 text-gray-500">
-        <a href="#about"    class="footer-link">About</a>
-        <a href="#features" class="footer-link">Features</a>
-        <a href="#support"  class="footer-link">Support</a>
-        <a href="/privacy.html" class="footer-link">Privacy</a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">SassaGold</span>
+      <nav class="footer-nav">
+        <a href="/about.html"       class="footer-link">About</a>
+        <a href="/features.html"    class="footer-link">Features</a>
+        <a href="/screenshots.html" class="footer-link">Screenshots</a>
+        <a href="/support.html"     class="footer-link">Support</a>
+        <a href="/privacy.html"     class="footer-link">Privacy</a>
+        <a href="/terms.html"       class="footer-link">Terms</a>
       </nav>
-      <p>© 2026 SassaGold. All rights reserved.</p>
+      <p class="footer-copy">© 2026 SassaGold. All rights reserved.</p>
     </div>
   </footer>
 
@@ -519,58 +596,6 @@
      * keep the relative path below unchanged.
      */
     const API = '/api';
-
-    /* ── Gold particle field ──────────────────────────────────────────────── */
-    (function () {
-      const canvas = document.getElementById('particles');
-      const ctx = canvas.getContext('2d');
-      let W, H, particles;
-
-      function resize() {
-        W = canvas.width  = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
-      }
-
-      function mkParticle() {
-        return {
-          x: Math.random() * W,
-          y: Math.random() * H,
-          r: Math.random() * 1.2 + 0.3,
-          v: Math.random() * 0.25 + 0.08,
-          o: Math.random() * 0.45 + 0.15,
-        };
-      }
-
-      function init() {
-        resize();
-        // Scale particle count by device capability: fewer on low-end / mobile
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        const cores = navigator.hardwareConcurrency ?? 2;
-        const count = isMobile ? 40 : cores <= 2 ? 60 : 110;
-        particles = Array.from({ length: count }, mkParticle);
-      }
-
-      function frame() {
-        ctx.clearRect(0, 0, W, H);
-        for (const p of particles) {
-          p.y -= p.v;
-          if (p.y < -2) { p.y = H + 2; p.x = Math.random() * W; }
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255,215,0,${p.o})`;
-          ctx.fill();
-        }
-        requestAnimationFrame(frame);
-      }
-
-      window.addEventListener('resize', () => {
-        resize();
-        for (const p of particles) p.x = Math.random() * W;
-      });
-
-      init();
-      frame();
-    }());
 
     /* ── Live waitlist count ─────────────────────────────────────────────── */
     (async function loadCount() {
@@ -588,9 +613,9 @@
     /* ── Waitlist form submission ────────────────────────────────────────── */
     document.getElementById('waitlist-form').addEventListener('submit', async function (e) {
       e.preventDefault();
-      const email  = document.getElementById('email-input').value.trim();
-      const btn    = document.getElementById('submit-btn');
-      const msg    = document.getElementById('form-message');
+      const email = document.getElementById('email-input').value.trim();
+      const btn   = document.getElementById('submit-btn');
+      const msg   = document.getElementById('form-message');
 
       btn.disabled    = true;
       btn.textContent = 'Joining…';
@@ -605,7 +630,7 @@
         });
         const data = await res.json();
 
-        if (res.ok && data.success) {
+        if (res.ok && data.ok) {
           msg.className   = 'success';
           msg.textContent = data.message ?? "You're on the list! 🎉";
           document.getElementById('email-input').value = '';
@@ -628,5 +653,6 @@
     /* ── Analytics pageview ping ─────────────────────────────────────────── */
     fetch(`${API}/pageview`, { method: 'POST' }).catch(() => {});
   </script>
+  <script src="/site.js"></script>
 </body>
 </html>
