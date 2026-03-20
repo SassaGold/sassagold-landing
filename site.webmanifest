@@ -1,7 +1,7 @@
 {
   "name": "SassaGold",
   "short_name": "SassaGold",
-  "description": "Your smart travel companion",
+  "description": "Your smart ride companion for motorcyclists",
   "start_url": "/",
   "display": "browser",
   "background_color": "#FFFFFF",
