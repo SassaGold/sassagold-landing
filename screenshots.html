@@ -90,7 +90,7 @@
       <div class="screenshots-grid" id="screenshots-grid">
 
         <!-- Rider HQ -->
-        <div class="screenshot-item" data-category="home" onclick="openModal('home')">
+        <div class="screenshot-item" data-category="home" onclick="openLightbox(this)">
           <div class="phone-frame">
             <img src="assets/screenshots/Rider HQ.png" alt="Rider HQ screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
           </div>
@@ -98,7 +98,7 @@
         </div>
 
         <!-- Trip Logger -->
-        <div class="screenshot-item" data-category="trip" onclick="openModal('trip')">
+        <div class="screenshot-item" data-category="trip" onclick="openLightbox(this)">
           <div class="phone-frame">
             <img src="assets/screenshots/Trip Logger.jpg" alt="Trip Logger screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
           </div>
@@ -106,7 +106,7 @@
         </div>
 
         <!-- The Garage -->
-        <div class="screenshot-item" data-category="garage" onclick="openModal('garage')">
+        <div class="screenshot-item" data-category="garage" onclick="openLightbox(this)">
           <div class="phone-frame">
             <img src="assets/screenshots/The Garage.jpg" alt="The Garage screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
           </div>
@@ -114,7 +114,7 @@
         </div>
 
         <!-- Emergency screen -->
-        <div class="screenshot-item" data-category="emergency" onclick="openModal('emergency')">
+        <div class="screenshot-item" data-category="emergency" onclick="openLightbox(this)">
           <div class="phone-frame featured">
             <img src="assets/screenshots/Emergency tab.jpg" alt="SOS Emergency screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
           </div>
@@ -122,7 +122,7 @@
         </div>
 
         <!-- Settings -->
-        <div class="screenshot-item" data-category="settings" onclick="openModal('settings')">
+        <div class="screenshot-item" data-category="settings" onclick="openLightbox(this)">
           <div class="phone-frame">
             <img src="assets/screenshots/Settings1.png" alt="Settings screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
           </div>
@@ -130,7 +130,7 @@
         </div>
 
         <!-- Language switching -->
-        <div class="screenshot-item" data-category="language settings" onclick="openModal('language')">
+        <div class="screenshot-item" data-category="language settings" onclick="openLightbox(this)">
           <div class="phone-frame">
             <div class="screen">
               <div class="screen-header">Language</div>
@@ -236,47 +236,28 @@
       });
     }
 
-    /* ── Modal ───────────────────────────────────────────────────────────── */
-    /* Clone the clicked phone frame into the modal for enlargement */
-    function openModal(id) {
+    /* ── Lightbox ────────────────────────────────────────────────────────── */
+    function openLightbox(el) {
       const overlay = document.getElementById('modal-overlay');
       const content = document.getElementById('modal-content');
-
-      /* Find the screen item matching the click */
-      const items = document.querySelectorAll('#screenshots-grid .screenshot-item');
-      let cloneTarget = null;
-      items.forEach(item => {
-        const cat = item.dataset.category || '';
-        if (
-          (id === 'home'       && cat === 'home')       ||
-          (id === 'poi'        && cat === 'poi' && !item.querySelector('.screen-emerg-banner'))  ||
-          (id === 'poi-detail' && cat === 'poi' && item.querySelectorAll('.screen-row-between').length > 0 && !item.querySelector('.screen-emerg-banner')) ||
-          (id === 'emergency'  && cat === 'emergency')  ||
-          (id === 'settings'   && cat === 'settings' && !cat.includes('language')) ||
-          (id === 'language'   && cat.includes('language'))
-        ) {
-          if (!cloneTarget) cloneTarget = item;
-        }
-      });
-
-      if (!cloneTarget) {
-        /* Fallback: find by position in grid */
-        const map = { home: 0, poi: 1, 'poi-detail': 2, emergency: 3, settings: 4, language: 5 };
-        cloneTarget = items[map[id] ?? 0];
-      }
-
-      if (!cloneTarget) return;
-
-      /* Remove old cloned content (keep close button) */
       const closeBtn = content.querySelector('.modal-close');
       content.innerHTML = '';
       content.appendChild(closeBtn);
 
-      const phoneClone = cloneTarget.querySelector('.phone-frame').cloneNode(true);
-      /* Scale up the phone frame */
-      phoneClone.style.transform = 'none';
-      phoneClone.style.cursor = 'default';
-      content.appendChild(phoneClone);
+      const img = el.querySelector('img');
+      if (img) {
+        const bigImg = document.createElement('img');
+        bigImg.src = img.src;
+        bigImg.alt = img.alt;
+        bigImg.className = 'modal-img';
+        content.appendChild(bigImg);
+      } else {
+        /* Fallback for HTML-based screens (e.g. Language) */
+        const phoneClone = el.querySelector('.phone-frame').cloneNode(true);
+        phoneClone.style.transform = 'none';
+        phoneClone.style.cursor = 'default';
+        content.appendChild(phoneClone);
+      }
 
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
