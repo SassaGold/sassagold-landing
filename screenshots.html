@@ -74,8 +74,9 @@
     <div class="section-inner">
       <div class="tab-filter" role="tablist">
         <button class="tab-btn active" data-filter="all"       onclick="filterScreens('all',       this)" role="tab">All</button>
-        <button class="tab-btn"        data-filter="home"      onclick="filterScreens('home',      this)" role="tab">Home</button>
-        <button class="tab-btn"        data-filter="poi"       onclick="filterScreens('poi',       this)" role="tab">Points of Interest</button>
+        <button class="tab-btn"        data-filter="home"      onclick="filterScreens('home',      this)" role="tab">Rider HQ</button>
+        <button class="tab-btn"        data-filter="trip"      onclick="filterScreens('trip',      this)" role="tab">Trip Logger</button>
+        <button class="tab-btn"        data-filter="garage"    onclick="filterScreens('garage',    this)" role="tab">The Garage</button>
         <button class="tab-btn"        data-filter="emergency" onclick="filterScreens('emergency', this)" role="tab">Emergency</button>
         <button class="tab-btn"        data-filter="settings"  onclick="filterScreens('settings',  this)" role="tab">Settings</button>
         <button class="tab-btn"        data-filter="language"  onclick="filterScreens('language',  this)" role="tab">Language</button>
@@ -88,156 +89,34 @@
     <div class="section-inner">
       <div class="screenshots-grid" id="screenshots-grid">
 
-        <!-- Home screen -->
+        <!-- Rider HQ -->
         <div class="screenshot-item" data-category="home" onclick="openModal('home')">
           <div class="phone-frame">
-            <div class="screen">
-              <div class="screen-header">Where Am I</div>
-              <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:4px;">
-                <div style="background:rgba(196,154,0,.1); border:1px solid rgba(196,154,0,.25); border-radius:10px; padding:12px 10px; text-align:center;">
-                  <div style="font-size:20px; margin-bottom:6px;">🗺️</div>
-                  <div class="screen-title">Places</div>
-                </div>
-                <div style="background:rgba(239,68,68,.08); border:1px solid rgba(239,68,68,.2); border-radius:10px; padding:12px 10px; text-align:center;">
-                  <div style="font-size:20px; margin-bottom:6px;">🚨</div>
-                  <div class="screen-title">Emergency</div>
-                </div>
-                <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:12px 10px; text-align:center;">
-                  <div style="font-size:20px; margin-bottom:6px;">🌐</div>
-                  <div class="screen-title">Language</div>
-                </div>
-                <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:12px 10px; text-align:center;">
-                  <div style="font-size:20px; margin-bottom:6px;">⚙️</div>
-                  <div class="screen-title">Settings</div>
-                </div>
-              </div>
-              <div class="screen-label" style="text-align:center; margin-top:6px;">Where Am I — Ride Companion</div>
-            </div>
+            <img src="assets/screenshots/Rider HQ.png" alt="Rider HQ screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
           </div>
-          <span class="screenshot-label">Home Screen</span>
+          <span class="screenshot-label">Rider HQ</span>
         </div>
 
-        <!-- POI list -->
-        <div class="screenshot-item" data-category="poi" onclick="openModal('poi')">
+        <!-- Trip Logger -->
+        <div class="screenshot-item" data-category="trip" onclick="openModal('trip')">
           <div class="phone-frame">
-            <div class="screen">
-              <div class="screen-header">Nearby for Riders</div>
-              <div class="screen-label">AROUND YOU</div>
-              <div class="screen-row">
-                <span class="screen-emoji">⛽</span>
-                <div>
-                  <div class="screen-title">Fuel Station</div>
-                  <div class="screen-sub">2.4 km away</div>
-                </div>
-              </div>
-              <div class="screen-row">
-                <span class="screen-emoji">🔧</span>
-                <div>
-                  <div class="screen-title">Moto Service</div>
-                  <div class="screen-sub">4.1 km away</div>
-                </div>
-              </div>
-              <div class="screen-row">
-                <span class="screen-emoji">🏥</span>
-                <div>
-                  <div class="screen-title">Hospital</div>
-                  <div class="screen-sub">5.8 km away</div>
-                </div>
-              </div>
-              <div class="screen-row">
-                <span class="screen-emoji">☕</span>
-                <div>
-                  <div class="screen-title">Biker Café</div>
-                  <div class="screen-sub">6.2 km away</div>
-                </div>
-              </div>
-              <div class="screen-row">
-                <span class="screen-emoji">🅿️</span>
-                <div>
-                  <div class="screen-title">Rest Stop</div>
-                  <div class="screen-sub">7.0 km away</div>
-                </div>
-              </div>
-            </div>
+            <img src="assets/screenshots/Trip Logger.jpg" alt="Trip Logger screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
           </div>
-          <span class="screenshot-label">Rider POIs</span>
+          <span class="screenshot-label">Trip Logger</span>
         </div>
 
-        <!-- POI detail -->
-        <div class="screenshot-item" data-category="poi" onclick="openModal('poi-detail')">
+        <!-- The Garage -->
+        <div class="screenshot-item" data-category="garage" onclick="openModal('garage')">
           <div class="phone-frame">
-            <div class="screen">
-              <div class="screen-header">⛽ Fuel Station</div>
-              <div class="screen-label">DETAILS</div>
-              <div class="screen-row-between">
-                <span class="screen-title">Distance</span>
-                <span style="font-size:10px; font-weight:600; color:var(--gold-btn);">2.4 km</span>
-              </div>
-              <div class="screen-row-between">
-                <span class="screen-title">Type</span>
-                <span class="screen-sub">Fuel Station</span>
-              </div>
-              <div class="screen-row-between">
-                <span class="screen-title">Status</span>
-                <span class="screen-online">Open</span>
-              </div>
-              <div class="screen-label" style="margin-top:6px;">NEARBY</div>
-              <div class="screen-row">
-                <span class="screen-emoji">🏪</span>
-                <div>
-                  <div class="screen-title">Convenience Store</div>
-                  <div class="screen-sub">At the station</div>
-                </div>
-              </div>
-              <div class="screen-row">
-                <span class="screen-emoji">☕</span>
-                <div>
-                  <div class="screen-title">Coffee available</div>
-                  <div class="screen-sub">Inside</div>
-                </div>
-              </div>
-            </div>
+            <img src="assets/screenshots/The Garage.jpg" alt="The Garage screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
           </div>
-          <span class="screenshot-label">POI Detail</span>
+          <span class="screenshot-label">The Garage</span>
         </div>
 
         <!-- Emergency screen -->
         <div class="screenshot-item" data-category="emergency" onclick="openModal('emergency')">
           <div class="phone-frame featured">
-            <div class="screen tall">
-              <div class="screen-header">SOS / Emergency</div>
-              <div class="screen-emerg-banner">
-                <div style="font-size:26px; margin-bottom:4px;">🆘</div>
-                <div style="font-size:10px; color:#ef4444; font-weight:700;">Call 112 — International Emergency</div>
-                <div style="font-size:8px; color:rgba(255,255,255,.35); margin-top:2px;">One tap to connect</div>
-              </div>
-              <div class="screen-label">NEAREST SERVICES</div>
-              <div class="screen-row-between">
-                <span class="screen-title">🏥 Hospital</span>
-                <span class="screen-num">2.1 km</span>
-              </div>
-              <div class="screen-row-between">
-                <span class="screen-title">👮 Police</span>
-                <span class="screen-num">3.4 km</span>
-              </div>
-              <div class="screen-row-between">
-                <span class="screen-title">🚒 Fire Station</span>
-                <span class="screen-num">4.8 km</span>
-              </div>
-              <div class="screen-row-between">
-                <span class="screen-title">💊 Pharmacy</span>
-                <span class="screen-num">1.7 km</span>
-              </div>
-              <div class="screen-label" style="margin-top:4px;">TOOLS</div>
-              <div class="screen-row-between">
-                <span class="screen-title">📍 Share Location</span>
-                <span style="font-size:8px; color:#D4A017;">SMS · WA</span>
-              </div>
-              <div class="screen-row-between">
-                <span class="screen-title">🔦 Torch / Flash</span>
-                <span class="screen-online">On</span>
-              </div>
-            </div>
+            <img src="assets/screenshots/Emergency tab.jpg" alt="SOS Emergency screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
           </div>
           <span class="screenshot-label">SOS Screen</span>
         </div>
@@ -245,37 +124,7 @@
         <!-- Settings -->
         <div class="screenshot-item" data-category="settings" onclick="openModal('settings')">
           <div class="phone-frame">
-            <div class="screen">
-              <div class="screen-header">Settings</div>
-              <div class="screen-label">APP</div>
-              <div class="screen-row-between">
-                <div>
-                  <div class="screen-title">Auto-update</div>
-                  <div class="screen-sub">Sync when connected</div>
-                </div>
-                <span class="screen-online">On</span>
-              </div>
-              <div class="screen-row-between">
-                <div>
-                  <div class="screen-title">Offline cache</div>
-                  <div class="screen-sub">142 locations stored</div>
-                </div>
-                <span class="screen-online">Ready</span>
-              </div>
-              <div class="screen-label" style="margin-top:6px;">ABOUT</div>
-              <div class="screen-row-between">
-                <span class="screen-title">Version</span>
-                <span class="screen-sub">2.0.0</span>
-              </div>
-              <div class="screen-row-between">
-                <span class="screen-title">Privacy</span>
-                <span style="font-size:9px; color:var(--gold-btn);">View →</span>
-              </div>
-              <div class="screen-row-between">
-                <span class="screen-title">Support</span>
-                <span style="font-size:9px; color:var(--gold-btn);">Contact →</span>
-              </div>
-            </div>
+            <img src="assets/screenshots/Settings .png" alt="Settings screen" style="width:200px; height:400px; object-fit:cover; display:block;" />
           </div>
           <span class="screenshot-label">Settings</span>
         </div>
