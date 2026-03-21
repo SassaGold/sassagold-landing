@@ -45,27 +45,3 @@
     });
   });
 })();
-
-/* ── Cookie / privacy banner ────────────────────────────────────────────────── */
-(function () {
-  var KEY = 'sg_privacy_ok';
-  if (localStorage.getItem(KEY)) return;
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var banner = document.createElement('div');
-    banner.id = 'privacy-banner';
-    banner.setAttribute('role', 'region');
-    banner.setAttribute('aria-label', 'Privacy notice');
-    banner.innerHTML =
-      'This site uses <strong>Google Fonts</strong> (loaded from Google\u2019s servers). ' +
-      'No personal data is collected or shared. ' +
-      '<a href="/privacy.html">Privacy&nbsp;Policy</a>' +
-      '<button id="privacy-banner-ok" aria-label="Dismiss privacy notice">Got&nbsp;it</button>';
-    document.body.appendChild(banner);
-
-    document.getElementById('privacy-banner-ok').addEventListener('click', function () {
-      localStorage.setItem(KEY, '1');
-      banner.remove();
-    });
-  });
-})();

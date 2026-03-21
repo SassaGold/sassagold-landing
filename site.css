@@ -905,39 +905,3 @@ img { max-width: 100%; height: auto; display: block; }
   border-width: 0;
 }
 
-/* ── Privacy / cookie banner ─────────────────────────────────────────────── */
-#privacy-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--text-primary);
-  color: #fff;
-  font-size: .875rem;
-  padding: .9rem 1.5rem;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: .5rem 1rem;
-  z-index: 9998;
-  line-height: 1.5;
-}
-#privacy-banner a {
-  color: var(--gold-border);
-  text-decoration: underline;
-  white-space: nowrap;
-}
-#privacy-banner-ok {
-  margin-left: auto;
-  background: var(--gold);
-  color: #fff;
-  border: none;
-  border-radius: 9999px;
-  padding: .35rem 1.1rem;
-  font-size: .875rem;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background .15s;
-}
-#privacy-banner-ok:hover { background: #a87e00; }
