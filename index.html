@@ -15,9 +15,6 @@
   <meta name="twitter:title"       content="SassaGold — Your Smart Ride Companion" />
   <meta name="twitter:description" content="SassaGold is the motorcycle companion app for riders: fuel stops, emergency tools, offline-ready features, and local info — all in one clean, clutter-free app." />
   <meta name="twitter:image"       content="https://sassagold.com/og-image.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="site.css" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#C49A00" />
@@ -121,7 +118,7 @@
       align-items: center;
     }
     .about-title {
-      font-size: 2.4rem;
+      font-size: clamp(1.75rem, 5vw, 2.4rem);
       font-weight: 800;
       color: var(--text-primary);
       line-height: 1.15;
@@ -142,6 +139,7 @@
     }
     /* ── Responsive (home-page) ──────────────────────────────────────────── */
     @media (max-width: 768px) {
+      .hero-section { padding: 80px 1.5rem; }
       .hero-inner {
         grid-template-columns: 1fr;
         text-align: center;
@@ -149,10 +147,17 @@
       .hero-phone-wrap { order: -1; }
       .hero-subheadline { max-width: 100%; margin-inline: auto; }
       .hero-cta-group { justify-content: center; }
-      .about-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .features-section, .screenshots-section, .about-section,
+      .waitlist-section, .support-section { padding: 60px 1.25rem; }
+      .privacy-section { padding: 50px 1.25rem; }
     }
     @media (max-width: 580px) {
-      .hero-section { padding: 80px 1.25rem; }
+      .hero-section { padding: 60px 1rem; }
+      .features-section, .screenshots-section, .about-section,
+      .waitlist-section, .support-section { padding: 50px 1rem; }
+      .privacy-section { padding: 40px 1rem; }
+      .hero-subheadline { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -238,7 +243,7 @@
     <div class="section-inner">
       <div style="text-align:center; margin-bottom: 4rem;">
         <span class="section-label">Key Features</span>
-        <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+        <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
           Everything you need,<br /><span class="text-gold">nothing you don't</span>
         </h2>
         <p style="color:var(--text-secondary); font-size:1.05rem; margin:0;">
@@ -300,12 +305,14 @@
         <a href="/features.html" class="section-more">View all features →</a>
       </div>
     </div>
-  </section>─────────────────────────────────────────────────────── -->
+  </section>
+
+  <!-- ── Screenshots ──────────────────────────────────────────────────────── -->
   <section id="screenshots" class="screenshots-section">
     <div class="section-inner">
       <div style="text-align:center; margin-bottom: 4rem;">
         <span class="section-label">App Preview</span>
-        <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+        <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
           See it in <span class="text-gold">action</span>
         </h2>
         <p style="color:var(--text-secondary); font-size:1.05rem; margin:0;">
@@ -448,7 +455,7 @@
   <section id="waitlist" class="waitlist-section">
     <div class="waitlist-inner">
       <span class="section-label">Early Access</span>
-      <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+      <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
         Be the <span class="text-gold">first to know</span>
       </h2>
       <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem;">
@@ -490,7 +497,7 @@
     <div class="support-inner">
       <div style="text-align:center; margin-bottom:3rem;">
         <span class="section-label">Support</span>
-        <h2 style="font-size:2.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+        <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
           We're here to <span class="text-gold">help</span>
         </h2>
         <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 1.25rem;">
@@ -549,7 +556,7 @@
   <section id="privacy" class="privacy-section">
     <div style="max-width:640px; margin:0 auto; text-align:center;">
       <span class="section-label">Privacy</span>
-      <h2 style="font-size:2.25rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+      <h2 style="font-size:clamp(1.6rem,5vw,2.25rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
         Your privacy <span class="text-gold">matters</span>
       </h2>
       <p style="color:var(--text-secondary); font-size:1.05rem; line-height:1.75; margin:0 0 .75rem;">

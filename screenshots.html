@@ -15,15 +15,24 @@
   <meta name="twitter:title"       content="Screenshots — SassaGold" />
   <meta name="twitter:description" content="See SassaGold in action — screenshots of the home screen, points of interest, emergency tools, settings, and language switching." />
   <meta name="twitter:image"       content="https://sassagold.com/og-image.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="site.css" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#C49A00" />
   <link rel="canonical" href="https://sassagold.com/screenshots.html" />
   <link rel="icon" href="/logo.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <style>
+    .screenshots-filter { padding: 60px 1.5rem 0; }
+    .screenshots-main   { padding: 0 1.5rem 100px; }
+    @media (max-width: 768px) {
+      .screenshots-filter { padding: 40px 1.25rem 0; }
+      .screenshots-main   { padding: 0 1.25rem 60px; }
+    }
+    @media (max-width: 580px) {
+      .screenshots-filter { padding: 30px 1rem 0; }
+      .screenshots-main   { padding: 0 1rem 50px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -70,7 +79,7 @@
   </header>
 
   <!-- ── Filter tabs ───────────────────────────────────────────────────────── -->
-  <section style="padding:60px 1.5rem 0;">
+  <section class="screenshots-filter">
     <div class="section-inner">
       <div class="tab-filter" role="tablist">
         <button class="tab-btn active" data-filter="all"       onclick="filterScreens('all',       this)" role="tab">All</button>
@@ -85,7 +94,7 @@
   </section>
 
   <!-- ── Screenshots grid ──────────────────────────────────────────────────── -->
-  <section style="padding:0 1.5rem 100px;">
+  <section class="screenshots-main">
     <div class="section-inner">
       <div class="screenshots-grid" id="screenshots-grid">
 
@@ -193,10 +202,10 @@
   <div class="gold-divider"></div>
 
   <!-- ── CTA ────────────────────────────────────────────────────────────────── -->
-  <section style="padding:80px 1.5rem; background:var(--bg); text-align:center;">
+  <section class="section-pad" style="background:var(--bg); text-align:center;">
     <div style="max-width:560px; margin:0 auto;">
       <span class="section-label">Coming Soon</span>
-      <h2 style="font-size:2.2rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;">
+      <h2 style="font-size:clamp(1.6rem,5vw,2.2rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;">
         Want to see it live?
       </h2>
       <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.7;">

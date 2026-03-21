@@ -15,9 +15,6 @@
   <meta name="twitter:title"       content="About — SassaGold" />
   <meta name="twitter:description" content="About SassaGold — a motorcycle companion app built for riders who value clarity, safety, and simplicity. Learn why it exists, who it's for, and our design philosophy." />
   <meta name="twitter:image"       content="https://sassagold.com/og-image.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="site.css" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#C49A00" />
@@ -53,6 +50,9 @@
     @media (max-width: 900px) {
       .about-two-col { grid-template-columns: 1fr; gap: 3rem; }
       .philosophy-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .about-two-col { gap: 2rem; }
     }
   </style>
 </head>
@@ -101,7 +101,7 @@
   </header>
 
   <!-- ── Why it exists ──────────────────────────────────────────────────────── -->
-  <section style="padding:100px 1.5rem; background:var(--bg);">
+  <section class="section-pad" style="background:var(--bg);">
     <div class="section-inner">
       <div class="about-two-col">
 
@@ -190,7 +190,7 @@
   <div class="gold-divider"></div>
 
   <!-- ── Who it's for ───────────────────────────────────────────────────────── -->
-  <section style="padding:100px 1.5rem; background:var(--bg-soft);">
+  <section class="section-pad" style="background:var(--bg-soft);">
     <div class="section-inner">
       <div class="section-hd">
         <span class="section-label">Who it's for</span>
@@ -235,7 +235,7 @@
   <div class="gold-divider"></div>
 
   <!-- ── Design philosophy ──────────────────────────────────────────────────── -->
-  <section style="padding:100px 1.5rem; background:var(--bg);">
+  <section class="section-pad" style="background:var(--bg);">
     <div class="section-inner">
       <div class="section-hd">
         <span class="section-label">Design philosophy</span>
@@ -270,7 +270,7 @@
   <div class="gold-divider"></div>
 
   <!-- ── Creator ────────────────────────────────────────────────────────────── -->
-  <section style="padding:100px 1.5rem; background:var(--bg-soft);">
+  <section class="section-pad" style="background:var(--bg-soft);">
     <div class="section-inner">
       <div class="section-hd">
         <span class="section-label">The team</span>
@@ -294,9 +294,9 @@
   <div class="gold-divider"></div>
 
   <!-- ── CTA ────────────────────────────────────────────────────────────────── -->
-  <section style="padding:80px 1.5rem; background:var(--bg); text-align:center;">
+  <section class="section-pad" style="background:var(--bg); text-align:center;">
     <div style="max-width:560px; margin:0 auto;">
-      <h2 style="font-size:2.2rem; font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;">
+      <h2 style="font-size:clamp(1.6rem,5vw,2.2rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;">
         Want to try <span class="text-gold">Where Am I</span>?
       </h2>
       <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.7;">

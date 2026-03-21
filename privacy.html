@@ -15,15 +15,17 @@
   <meta name="twitter:title"       content="Privacy Policy — SassaGold" />
   <meta name="twitter:description" content="SassaGold Privacy Policy — we do not collect personal data, track your identity, or share information with third parties." />
   <meta name="twitter:image"       content="https://sassagold.com/og-image.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="site.css" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#C49A00" />
   <link rel="canonical" href="https://sassagold.com/privacy.html" />
   <link rel="icon" href="/logo.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <style>
+    @media (max-width: 580px) {
+      #main-content { padding: 2rem 1rem !important; }
+    }
+  </style>
 </head>
 
 <body>
@@ -62,7 +64,7 @@
 
       <div style="margin-bottom: 2.5rem;">
         <span class="section-label">Legal</span>
-        <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--text-primary); letter-spacing: -.03em; margin: 0 0 .75rem;">
+        <h1 style="font-size: clamp(1.6rem, 5vw, 2.25rem); font-weight: 800; color: var(--text-primary); letter-spacing: -.03em; margin: 0 0 .75rem;">
           Privacy Policy — <span class="text-gold">SassaGold</span>
         </h1>
         <p style="color: var(--text-muted); font-size: .95rem;">Last updated: March 2026</p>
@@ -149,10 +151,9 @@
         <h2>8. Third-Party Services</h2>
         <p>
           The app does not integrate third-party analytics, advertising SDKs, or tracking services.
-          This website loads fonts from Google Fonts; Google's servers may log your IP address when
-          the font files are requested — see
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
-          The Google Play Store may collect data when you download or update the app, as governed by
+          All fonts are self-hosted — no requests are made to Google Fonts or any other external
+          font service. The Google Play Store may collect data when you download or update the app,
+          as governed by
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
         </p>
 

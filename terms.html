@@ -15,15 +15,17 @@
   <meta name="twitter:title"       content="Terms of Service — SassaGold" />
   <meta name="twitter:description" content="SassaGold Terms of Service — the rules that govern use of the SassaGold app and website." />
   <meta name="twitter:image"       content="https://sassagold.com/og-image.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="site.css" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#C49A00" />
   <link rel="canonical" href="https://sassagold.com/terms.html" />
   <link rel="icon" href="/logo.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <style>
+    @media (max-width: 580px) {
+      #main-content { padding: 2rem 1rem !important; }
+    }
+  </style>
 </head>
 
 <body>
@@ -62,7 +64,7 @@
 
       <div style="margin-bottom: 2.5rem;">
         <span class="section-label">Legal</span>
-        <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--text-primary); letter-spacing: -.03em; margin: 0 0 .75rem;">
+        <h1 style="font-size: clamp(1.6rem, 5vw, 2.25rem); font-weight: 800; color: var(--text-primary); letter-spacing: -.03em; margin: 0 0 .75rem;">
           Terms of Service — <span class="text-gold">SassaGold</span>
         </h1>
         <p style="color: var(--text-muted); font-size: .95rem;">Last updated: March 2026</p>
