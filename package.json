@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@fontsource/inter": "^5.2.8",
     "@tailwindcss/cli": "^4.2.1",
     "tailwindcss": "^4.2.1"
   }
