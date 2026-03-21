@@ -1,4 +1,4 @@
-/* SassaGold — shared site behaviour */
+/* SassaGold-Studio — shared site behaviour */
 
 /* ── Mobile nav ────────────────────────────────────────────────────────────── */
 (function () {

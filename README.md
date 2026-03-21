@@ -1,6 +1,6 @@
-# SassaGold Landing Page
+# SassaGold-Studio Landing Page
 
-Coming-soon landing page for the SassaGold product launch.
+Coming-soon landing page for the SassaGold-Studio product launch.
 
 ## 🚀 Making Changes Live on sassagold.com
 
