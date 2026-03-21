@@ -1,6 +1,6 @@
 {
-  "name": "SassaGold",
-  "short_name": "SassaGold",
+  "name": "SassaGold-Studio",
+  "short_name": "SassaGold-Studio",
   "description": "Your smart ride companion for motorcyclists",
   "start_url": "/",
   "display": "browser",
