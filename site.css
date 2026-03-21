@@ -198,6 +198,9 @@ img { max-width: 100%; height: auto; display: block; }
   text-align: center;
   margin-bottom: 4rem;
 }
+
+/* ── Section padding utility ────────────────────────────────────────────── */
+.section-pad { padding: 100px 1.5rem; }
 .section-title {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 800;
@@ -754,11 +757,22 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-links .btn-gold { display: none; }
   .nav-hamburger { display: flex; }
   .creator-card { flex-direction: column; text-align: center; }
+  .page-hero { padding: 50px 1.25rem 45px; }
+  .page-hero-title { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+  .section-hd { margin-bottom: 2.5rem; }
+  .section-pad { padding: 60px 1.25rem; }
+  .about-graphic { padding: 1.5rem; }
+  .about-graphic svg { width: 100%; height: auto; }
 }
 
 @media (max-width: 580px) {
   .features-grid { grid-template-columns: 1fr; }
   .screenshots-grid { grid-template-columns: 1fr; }
+  .phone-frame { transform: none !important; }
+  .section-pad { padding: 50px 1rem; }
+  .page-hero { padding: 40px 1rem 35px; }
+  .screenshots-row { gap: 1.5rem; }
+  .screenshot-item.featured { transform: none; }
 }
 
 /* ── Accessibility: skip link ─────────────────────────────────────────────── */
