@@ -1,5 +1,42 @@
 /* SassaGold Studios — shared site behaviour */
 
+/* ── Theme (dark / light) ──────────────────────────────────────────────────── */
+(function () {
+  var THEME_STORAGE_KEY = 'sg-theme';
+
+  function getPreferred() {
+    var saved = localStorage.getItem(THEME_STORAGE_KEY);
+    if (saved === 'dark' || saved === 'light') return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    /* Update every toggle button on the page */
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      var sunIcon  = btn.querySelector('.icon-sun');
+      var moonIcon = btn.querySelector('.icon-moon');
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      sunIcon.style.display  = theme === 'dark'  ? 'block' : 'none';
+      moonIcon.style.display = theme === 'light' ? 'block' : 'none';
+    });
+  }
+
+  function toggleTheme() {
+    var current = document.documentElement.getAttribute('data-theme') || 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(THEME_STORAGE_KEY, next);
+    applyTheme(next);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    applyTheme(getPreferred());
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      btn.addEventListener('click', toggleTheme);
+    });
+  });
+})();
+
 /* ── Mobile nav ────────────────────────────────────────────────────────────── */
 (function () {
   function closeNav(nav) {
