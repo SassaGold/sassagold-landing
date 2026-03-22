@@ -1,5 +1,5 @@
 /**
- * SassaGold-Studio Waitlist & Analytics Worker
+ * SassaGold Studios Waitlist & Analytics Worker
  *
  * Routes
  *   POST /api/waitlist         — register an email address
