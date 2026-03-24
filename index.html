@@ -138,8 +138,22 @@
       font-style: italic;
       margin: 0 0 1.75rem;
     }
+    /* ── Header banner (full-width) ─────────────────────────────────────── */
+    .header-banner {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .header-banner img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
     /* ── Responsive (home-page) ──────────────────────────────────────────── */
     @media (max-width: 768px) {
+      .header-banner img { height: 280px; }
       .hero-section { padding: 80px 1.5rem; }
       .hero-inner {
         grid-template-columns: 1fr;
@@ -154,6 +168,7 @@
       .privacy-section { padding: 50px 1.25rem; }
     }
     @media (max-width: 580px) {
+      .header-banner img { height: 180px; }
       .hero-section { padding: 60px 1rem; }
       .features-section, .screenshots-section, .about-section,
       .waitlist-section, .support-section { padding: 50px 1rem; }
@@ -200,6 +215,11 @@
       <a href="#waitlist"         class="mobile-menu-link" style="color:var(--gold); font-weight:700;">Get notified →</a>
     </div>
   </nav>
+
+  <!-- ── Header Banner ─────────────────────────────────────────────────────── -->
+  <div class="header-banner">
+    <img src="assets/SassaGold-Header.png" alt="SassaGold Studios — Where Am I, your motorcycle companion app" />
+  </div>
 
   <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
   <section id="main-content" class="hero-section">
