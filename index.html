@@ -138,22 +138,25 @@
       font-style: italic;
       margin: 0 0 1.75rem;
     }
-    /* ── Header banner (full-width) ─────────────────────────────────────── */
+    /* ── Header banner ───────────────────────────────────────────────────── */
     .header-banner {
       width: 100%;
-      overflow: hidden;
+      padding: 2.5rem 1.5rem 0;
+      display: flex;
+      justify-content: center;
       line-height: 0;
     }
     .header-banner img {
       width: 100%;
-      height: 480px;
-      object-fit: cover;
-      object-position: center;
+      max-width: 1120px;
+      height: auto;
       display: block;
+      border-radius: 1.25rem;
+      box-shadow: 0 24px 56px rgba(0,0,0,0.14);
     }
     /* ── Responsive (home-page) ──────────────────────────────────────────── */
     @media (max-width: 768px) {
-      .header-banner img { height: 280px; }
+      .header-banner { padding: 1.5rem 1rem 0; }
       .hero-section { padding: 80px 1.5rem; }
       .hero-inner {
         grid-template-columns: 1fr;
@@ -168,7 +171,7 @@
       .privacy-section { padding: 50px 1.25rem; }
     }
     @media (max-width: 580px) {
-      .header-banner img { height: 180px; }
+      .header-banner img { border-radius: .75rem; }
       .hero-section { padding: 60px 1rem; }
       .features-section, .screenshots-section, .about-section,
       .waitlist-section, .support-section { padding: 50px 1rem; }
@@ -218,7 +221,7 @@
 
   <!-- ── Header Banner ─────────────────────────────────────────────────────── -->
   <div class="header-banner">
-    <img src="assets/SassaGold-Header.png" alt="SassaGold Studios — Where Am I, your motorcycle companion app" />
+    <img src="assets/SassaGold-Header-1.png" alt="SassaGold Studios — Where Am I, your motorcycle companion app" />
   </div>
 
   <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
