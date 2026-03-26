@@ -229,14 +229,35 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-logo {
   display: inline-flex;
   align-items: center;
+  gap: .6rem;
   line-height: 1;
+  text-decoration: none;
 }
 .nav-logo img {
-  height: 46px;
-  width: 46px;
+  height: 56px;
+  width: 56px;
   border-radius: 8px;
   display: block;
   object-fit: contain;
+  flex-shrink: 0;
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.nav-logo-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -.01em;
+}
+.nav-logo-sub {
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
 .nav-links {
   display: flex;
