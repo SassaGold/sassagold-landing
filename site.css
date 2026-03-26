@@ -220,7 +220,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-inner {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 1.1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -229,14 +229,14 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-logo {
   display: inline-flex;
   align-items: center;
-  gap: .85rem;
+  gap: 1rem;
   line-height: 1;
   text-decoration: none;
 }
 .nav-logo img {
-  height: 72px;
-  width: 72px;
-  border-radius: 12px;
+  height: 96px;
+  width: 96px;
+  border-radius: 16px;
   display: block;
   object-fit: contain;
   flex-shrink: 0;
@@ -248,18 +248,18 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.1;
 }
 .nav-logo-name {
-  font-size: 1.35rem;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--text-primary);
-  letter-spacing: -.02em;
+  letter-spacing: -.03em;
 }
 .nav-logo-sub {
-  font-size: .7rem;
-  font-weight: 600;
+  font-size: .78rem;
+  font-weight: 700;
   color: var(--gold);
-  letter-spacing: .18em;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  margin-top: .1rem;
+  margin-top: .15rem;
 }
 .nav-links {
   display: flex;
