@@ -37,6 +37,23 @@
   });
 })();
 
+/* ── Nav scroll-shrink ──────────────────────────────────────────────────────── */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    function tick() {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', tick, { passive: true });
+    tick();
+  });
+})();
+
 /* ── Mobile nav ────────────────────────────────────────────────────────────── */
 (function () {
   function closeNav(nav) {
