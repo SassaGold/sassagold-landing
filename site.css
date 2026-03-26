@@ -228,7 +228,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: linear-gradient(to right, transparent, rgba(196,154,0,.55), transparent);
   pointer-events: none;
 }
-.site-nav.scrolled { box-shadow: 0 4px 40px var(--shadow-md); }
+
 
 .nav-inner {
   max-width: 1120px;
@@ -238,9 +238,7 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   justify-content: space-between;
   position: relative;
-  transition: padding .35s ease;
 }
-.site-nav.scrolled .nav-inner { padding-top: .6rem; padding-bottom: .6rem; }
 
 .nav-logo {
   display: inline-flex;
@@ -255,7 +253,6 @@ img { max-width: 100%; height: auto; display: block; }
   flex-shrink: 0;
   width: 110px;
   height: 110px;
-  transition: width .35s ease, height .35s ease;
 }
 .nav-logo-img-wrap img {
   height: 110px;
@@ -263,16 +260,12 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 20px;
   display: block;
   object-fit: contain;
-  transition: transform .35s ease, height .35s ease, width .35s ease, border-radius .35s ease, box-shadow .35s ease;
+  transition: transform .35s ease, box-shadow .35s ease;
 }
 .nav-logo:hover .nav-logo-img-wrap img {
   transform: scale(1.06);
   box-shadow: 0 8px 32px rgba(196,154,0,.35);
 }
-
-/* Scrolled: compact logo */
-.site-nav.scrolled .nav-logo-img-wrap     { width: 52px; height: 52px; }
-.site-nav.scrolled .nav-logo-img-wrap img { height: 52px; width: 52px; border-radius: 10px; }
 
 .nav-logo-text {
   display: flex;
@@ -285,9 +278,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -.04em;
-  transition: font-size .35s ease;
 }
-.site-nav.scrolled .nav-logo-name { font-size: 1.3rem; }
 
 .nav-logo-sub {
   font-size: .82rem;
@@ -296,11 +287,7 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: .24em;
   text-transform: uppercase;
   margin-top: .18rem;
-  max-height: 2em;
-  overflow: hidden;
-  transition: opacity .25s ease, max-height .35s ease, margin-top .35s ease;
 }
-.site-nav.scrolled .nav-logo-sub { opacity: 0; max-height: 0; margin-top: 0; }
 
 /* ── Nav links with sweeping underline ── */
 .nav-links {
