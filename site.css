@@ -250,48 +250,19 @@ img { max-width: 100%; height: auto; display: block; }
 /* ── Logo image wrapper ── */
 .nav-logo-img-wrap {
   flex-shrink: 0;
-  width: 200px;
+  width: 80px;
   height: 80px;
 }
 .nav-logo-img-wrap img {
   height: 80px;
-  width: 200px;
-  border-radius: 0;
+  width: 80px;
   display: block;
   object-fit: contain;
   transition: transform .35s ease, box-shadow .35s ease;
-  background: transparent;
-}
-[data-theme="dark"] .nav-logo-img-wrap img {
-  background: #1a1508;
-  border-radius: 12px;
-  padding: 6px 10px;
 }
 .nav-logo:hover .nav-logo-img-wrap img {
   transform: scale(1.06);
   box-shadow: 0 8px 32px rgba(196,154,0,.35);
-}
-
-.nav-logo-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.1;
-}
-.nav-logo-name {
-  font-size: 1.9rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  letter-spacing: -.04em;
-}
-
-.nav-logo-sub {
-  font-size: .82rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  margin-top: .18rem;
 }
 
 /* ── Nav links with sweeping underline ── */
@@ -947,8 +918,7 @@ img { max-width: 100%; height: auto; display: block; }
   gap: .75rem;
 }
 .footer-logo { display: inline-flex; align-items: center; line-height: 1; }
-.footer-logo img { height: 56px; width: 140px; border-radius: 0; display: block; object-fit: contain; background: transparent; }
-[data-theme="dark"] .footer-logo img { background: #1a1508; border-radius: 8px; padding: 4px 8px; }
+.footer-logo img { height: 60px; width: 60px; display: block; object-fit: contain; }
 .footer-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
 .footer-link { color: #888; transition: color .2s; }
 .footer-link:hover { color: var(--gold); }
@@ -982,8 +952,8 @@ img { max-width: 100%; height: auto; display: block; }
   .section-pad { padding: 60px 1.25rem; }
   .about-graphic { padding: 1.5rem; }
   .about-graphic svg { width: 100%; height: auto; }
-  .nav-logo-img-wrap       { width: 150px; height: 60px; }
-  .nav-logo-img-wrap img   { height: 60px; width: 150px; }
+  .nav-logo-img-wrap       { width: 60px; height: 60px; }
+  .nav-logo-img-wrap img   { height: 60px; width: 60px; }
 }
 
 @media (max-width: 580px) {
