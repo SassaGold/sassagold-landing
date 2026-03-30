@@ -243,7 +243,6 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0;
   line-height: 1;
   text-decoration: none;
 }
