@@ -33,6 +33,11 @@
       .screenshots-filter { padding: 30px 1rem 0; }
       .screenshots-main   { padding: 0 1rem 50px; }
     }
+    /* Settings1.png is nearly square — contain keeps the full screenshot visible */
+    .phone-frame.settings-screen img {
+      object-fit: contain;
+      object-position: center;
+    }
   </style>
 </head>
 
@@ -139,7 +144,7 @@
 
         <!-- Settings -->
         <div class="screenshot-item" data-category="settings" onclick="openLightbox(this)">
-          <div class="phone-frame">
+          <div class="phone-frame settings-screen">
             <img src="assets/screenshots/Settings1.png" alt="Settings screen" />
           </div>
           <span class="screenshot-label">Settings</span>
