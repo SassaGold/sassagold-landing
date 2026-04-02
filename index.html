@@ -218,14 +218,14 @@
         <span class="nav-logo-img-wrap"><img src="/assets/logo.png" alt="SassaGold Studios" width="160" height="160" /></span>
       </a>
       <div class="nav-links">
-        <a href="/features.html"    class="nav-link">Features</a>
-        <a href="/screenshots.html" class="nav-link">Screenshots</a>
-        <a href="/about.html"       class="nav-link">About</a>
-        <a href="/support.html"     class="nav-link">Support</a>
+        <a href="/features.html"    class="nav-link" data-i18n="nav.features">Features</a>
+        <a href="/screenshots.html" class="nav-link" data-i18n="nav.screenshots">Screenshots</a>
+        <a href="/about.html"       class="nav-link" data-i18n="nav.about">About</a>
+        <a href="/support.html"     class="nav-link" data-i18n="nav.support">Support</a>
         <a href="https://play.google.com/store/apps/details?id=com.sassagold.whereami"
            target="_blank" rel="noopener noreferrer"
            class="btn-gold"
-           style="padding: .55rem 1.4rem; border-radius: 9999px; font-size: .9rem;">
+           style="padding: .55rem 1.4rem; border-radius: 9999px; font-size: .9rem;" data-i18n="nav.join_beta">
           Join Beta
         </a>
       </div>
@@ -233,18 +233,19 @@
         <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
         <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="display:none"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/></svg>
       </button>
+      <button class="lang-toggle" aria-label="Change language" title="Change language">🌐</button>
       <button class="nav-hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu" id="mobile-menu">
-      <a href="/features.html"    class="mobile-menu-link">Features</a>
-      <a href="/screenshots.html" class="mobile-menu-link">Screenshots</a>
-      <a href="/about.html"       class="mobile-menu-link">About</a>
-      <a href="/support.html"     class="mobile-menu-link">Support</a>
+      <a href="/features.html"    class="mobile-menu-link" data-i18n="nav.features">Features</a>
+      <a href="/screenshots.html" class="mobile-menu-link" data-i18n="nav.screenshots">Screenshots</a>
+      <a href="/about.html"       class="mobile-menu-link" data-i18n="nav.about">About</a>
+      <a href="/support.html"     class="mobile-menu-link" data-i18n="nav.support">Support</a>
       <a href="https://play.google.com/store/apps/details?id=com.sassagold.whereami"
          target="_blank" rel="noopener noreferrer"
-         class="mobile-menu-link" style="color:var(--gold); font-weight:700;">Join Beta →</a>
+         class="mobile-menu-link" style="color:var(--gold); font-weight:700;" data-i18n="nav.join_beta_mobile">Join Beta →</a>
     </div>
   </nav>
 
@@ -254,11 +255,11 @@
 
       <!-- Left: text -->
       <div class="fade-up">
-        <span class="section-label">Now in Beta · Android</span>
-        <h1 class="hero-headline">
+        <span class="section-label" data-i18n="hero.badge">Now in Beta · Android</span>
+        <h1 class="hero-headline" data-i18n-html="hero.headline">
           Your smart<br />ride companion —<br /><span class="text-gold">Where Am I</span>
         </h1>
-        <p class="hero-subheadline">
+        <p class="hero-subheadline" data-i18n="hero.sub">
           Explore. Ride. Discover. Live weather, biker POIs, trip logger, and SOS tools — built for motorcyclists, in one clean app.
         </p>
         <div class="hero-cta-group">
@@ -269,15 +270,15 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M3.18 23.76c.3.17.64.24.98.21l12.37-11.97L3.18.24A1.6 1.6 0 0 0 2 1.76v20.48c0 .6.44 1.35 1.18 1.52zM16.53 12 5.12 23.42l10.29-5.94L16.53 12zm3.84-2.22L17.3 8.1 15.9 12l1.4 3.9 2.54-1.48a1.6 1.6 0 0 0 0-2.64h.03zM5.12.58 16.53 12l-1.12 3.48-10.3-5.94L5.12.58z"/>
             </svg>
-            Join beta on Google Play
+            <span data-i18n="hero.cta_play">Join beta on Google Play</span>
           </a>
           <a href="#beta"
              class="btn-outline"
-             style="padding: 1rem 1.75rem; border-radius: 9999px; font-size: 1rem;">
+             style="padding: 1rem 1.75rem; border-radius: 9999px; font-size: 1rem;" data-i18n="hero.cta_beta">
             How to join the beta
           </a>
         </div>
-        <p style="font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted);">
+        <p style="font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted);" data-i18n="hero.badge_bottom">
           Now in Beta on Android
         </p>
       </div>
@@ -298,11 +299,11 @@
   <section id="features" class="features-section">
     <div class="section-inner">
       <div style="text-align:center; margin-bottom: 4rem;">
-        <span class="section-label">Key Features</span>
-        <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+        <span class="section-label" data-i18n="features.label">Key Features</span>
+        <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;" data-i18n-html="features.h2">
           Everything you need,<br /><span class="text-gold">nothing you don't</span>
         </h2>
-        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0;">
+        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0;" data-i18n="features.sub">
           Built for the road. Designed for riders.
         </p>
       </div>
@@ -311,20 +312,20 @@
 
         <div class="feature-card">
           <div class="feature-icon">🗺️</div>
-          <h3 class="feature-title">Biker-Friendly POIs</h3>
-          <p class="feature-body">Find fuel stations, motorcycle workshops, rest areas, and biker cafés nearby — with clean, readable details built for riders.</p>
+          <h3 class="feature-title" data-i18n="features.poi.title">Biker-Friendly POIs</h3>
+          <p class="feature-body" data-i18n="features.poi.body">Find fuel stations, motorcycle workshops, rest areas, and biker cafés nearby — with clean, readable details built for riders.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">🚨</div>
-          <h3 class="feature-title">Emergency Tools</h3>
-          <p class="feature-body">Quick access to emergency numbers, roadside assistance contacts, and location‑aware information when you need it most.</p>
+          <h3 class="feature-title" data-i18n="features.emergency.title">Emergency Tools</h3>
+          <p class="feature-body" data-i18n="features.emergency.body">Quick access to emergency numbers, roadside assistance contacts, and location‑aware information when you need it most.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">🌐</div>
-          <h3 class="feature-title">9 Languages</h3>
-          <p class="feature-body">Full interface in English, Spanish, German, French, Icelandic, Norwegian, Swedish, Danish, and Dutch. Switch instantly — remembered forever.</p>
+          <h3 class="feature-title" data-i18n="features.languages.title">9 Languages</h3>
+          <p class="feature-body" data-i18n="features.languages.body">Full interface in English, Spanish, German, French, Icelandic, Norwegian, Swedish, Danish, and Dutch. Switch instantly — remembered forever.</p>
           <div class="lang-badges">
             <span class="lang-badge">🇬🇧 EN</span>
             <span class="lang-badge">🇪🇸 ES</span>
@@ -340,25 +341,25 @@
 
         <div class="feature-card">
           <div class="feature-icon">📡</div>
-          <h3 class="feature-title">Offline‑Friendly</h3>
-          <p class="feature-body">Remote routes often have no signal. Where Am I works without a connection — essential data is cached on your device.</p>
+          <h3 class="feature-title" data-i18n="features.offline.title">Offline‑Friendly</h3>
+          <p class="feature-body" data-i18n="features.offline.body">Remote routes often have no signal. Where Am I works without a connection — essential data is cached on your device.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">📏</div>
-          <h3 class="feature-title">Trip Logger</h3>
-          <p class="feature-body">Record your rides with a live speed gauge, real-time distance counter, and GPS route tracking. All ride history is saved on-device — never uploaded anywhere.</p>
+          <h3 class="feature-title" data-i18n="features.trip.title">Trip Logger</h3>
+          <p class="feature-body" data-i18n="features.trip.body">Record your rides with a live speed gauge, real-time distance counter, and GPS route tracking. All ride history is saved on-device — never uploaded anywhere.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">🧭</div>
-          <h3 class="feature-title">Clean, Rider-Focused UI</h3>
-          <p class="feature-body">No ads. No clutter. Just the information you need — glanceable and fast, designed for bikers on the move.</p>
+          <h3 class="feature-title" data-i18n="features.ui.title">Clean, Rider-Focused UI</h3>
+          <p class="feature-body" data-i18n="features.ui.body">No ads. No clutter. Just the information you need — glanceable and fast, designed for bikers on the move.</p>
         </div>
 
       </div>
       <div style="text-align:center; margin-top:3rem;">
-        <a href="/features.html" class="section-more">View all features →</a>
+        <a href="/features.html" class="section-more" data-i18n="features.view_all">View all features →</a>
       </div>
     </div>
   </section>
@@ -367,11 +368,11 @@
   <section id="screenshots" class="screenshots-section">
     <div class="section-inner">
       <div style="text-align:center; margin-bottom: 4rem;">
-        <span class="section-label">App Preview</span>
-        <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+        <span class="section-label" data-i18n="screenshots.label">App Preview</span>
+        <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;" data-i18n-html="screenshots.h2">
           See it in <span class="text-gold">action</span>
         </h2>
-        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0;">
+        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0;" data-i18n="screenshots.sub">
           A clean, focused interface designed for riders on the road.
         </p>
       </div>
@@ -404,7 +405,7 @@
 
       </div>
       <div style="text-align:center; margin-top:3rem;">
-        <a href="/screenshots.html" class="section-more">View all screenshots →</a>
+        <a href="/screenshots.html" class="section-more" data-i18n="screenshots.view_all">View all screenshots →</a>
       </div>
     </div>
   </section>
@@ -418,19 +419,19 @@
 
         <!-- Left: text -->
         <div>
-          <span class="section-label">About the App</span>
-          <h2 class="about-title">
+          <span class="section-label" data-i18n="about.label">About the App</span>
+          <h2 class="about-title" data-i18n-html="about.h2">
             What is <span class="text-gold">Where Am I</span>?
           </h2>
-          <p class="about-body">
+          <p class="about-body" data-i18n="about.body1">
             Where Am I is a motorcycle companion app built to help riders stay safe, informed, and prepared —
             whether you're touring a new country or navigating remote back roads.
           </p>
-          <p class="about-body">
+          <p class="about-body" data-i18n="about.body2">
             It combines live weather, rider HQ dashboard, food stops, crash pads, roadside attractions,
             garage services, a trip logger, and SOS emergency tools into one seamless experience.
           </p>
-          <p class="about-caption">
+          <p class="about-caption" data-i18n="about.caption">
             Built for reliability. Designed for simplicity. Ready for your next ride.
           </p>
           <div class="audience-tags">
@@ -439,7 +440,7 @@
             <span class="audience-tag">🧭 Adventure bikers</span>
             <span class="audience-tag">🗺️ Route explorers</span>
           </div>
-          <a href="/about.html" class="section-more" style="margin-top:1.5rem;">Learn more about Where Am I →</a>
+          <a href="/about.html" class="section-more" style="margin-top:1.5rem;" data-i18n="about.learn_more">Learn more about Where Am I →</a>
         </div>
 
         <!-- Right: travel illustration -->
@@ -511,11 +512,11 @@
   <span id="waitlist" style="display:block;position:relative;top:-80px;visibility:hidden;" aria-hidden="true"></span>
   <section id="beta" class="waitlist-section">
     <div class="waitlist-inner">
-      <span class="section-label">Stay in the Loop</span>
-      <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+      <span class="section-label" data-i18n="waitlist.label">Stay in the Loop</span>
+      <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;" data-i18n-html="waitlist.h2">
         Get notified <span class="text-gold">at launch</span>
       </h2>
-      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.75;">
+      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.75;" data-i18n="waitlist.body">
         Drop your email and we'll let you know the moment Where Am I is fully released — no spam, just the important stuff.
       </p>
 
@@ -530,17 +531,17 @@
           <button type="submit"
                   id="submit-btn"
                   class="btn-gold"
-                  style="padding:.9rem 1.75rem; border-radius:9999px; font-size:1rem; font-weight:700; white-space:nowrap; cursor:pointer; border:none;">
+                  style="padding:.9rem 1.75rem; border-radius:9999px; font-size:1rem; font-weight:700; white-space:nowrap; cursor:pointer; border:none;" data-i18n="waitlist.cta">
             Notify Me
           </button>
         </div>
         <p id="form-message" aria-live="polite"></p>
       </form>
 
-      <p style="margin-top:1rem; font-size:.8rem; color:var(--text-muted);">No spam. Unsubscribe any time.</p>
+      <p style="margin-top:1rem; font-size:.8rem; color:var(--text-muted);" data-i18n="waitlist.no_spam">No spam. Unsubscribe any time.</p>
 
       <div style="margin-top:2.5rem; padding-top:2rem; border-top:1px solid var(--border, #e5e0d5);">
-        <p style="font-size:.9rem; color:var(--text-muted); margin:0 0 1rem;">Already on Android? Try the open beta now:</p>
+        <p style="font-size:.9rem; color:var(--text-muted); margin:0 0 1rem;" data-i18n="waitlist.already">Already on Android? Try the open beta now:</p>
         <a href="https://play.google.com/store/apps/details?id=com.sassagold.whereami"
            target="_blank" rel="noopener noreferrer"
            class="btn-outline"
@@ -548,7 +549,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M3.18 23.76c.3.17.64.24.98.21l12.37-11.97L3.18.24A1.6 1.6 0 0 0 2 1.76v20.48c0 .6.44 1.35 1.18 1.52zM16.53 12 5.12 23.42l10.29-5.94L16.53 12zm3.84-2.22L17.3 8.1 15.9 12l1.4 3.9 2.54-1.48a1.6 1.6 0 0 0 0-2.64h.03zM5.12.58 16.53 12l-1.12 3.48-10.3-5.94L5.12.58z"/>
           </svg>
-          Get it on Google Play
+          <span data-i18n="waitlist.play">Get it on Google Play</span>
         </a>
       </div>
     </div>
@@ -560,35 +561,35 @@
   <section id="support" class="support-section">
     <div class="support-inner">
       <div style="text-align:center; margin-bottom:3rem;">
-        <span class="section-label">Support</span>
-        <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+        <span class="section-label" data-i18n="support.label">Support</span>
+        <h2 style="font-size:clamp(1.75rem,5vw,2.4rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;" data-i18n-html="support.h2">
           We're here to <span class="text-gold">help</span>
         </h2>
-        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 1.25rem;">
+        <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 1.25rem;" data-i18n="support.sub">
           Have a question or need assistance? Reach out any time.
         </p>
         <a href="mailto:support@sassagold.com" class="support-email">
           support@sassagold.com
         </a>
         <br /><br />
-        <a href="/support.html" class="section-more" style="display:inline-flex;">View all support options →</a>
+        <a href="/support.html" class="section-more" style="display:inline-flex;" data-i18n="support.view_all">View all support options →</a>
       </div>
 
-      <h3 style="font-size:1.5rem; font-weight:700; color:var(--text-primary); margin:0 0 1.5rem; text-align:center;">
+      <h3 style="font-size:1.5rem; font-weight:700; color:var(--text-primary); margin:0 0 1.5rem; text-align:center;" data-i18n="support.faq_title">
         Frequently Asked Questions
       </h3>
 
       <details class="faq-item">
-        <summary>How do I change the language?</summary>
-        <div class="faq-answer">
+        <summary data-i18n="support.faq1.q">How do I change the language?</summary>
+        <div class="faq-answer" data-i18n="support.faq1.a">
           Open the app's settings menu and select your preferred language from the list.
           Where Am I supports English, Spanish, German, French, Icelandic, Norwegian, Swedish, Danish, and Dutch — and remembers your choice for future sessions.
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>Why am I not seeing certain points of interest?</summary>
-        <div class="faq-answer">
+        <summary data-i18n="support.faq2.q">Why am I not seeing certain points of interest?</summary>
+        <div class="faq-answer" data-i18n="support.faq2.a">
           Points of interest are updated automatically when your device has a connection.
           If you're in an area with limited coverage, some POIs may not be visible until the app syncs.
           Try refreshing when you regain connectivity.
@@ -596,16 +597,16 @@
       </details>
 
       <details class="faq-item">
-        <summary>Does the app work offline?</summary>
-        <div class="faq-answer">
+        <summary data-i18n="support.faq3.q">Does the app work offline?</summary>
+        <div class="faq-answer" data-i18n="support.faq3.a">
           Yes. Where Am I is designed to work with limited or no connectivity.
           Core features — including emergency tools and previously cached local information — remain available offline.
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>How often does the app update?</summary>
-        <div class="faq-answer">
+        <summary data-i18n="support.faq4.q">How often does the app update?</summary>
+        <div class="faq-answer" data-i18n="support.faq4.a">
           The app checks for new content and improvements automatically in the background.
           You don't need to manually trigger updates — the app handles it for you whenever a connection is available.
         </div>
@@ -619,21 +620,21 @@
   <!-- ── Privacy teaser ─────────────────────────────────────────────────────── -->
   <section id="privacy" class="privacy-section">
     <div style="max-width:640px; margin:0 auto; text-align:center;">
-      <span class="section-label">Privacy</span>
-      <h2 style="font-size:clamp(1.6rem,5vw,2.25rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;">
+      <span class="section-label" data-i18n="privacy.label">Privacy</span>
+      <h2 style="font-size:clamp(1.6rem,5vw,2.25rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem;" data-i18n-html="privacy.h2">
         Your privacy <span class="text-gold">matters</span>
       </h2>
-      <p style="color:var(--text-secondary); font-size:1.05rem; line-height:1.75; margin:0 0 .75rem;">
+      <p style="color:var(--text-secondary); font-size:1.05rem; line-height:1.75; margin:0 0 .75rem;" data-i18n="privacy.body1">
         Where Am I does not collect personal data, does not track your identity,
         and does not share information with third parties.
       </p>
-      <p style="color:var(--text-muted); font-size:1rem; line-height:1.75; margin:0 0 2.5rem;">
+      <p style="color:var(--text-muted); font-size:1rem; line-height:1.75; margin:0 0 2.5rem;" data-i18n="privacy.body2">
         The app only processes the minimum data required to function,
         such as language settings and cached content.
       </p>
       <a href="/privacy.html"
          class="btn-outline"
-         style="padding:.9rem 2rem; border-radius:9999px; font-size:1rem;">
+         style="padding:.9rem 2rem; border-radius:9999px; font-size:1rem;" data-i18n="privacy.cta">
         Read the full Privacy Policy →
       </a>
     </div>
@@ -653,7 +654,7 @@
         <a href="/privacy.html"     class="footer-link">Privacy</a>
         <a href="/terms.html"       class="footer-link">Terms</a>
       </nav>
-      <p class="footer-copy">© 2026 SassaGold Studios. All rights reserved.</p>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 SassaGold Studios. All rights reserved.</p>
     </div>
   </footer>
 
