@@ -733,20 +733,27 @@ var SG_I18N = {
 
   function t(lang, key) {
     var dict = SG_I18N[lang] || SG_I18N['en'];
-    return (dict && dict[key] !== undefined) ? dict[key] : (SG_I18N['en'][key] || key);
+    if (dict && dict[key] !== undefined) return dict[key];
+    if (SG_I18N['en'][key] !== undefined) return SG_I18N['en'][key];
+    return null;
   }
 
   function applyTranslations(lang) {
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
-      el.textContent = t(lang, key);
+      var val = t(lang, key);
+      if (val !== null) el.textContent = val;
     });
     document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-html');
-      el.innerHTML = t(lang, key);
+      /* only set innerHTML for known translation keys — values are hardcoded strings */
+      if (Object.prototype.hasOwnProperty.call(SG_I18N['en'], key)) {
+        var val = t(lang, key);
+        if (val !== null) el.innerHTML = val;
+      }
     });
     /* update <html lang> attribute */
-    document.documentElement.setAttribute('lang', lang === 'sv' ? 'sv' : lang === 'da' ? 'da' : lang === 'no' ? 'no' : lang);
+    document.documentElement.setAttribute('lang', lang);
     /* update active state on lang buttons */
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
       btn.classList.toggle('active', btn.dataset.lang === lang);
