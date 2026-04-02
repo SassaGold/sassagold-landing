@@ -44,11 +44,11 @@
         <span class="nav-logo-img-wrap"><img src="/assets/logo.png" alt="SassaGold Studios" width="160" height="160" /></span>
       </a>
       <div class="nav-links">
-        <a href="/features.html"    class="nav-link active">Features</a>
-        <a href="/screenshots.html" class="nav-link">Screenshots</a>
-        <a href="/about.html"       class="nav-link">About</a>
-        <a href="/support.html"     class="nav-link">Support</a>
-        <a href="/#waitlist" class="btn-gold" style="padding:.55rem 1.4rem; border-radius:9999px; font-size:.9rem;">
+        <a href="/features.html"    class="nav-link active" data-i18n="nav.features">Features</a>
+        <a href="/screenshots.html" class="nav-link" data-i18n="nav.screenshots">Screenshots</a>
+        <a href="/about.html"       class="nav-link" data-i18n="nav.about">About</a>
+        <a href="/support.html"     class="nav-link" data-i18n="nav.support">Support</a>
+        <a href="/#waitlist" class="btn-gold" style="padding:.55rem 1.4rem; border-radius:9999px; font-size:.9rem;" data-i18n="nav.get_notified">
           Get notified
         </a>
       </div>
@@ -56,27 +56,28 @@
         <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
         <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="display:none"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/></svg>
       </button>
+      <button class="lang-toggle" aria-label="Change language" title="Change language">🌐</button>
       <button class="nav-hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="/features.html"    class="mobile-menu-link active">Features</a>
-      <a href="/screenshots.html" class="mobile-menu-link">Screenshots</a>
-      <a href="/about.html"       class="mobile-menu-link">About</a>
-      <a href="/support.html"     class="mobile-menu-link">Support</a>
-      <a href="/#waitlist"        class="mobile-menu-link" style="color:var(--gold);font-weight:700;">Get notified →</a>
+      <a href="/features.html"    class="mobile-menu-link active" data-i18n="nav.features">Features</a>
+      <a href="/screenshots.html" class="mobile-menu-link" data-i18n="nav.screenshots">Screenshots</a>
+      <a href="/about.html"       class="mobile-menu-link" data-i18n="nav.about">About</a>
+      <a href="/support.html"     class="mobile-menu-link" data-i18n="nav.support">Support</a>
+      <a href="/#waitlist"        class="mobile-menu-link" style="color:var(--gold);font-weight:700;" data-i18n="nav.get_notified_mobile">Get notified →</a>
     </div>
   </nav>
 
   <!-- ── Page hero ─────────────────────────────────────────────────────────── -->
   <header id="main-content" class="page-hero">
     <div class="page-hero-inner fade-up">
-      <span class="section-label">What's inside</span>
-      <h1 class="page-hero-title">
+      <span class="section-label" data-i18n="features_page.hero.label">What's inside</span>
+      <h1 class="page-hero-title" data-i18n-html="features_page.hero.h1">
         Features built for<br /><span class="text-gold">real riders</span>
       </h1>
-      <p class="page-hero-sub">
+      <p class="page-hero-sub" data-i18n="features_page.hero.sub">
         Everything you need for safer, smarter riding — no ads, no clutter, just the tools that matter on the road.
       </p>
     </div>
@@ -90,8 +91,8 @@
       <div class="feature-block fade-up">
         <div class="feature-block-text">
           <div class="feature-block-icon">🗺️</div>
-          <h2 class="feature-block-title">Biker-Friendly Points of Interest</h2>
-          <p class="feature-block-body">
+          <h2 class="feature-block-title" data-i18n="features_page.poi.title">Biker-Friendly Points of Interest</h2>
+          <p class="feature-block-body" data-i18n="features_page.poi.body">
             Find everything a rider needs nearby — fuel stations, motorcycle service shops, rest areas,
             biker cafés, hospitals, and more. Each point of interest shows clean, readable details so
             you always know what's available and how far away it is.
@@ -153,8 +154,8 @@
       <div class="feature-block reversed fade-up delay-1">
         <div class="feature-block-text">
           <div class="feature-block-icon">🆘</div>
-          <h2 class="feature-block-title">SOS &amp; Emergency</h2>
-          <p class="feature-block-body">
+          <h2 class="feature-block-title" data-i18n="features_page.sos.title">SOS &amp; Emergency</h2>
+          <p class="feature-block-body" data-i18n="features_page.sos.body">
             A dedicated emergency screen that puts help one tap away. Find the nearest services,
             share your exact location, and access first-aid guidance — all without an internet
             connection.
@@ -207,8 +208,8 @@
       <div class="feature-block fade-up">
         <div class="feature-block-text">
           <div class="feature-block-icon">🌐</div>
-          <h2 class="feature-block-title">9 Languages</h2>
-          <p class="feature-block-body">
+          <h2 class="feature-block-title" data-i18n="features.languages.title">9 Languages</h2>
+          <p class="feature-block-body" data-i18n="features_page.languages.body">
             Where Am I speaks your language. Switch instantly between nine fully translated languages —
             the app remembers your preference so you never have to set it again.
           </p>
@@ -223,7 +224,7 @@
             <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇸🇪 Swedish</span>
             <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇳🇱 Dutch</span>
           </div>
-          <p class="feature-block-body" style="margin:0;">
+          <p class="feature-block-body" style="margin:0;" data-i18n="features_page.languages.extra">
             All content — menus, labels, emergency information — is available in your chosen language.
           </p>
         </div>
@@ -278,8 +279,8 @@
       <div class="feature-block reversed fade-up delay-1">
         <div class="feature-block-text">
           <div class="feature-block-icon">📡</div>
-          <h2 class="feature-block-title">Offline‑Friendly</h2>
-          <p class="feature-block-body">
+          <h2 class="feature-block-title" data-i18n="features.offline.title">Offline‑Friendly</h2>
+          <p class="feature-block-body" data-i18n="features_page.offline.body">
             Remote roads often have spotty or no signal. Where Am I is designed from the ground up to
             work without a reliable connection. Essential data is cached on your device so you stay
             informed even when riding beyond cell coverage.
@@ -335,8 +336,8 @@
       <div class="feature-block fade-up">
         <div class="feature-block-text">
           <div class="feature-block-icon">📏</div>
-          <h2 class="feature-block-title">Trip Logger</h2>
-          <p class="feature-block-body">
+          <h2 class="feature-block-title" data-i18n="features.trip.title">Trip Logger</h2>
+          <p class="feature-block-body" data-i18n="features_page.trip.body">
             Record every ride with a live animated speed gauge, real-time distance counter, and GPS
             route tracking. All ride history is saved only on your device — never uploaded anywhere.
           </p>
@@ -395,8 +396,8 @@
       <div class="feature-block reversed fade-up delay-1">
         <div class="feature-block-text">
           <div class="feature-block-icon">🧭</div>
-          <h2 class="feature-block-title">Clean, Rider-Focused UI</h2>
-          <p class="feature-block-body">
+          <h2 class="feature-block-title" data-i18n="features.ui.title">Clean, Rider-Focused UI</h2>
+          <p class="feature-block-body" data-i18n="features_page.ui.body">
             Riding apps are often bloated with ads, notifications, and unnecessary features.
             Where Am I takes the opposite approach — a minimal, focused interface that shows you
             exactly what you need and nothing you don't.
@@ -445,14 +446,14 @@
   <!-- ── Bottom CTA ─────────────────────────────────────────────────────────── -->
   <section class="section-pad" style="background:var(--bg-soft); text-align:center;">
     <div style="max-width:560px; margin:0 auto;">
-      <span class="section-label">Coming Soon</span>
-      <h2 style="font-size:clamp(1.6rem,5vw,2.2rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;">
+      <span class="section-label" data-i18n="features_page.cta.label">Coming Soon</span>
+      <h2 style="font-size:clamp(1.6rem,5vw,2.2rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;" data-i18n-html="features_page.cta.h2">
         Ready to ride <span class="text-gold">smarter</span>?
       </h2>
-      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.7;">
+      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.7;" data-i18n="features_page.cta.body">
         Where Am I is launching on Google Play. Be the first to know when it's live.
       </p>
-      <a href="/#waitlist" class="btn-gold" style="padding:1rem 2.5rem; border-radius:9999px; font-size:1rem;">
+      <a href="/#waitlist" class="btn-gold" style="padding:1rem 2.5rem; border-radius:9999px; font-size:1rem;" data-i18n="features_page.cta.btn">
         Get notified at launch
       </a>
     </div>
@@ -472,7 +473,7 @@
         <a href="/privacy.html"     class="footer-link">Privacy</a>
         <a href="/terms.html"       class="footer-link">Terms</a>
       </nav>
-      <p class="footer-copy">© 2026 SassaGold Studios. All rights reserved.</p>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 SassaGold Studios. All rights reserved.</p>
     </div>
   </footer>
   <script src="/site.js"></script>

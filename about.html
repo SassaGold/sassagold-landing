@@ -69,11 +69,11 @@
         <span class="nav-logo-img-wrap"><img src="/assets/logo.png" alt="SassaGold Studios" width="160" height="160" /></span>
       </a>
       <div class="nav-links">
-        <a href="/features.html"    class="nav-link">Features</a>
-        <a href="/screenshots.html" class="nav-link">Screenshots</a>
-        <a href="/about.html"       class="nav-link active">About</a>
-        <a href="/support.html"     class="nav-link">Support</a>
-        <a href="/#waitlist" class="btn-gold" style="padding:.55rem 1.4rem; border-radius:9999px; font-size:.9rem;">
+        <a href="/features.html"    class="nav-link" data-i18n="nav.features">Features</a>
+        <a href="/screenshots.html" class="nav-link" data-i18n="nav.screenshots">Screenshots</a>
+        <a href="/about.html"       class="nav-link active" data-i18n="nav.about">About</a>
+        <a href="/support.html"     class="nav-link" data-i18n="nav.support">Support</a>
+        <a href="/#waitlist" class="btn-gold" style="padding:.55rem 1.4rem; border-radius:9999px; font-size:.9rem;" data-i18n="nav.get_notified">
           Get notified
         </a>
       </div>
@@ -81,27 +81,28 @@
         <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
         <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="display:none"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/></svg>
       </button>
+      <button class="lang-toggle" aria-label="Change language" title="Change language">🌐</button>
       <button class="nav-hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="/features.html"    class="mobile-menu-link">Features</a>
-      <a href="/screenshots.html" class="mobile-menu-link">Screenshots</a>
-      <a href="/about.html"       class="mobile-menu-link active">About</a>
-      <a href="/support.html"     class="mobile-menu-link">Support</a>
-      <a href="/#waitlist"        class="mobile-menu-link" style="color:var(--gold);font-weight:700;">Get notified →</a>
+      <a href="/features.html"    class="mobile-menu-link" data-i18n="nav.features">Features</a>
+      <a href="/screenshots.html" class="mobile-menu-link" data-i18n="nav.screenshots">Screenshots</a>
+      <a href="/about.html"       class="mobile-menu-link active" data-i18n="nav.about">About</a>
+      <a href="/support.html"     class="mobile-menu-link" data-i18n="nav.support">Support</a>
+      <a href="/#waitlist"        class="mobile-menu-link" style="color:var(--gold);font-weight:700;" data-i18n="nav.get_notified_mobile">Get notified →</a>
     </div>
   </nav>
 
   <!-- ── Page hero ─────────────────────────────────────────────────────────── -->
   <header id="main-content" class="page-hero">
     <div class="page-hero-inner fade-up">
-      <span class="section-label">Our story</span>
-      <h1 class="page-hero-title">
+      <span class="section-label" data-i18n="about_page.hero.label">Our story</span>
+      <h1 class="page-hero-title" data-i18n-html="about_page.hero.h1">
         About <span class="text-gold">Where Am I</span>
       </h1>
-      <p class="page-hero-sub">
+      <p class="page-hero-sub" data-i18n="about_page.hero.sub">
         Built for clarity, safety, and simplicity — a ride companion that stays out of your way until you need it.
       </p>
     </div>
@@ -113,21 +114,21 @@
       <div class="about-two-col">
 
         <div class="fade-up">
-          <span class="section-label">Why Where Am I exists</span>
-          <h2 class="about-text-title">
+          <span class="section-label" data-i18n="about_page.why.label">Why Where Am I exists</span>
+          <h2 class="about-text-title" data-i18n-html="about_page.why.title">
             Rider apps were<br />making riding <span class="text-gold">harder</span>
           </h2>
-          <p class="about-text-body">
+          <p class="about-text-body" data-i18n="about_page.why.body1">
             Most apps for bikers are overloaded with features you don't need, cluttered with ads, and slow
             to open when you're on the road — especially in an unfamiliar area or a foreign country.
             When you're riding, you need reliable information, fast.
           </p>
-          <p class="about-text-body">
+          <p class="about-text-body" data-i18n-html="about_page.why.body2">
             Where Am I was built to solve that. It strips away everything unnecessary and focuses on
             three things: <strong>knowing what's nearby for riders</strong>, <strong>staying safe</strong>,
             and <strong>getting help when you need it</strong>.
           </p>
-          <p class="about-text-body" style="color:var(--text-muted); font-style:italic;">
+          <p class="about-text-body" style="color:var(--text-muted); font-style:italic;" data-i18n="about_page.why.body3">
             No ads. No account. No clutter. Just the tools that matter on the road.
           </p>
           <div style="display:flex; flex-direction:column; gap:.65rem; margin-top:1.75rem;">
@@ -200,40 +201,40 @@
   <section class="section-pad" style="background:var(--bg-soft);">
     <div class="section-inner">
       <div class="section-hd">
-        <span class="section-label">Who it's for</span>
-        <h2 class="section-title">Built for riders <span class="text-gold">on the road</span></h2>
-        <p class="section-sub">Whether you're on a solo tour, group ride, or pushing into remote territory.</p>
+        <span class="section-label" data-i18n="about_page.for.label">Who it's for</span>
+        <h2 class="section-title" data-i18n-html="about_page.for.h2">Built for riders <span class="text-gold">on the road</span></h2>
+        <p class="section-sub" data-i18n="about_page.for.sub">Whether you're on a solo tour, group ride, or pushing into remote territory.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">🏍️</div>
-          <h3 class="feature-title">Solo Riders</h3>
-          <p class="feature-body">Ride with confidence knowing fuel, emergency numbers, and repair shops are always a tap away — no account, no fuss.</p>
+          <h3 class="feature-title" data-i18n="about_page.for.solo.title">Solo Riders</h3>
+          <p class="feature-body" data-i18n="about_page.for.solo.body">Ride with confidence knowing fuel, emergency numbers, and repair shops are always a tap away — no account, no fuss.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🛣️</div>
-          <h3 class="feature-title">Touring Bikers</h3>
-          <p class="feature-body">Plan and execute long-distance motorcycle tours across borders. Multilingual support and offline maps keep you covered wherever you go.</p>
+          <h3 class="feature-title" data-i18n="about_page.for.touring.title">Touring Bikers</h3>
+          <p class="feature-body" data-i18n="about_page.for.touring.body">Plan and execute long-distance motorcycle tours across borders. Multilingual support and offline maps keep you covered wherever you go.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🧭</div>
-          <h3 class="feature-title">Adventure Riders</h3>
-          <p class="feature-body">Head into the backcountry without losing access to critical information. The app's offline mode keeps you covered far beyond the cell tower.</p>
+          <h3 class="feature-title" data-i18n="about_page.for.adventure.title">Adventure Riders</h3>
+          <p class="feature-body" data-i18n="about_page.for.adventure.body">Head into the backcountry without losing access to critical information. The app's offline mode keeps you covered far beyond the cell tower.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🌍</div>
-          <h3 class="feature-title">International Tourers</h3>
-          <p class="feature-body">Riding through new countries? Get local emergency numbers, find nearby services, and switch languages instantly — without needing an account.</p>
+          <h3 class="feature-title" data-i18n="about_page.for.intl.title">International Tourers</h3>
+          <p class="feature-body" data-i18n="about_page.for.intl.body">Riding through new countries? Get local emergency numbers, find nearby services, and switch languages instantly — without needing an account.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🏁</div>
-          <h3 class="feature-title">Club Rides</h3>
-          <p class="feature-body">Group riding is better when everyone knows where the next fuel stop or café is. Share the app — it's free for every rider in the group.</p>
+          <h3 class="feature-title" data-i18n="about_page.for.club.title">Club Rides</h3>
+          <p class="feature-body" data-i18n="about_page.for.club.body">Group riding is better when everyone knows where the next fuel stop or café is. Share the app — it's free for every rider in the group.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🔋</div>
-          <h3 class="feature-title">Everyday Commuters</h3>
-          <p class="feature-body">A lightweight, no-nonsense companion for daily riders too. Fast to open, zero clutter — ready when you are.</p>
+          <h3 class="feature-title" data-i18n="about_page.for.commuter.title">Everyday Commuters</h3>
+          <p class="feature-body" data-i18n="about_page.for.commuter.body">A lightweight, no-nonsense companion for daily riders too. Fast to open, zero clutter — ready when you are.</p>
         </div>
       </div>
     </div>
@@ -245,30 +246,30 @@
   <section class="section-pad" style="background:var(--bg);">
     <div class="section-inner">
       <div class="section-hd">
-        <span class="section-label">Design philosophy</span>
-        <h2 class="section-title">Scandinavian <span class="text-gold">simplicity</span></h2>
-        <p class="section-sub">Four principles that guide every decision we make.</p>
+        <span class="section-label" data-i18n="about_page.design.label">Design philosophy</span>
+        <h2 class="section-title" data-i18n-html="about_page.design.h2">Scandinavian <span class="text-gold">simplicity</span></h2>
+        <p class="section-sub" data-i18n="about_page.design.sub">Four principles that guide every decision we make.</p>
       </div>
       <div class="philosophy-grid">
         <div class="info-card">
           <div class="info-card-icon">⬜</div>
-          <h3 class="info-card-title">Minimalism first</h3>
-          <p class="info-card-body">Every element on screen earns its place. If it doesn't help you travel better, it doesn't belong in the app.</p>
+          <h3 class="info-card-title" data-i18n="about_page.design.min.title">Minimalism first</h3>
+          <p class="info-card-body" data-i18n="about_page.design.min.body">Every element on screen earns its place. If it doesn't help you travel better, it doesn't belong in the app.</p>
         </div>
         <div class="info-card">
           <div class="info-card-icon">📵</div>
-          <h3 class="info-card-title">Zero ads, zero tracking</h3>
-          <p class="info-card-body">We don't monetize your data or attention. No ads, no analytics, no third-party SDKs. Your privacy is not a feature — it's a baseline.</p>
+          <h3 class="info-card-title" data-i18n="about_page.design.zero.title">Zero ads, zero tracking</h3>
+          <p class="info-card-body" data-i18n="about_page.design.zero.body">We don't monetize your data or attention. No ads, no analytics, no third-party SDKs. Your privacy is not a feature — it's a baseline.</p>
         </div>
         <div class="info-card">
           <div class="info-card-icon">🔋</div>
-          <h3 class="info-card-title">Reliability above all</h3>
-          <p class="info-card-body">An app that fails when you need it most is worse than no app. Where Am I is built to work in the conditions riders actually face — remote roads, no signal, full gear on.</p>
+          <h3 class="info-card-title" data-i18n="about_page.design.rel.title">Reliability above all</h3>
+          <p class="info-card-body" data-i18n="about_page.design.rel.body">An app that fails when you need it most is worse than no app. Where Am I is built to work in the conditions riders actually face — remote roads, no signal, full gear on.</p>
         </div>
         <div class="info-card">
           <div class="info-card-icon">🌱</div>
-          <h3 class="info-card-title">Built to last</h3>
-          <p class="info-card-body">No feature bloat, no endless chasing of trends. A focused tool that does a few things exceptionally well and keeps doing them.</p>
+          <h3 class="info-card-title" data-i18n="about_page.design.last.title">Built to last</h3>
+          <p class="info-card-body" data-i18n="about_page.design.last.body">No feature bloat, no endless chasing of trends. A focused tool that does a few things exceptionally well and keeps doing them.</p>
         </div>
       </div>
     </div>
@@ -280,16 +281,16 @@
   <section class="section-pad" style="background:var(--bg-soft);">
     <div class="section-inner">
       <div class="section-hd">
-        <span class="section-label">The team</span>
-        <h2 class="section-title">Made with <span class="text-gold">care</span></h2>
-        <p class="section-sub">Where Am I is an independent project, built and maintained by one person who rides and uses the app.</p>
+        <span class="section-label" data-i18n="about_page.team.label">The team</span>
+        <h2 class="section-title" data-i18n-html="about_page.team.h2">Made with <span class="text-gold">care</span></h2>
+        <p class="section-sub" data-i18n="about_page.team.sub">Where Am I is an independent project, built and maintained by one person who rides and uses the app.</p>
       </div>
       <div class="creator-card">
         <div class="creator-avatar">L</div>
         <div>
           <p class="creator-name">Leander</p>
-          <p class="creator-role">Creator &amp; Developer — Where Am I by SassaGold Studios</p>
-          <p style="font-size:.95rem; color:var(--text-secondary); margin:.6rem 0 0; line-height:1.65;">
+          <p class="creator-role" data-i18n="about_page.team.role">Creator &amp; Developer — Where Am I by SassaGold Studios</p>
+          <p style="font-size:.95rem; color:var(--text-secondary); margin:.6rem 0 0; line-height:1.65;" data-i18n="about_page.team.bio">
             Built Where Am I because I needed it and couldn't find what I was looking for.
             A rider who values simplicity, privacy, and things that just work on the road.
           </p>
@@ -303,13 +304,13 @@
   <!-- ── CTA ────────────────────────────────────────────────────────────────── -->
   <section class="section-pad" style="background:var(--bg); text-align:center;">
     <div style="max-width:560px; margin:0 auto;">
-      <h2 style="font-size:clamp(1.6rem,5vw,2.2rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;">
+      <h2 style="font-size:clamp(1.6rem,5vw,2.2rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;" data-i18n-html="about_page.cta.h2">
         Want to try <span class="text-gold">Where Am I</span>?
       </h2>
-      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.7;">
+      <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.7;" data-i18n="about_page.cta.body">
         It's launching on Google Play. Join the list and be the first to take it for a ride.
       </p>
-      <a href="/#waitlist" class="btn-gold" style="padding:1rem 2.5rem; border-radius:9999px; font-size:1rem;">
+      <a href="/#waitlist" class="btn-gold" style="padding:1rem 2.5rem; border-radius:9999px; font-size:1rem;" data-i18n="about_page.cta.btn">
         Get notified at launch
       </a>
     </div>
@@ -329,7 +330,7 @@
         <a href="/privacy.html"     class="footer-link">Privacy</a>
         <a href="/terms.html"       class="footer-link">Terms</a>
       </nav>
-      <p class="footer-copy">© 2026 SassaGold Studios. All rights reserved.</p>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 SassaGold Studios. All rights reserved.</p>
     </div>
   </footer>
   <script src="/site.js"></script>
