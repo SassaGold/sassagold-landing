@@ -74,7 +74,7 @@
         <h1 style="font-size: clamp(1.6rem, 5vw, 2.25rem); font-weight: 800; color: var(--text-primary); letter-spacing: -.03em; margin: 0 0 .75rem;">
           Privacy Policy — <span class="text-gold">SassaGold Studios</span>
         </h1>
-        <p style="color: var(--text-muted); font-size: .95rem;">Last updated: April 2026</p>
+        <p style="color: var(--text-muted); font-size: .95rem;">Last updated: April 23, 2026</p>
       </div>
 
       <div class="prose">
@@ -99,14 +99,29 @@
         </p>
         <p>The app stores and processes the following data <strong>locally on your device only</strong>:</p>
         <ul>
-          <li><strong>Precise location</strong> — your device's GPS coordinates are accessed and processed entirely on-device to:
+          <li><strong>Precise location</strong> — your device's GPS coordinates are used to:
             <ul>
               <li>Show your current position and address</li>
               <li>Find nearby food, accommodation, fuel stations &amp; services</li>
               <li>Display local weather and road conditions</li>
-              <li>Record ride distance and route in the Trip Logger</li>
+              <li>Record ride distance and route in the Trip Logger — <strong>even when the app is closed or not in use</strong></li>
             </ul>
-            Your location is processed on-device only and is <strong>never transmitted to our servers or shared with anyone</strong>.
+            <p style="margin:.5rem 0 0;">
+              To deliver these features, your anonymous coordinates are sent to the following
+              third-party APIs. No personal data accompanies these requests; only the coordinates
+              needed to answer the query are transmitted.
+            </p>
+            <ul>
+              <li><strong>OpenStreetMap Nominatim</strong> — reverse geocoding (address lookup)</li>
+              <li><strong>Overpass API</strong> — nearby points-of-interest search</li>
+              <li><strong>Open-Meteo</strong> — local weather and road-condition data</li>
+              <li><strong>Wikipedia API</strong> — place descriptions and information</li>
+            </ul>
+            <p style="margin:.5rem 0 0;">
+              Your location is <strong>never transmitted to our own servers</strong>, never used for
+              advertising or profiling, and <strong>never sold or shared</strong> for any commercial
+              purpose.
+            </p>
           </li>
           <li><strong>Language preference</strong> — your chosen language is saved on-device so the app remembers it between sessions.</li>
           <li><strong>Cached content</strong> — points of interest and other app data cached on your device for offline access.</li>
@@ -137,12 +152,13 @@
         <h2>4. How We Use Data</h2>
         <p>
           The minimal data described above is used solely to provide core app functionality.
-          Location data is accessed on-device to show your position, find nearby places, display
-          local weather and road conditions, and log trip distance and route — it is never
-          transmitted or stored outside your device. App settings and cached content enable
-          offline access. Waitlist email addresses are used only to send a single notification
-          when the app launches. No data is ever used for advertising, profiling, or shared with
-          any third party.
+          Location coordinates are sent anonymously to OpenStreetMap Nominatim, Overpass API,
+          Open-Meteo, and Wikipedia solely to resolve each feature request; no data is retained
+          by us after the response is received. The Trip Logger stores route data locally on
+          your device — it is never uploaded. App settings and cached content enable offline
+          access. Waitlist email addresses are used only to send a single notification when the
+          app launches. No data is ever used for advertising or profiling, and no data is sold
+          or shared with any third party for commercial purposes.
         </p>
 
         <h2>5. Data Retention</h2>
@@ -169,10 +185,34 @@
 
         <h2>8. Third-Party Services</h2>
         <p>
-          The app does not integrate third-party analytics, advertising SDKs, or tracking services.
-          All fonts are self-hosted — no requests are made to Google Fonts or any other external
-          font service. The Google Play Store may collect data when you download or update the app,
-          as governed by
+          The app integrates the following external APIs to deliver core features. No user account,
+          device identifier, or persistent tracking identifier is sent to any of these services —
+          only the anonymous coordinates or search terms required to answer each request.
+        </p>
+        <ul>
+          <li><strong>OpenStreetMap Nominatim</strong> — reverse geocoding to display your current
+            address. Governed by the
+            <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">OpenStreetMap Foundation Privacy Policy</a>.</li>
+          <li><strong>Overpass API</strong> — querying nearby points of interest (food, fuel,
+            accommodation, services). Governed by the
+            <a href="https://overpass-api.de/" target="_blank" rel="noopener noreferrer">Overpass API terms</a>.</li>
+          <li><strong>Open-Meteo</strong> — fetching local weather and road-condition data. Governed
+            by the
+            <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">Open-Meteo Terms</a>. Open-Meteo does not
+            require an API key and does not identify individual users.</li>
+          <li><strong>Wikipedia API</strong> — retrieving place descriptions and articles. Wikipedia
+            is a public service operated by the Wikimedia Foundation; see their
+            <a href="https://foundation.wikimedia.org/wiki/Privacy_policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</li>
+          <li><strong>Expo Updates</strong> — delivering over-the-air JavaScript bundle updates.
+            Expo may log anonymous request metadata (e.g. app version, platform) in accordance
+            with
+            <a href="https://expo.dev/privacy" target="_blank" rel="noopener noreferrer">Expo's Privacy Policy</a>.</li>
+        </ul>
+        <p>
+          The app does <strong>not</strong> integrate third-party analytics, advertising SDKs, or
+          tracking services. All fonts are self-hosted — no requests are made to Google Fonts or
+          any other external font service. The Google Play Store may collect data when you download
+          or update the app, as governed by
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
         </p>
 
