@@ -26,6 +26,22 @@
   <link rel="alternate" hreflang="no" href="https://sassagold.com/no/screenshots.html" />
   <link rel="alternate" hreflang="is" href="https://sassagold.com/is/screenshots.html" />
   <link rel="alternate" hreflang="x-default" href="https://sassagold.com/screenshots.html" />
+  <style>
+    .screenshots-filter { padding: 60px 1.5rem 0; }
+    .screenshots-main   { padding: 0 1.5rem 100px; }
+    @media (max-width: 768px) {
+      .screenshots-filter { padding: 40px 1.25rem 0; }
+      .screenshots-main   { padding: 0 1.25rem 60px; }
+    }
+    @media (max-width: 580px) {
+      .screenshots-filter { padding: 30px 1rem 0; }
+      .screenshots-main   { padding: 0 1rem 50px; }
+    }
+    .phone-frame.settings-screen img {
+      object-fit: contain;
+      object-position: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -81,78 +97,136 @@
         <span class="text-gold">Where Am I</span> í aðgerð
       </h1>
       <p class="page-hero-sub">
-        Fljótur kynning á helstu skjámyndunum — hannað fyrir lesanleika með hanska á og í hreyfingu.
+        Hreint, einbeitt viðmót hannað fyrir hjólara á veginum. Ýttu á skjámynd til að stækka.
       </p>
     </div>
   </header>
 
-  <section class="section-pad" id="main-content" style="background:var(--bg);">
+  <!-- ── Filter tabs ─────────────────────────────────────────────────────── -->
+  <section class="screenshots-filter">
     <div class="section-inner">
-
-      <div class="screenshot-row fade-up">
-        <div class="screenshot-frame">
-          <img src="/assets/screenshots/map-screen.png" alt="Kortskjámynd með MC-POI" width="390" height="844" loading="lazy" />
-        </div>
-        <div class="screenshot-copy">
-          <span class="section-label">Kortaview</span>
-          <h2 class="screenshot-title">Sjáðu hvað er <span class="text-gold">í kringum þig</span></h2>
-          <p class="screenshot-body">Gagnvirka kortið sýnir POI í nágrenninu — bensín, þjónusta, kaffihús og hvíldarstaðir — í einu yfirliti. Ýttu á hvaða tákn sem er til að opna nákvæmni og leiðbeiningar.</p>
-          <ul class="screenshot-bullets">
-            <li>GPS-staðsetning í rauntíma</li>
-            <li>Sía eftir POI-flokki</li>
-            <li>Virkar offline með sóttum kortum</li>
-          </ul>
-        </div>
+      <div class="tab-filter" role="tablist">
+        <button class="tab-btn active" data-filter="all"       onclick="filterScreens('all',       this)" role="tab">Allt</button>
+        <button class="tab-btn"        data-filter="home"      onclick="filterScreens('home',      this)" role="tab">Rider HQ</button>
+        <button class="tab-btn"        data-filter="trip"      onclick="filterScreens('trip',      this)" role="tab">Trip Logger</button>
+        <button class="tab-btn"        data-filter="garage"    onclick="filterScreens('garage',    this)" role="tab">The Garage</button>
+        <button class="tab-btn"        data-filter="emergency" onclick="filterScreens('emergency', this)" role="tab">Neyðarskjár</button>
+        <button class="tab-btn"        data-filter="settings"  onclick="filterScreens('settings',  this)" role="tab">Stillingar</button>
+        <button class="tab-btn"        data-filter="language"  onclick="filterScreens('language',  this)" role="tab">Tungumál</button>
       </div>
-
-      <div class="gold-divider"></div>
-
-      <div class="screenshot-row screenshot-row-rev fade-up">
-        <div class="screenshot-frame">
-          <img src="/assets/screenshots/emergency-screen.png" alt="Neyðarsímaskjámynd" width="390" height="844" loading="lazy" />
-        </div>
-        <div class="screenshot-copy">
-          <span class="section-label">Neyðarsímar</span>
-          <h2 class="screenshot-title">Hjálp er alltaf <span class="text-gold">einn tappa í burtu</span></h2>
-          <p class="screenshot-body">Staðbundin neyðarsímanúmer fyrir landið sem þú ert í, alltaf aðgengileg — jafnvel án nettengingar. Lögregla, sjúkrabíll, slökkvilið og vegaþjónusta á einum stað.</p>
-          <ul class="screenshot-bullets">
-            <li>Uppfærð númer fyrir öll studd lönd</li>
-            <li>Virkar fullnægjandi offline</li>
-            <li>Hringir beint með einum tappa</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="gold-divider"></div>
-
-      <div class="screenshot-row fade-up">
-        <div class="screenshot-frame">
-          <img src="/assets/screenshots/settings-screen.png" alt="Stillingaskjámynd" width="390" height="844" loading="lazy" />
-        </div>
-        <div class="screenshot-copy">
-          <span class="section-label">Stillingar</span>
-          <h2 class="screenshot-title">Sérsníddu <span class="text-gold">eftir þínum þörfum</span></h2>
-          <p class="screenshot-body">Veldu tungumál, skiptu milli dökks og bjarts þema og stilltu hvaða POI-flokkar birtast á kortinu. Allar stillingar geymdar staðbundið — enginn aðgangur þörf.</p>
-          <ul class="screenshot-bullets">
-            <li>9 tungumál í boði</li>
-            <li>Dökkt / bjart þema</li>
-            <li>Sérsnæðanleg POI-birting</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
   </section>
 
+  <!-- ── Screenshots grid ─────────────────────────────────────────────────── -->
+  <section class="screenshots-main">
+    <div class="section-inner">
+      <div class="screenshots-grid" id="screenshots-grid">
+
+        <div class="screenshot-item" data-category="home" onclick="openLightbox(this)">
+          <div class="phone-frame">
+            <img src="/assets/screenshots/Rider HQ.png" alt="Hjólarar-HQ-skjár" />
+          </div>
+          <span class="screenshot-label">Rider HQ</span>
+        </div>
+
+        <div class="screenshot-item" data-category="trip" onclick="openLightbox(this)">
+          <div class="phone-frame">
+            <img src="/assets/screenshots/Trip Logger.jpg" alt="Ferðadagbókar-skjár" />
+          </div>
+          <span class="screenshot-label">Trip Logger</span>
+        </div>
+
+        <div class="screenshot-item" data-category="garage" onclick="openLightbox(this)">
+          <div class="phone-frame">
+            <img src="/assets/screenshots/The Garage.jpg" alt="Bílskúrs-skjár" />
+          </div>
+          <span class="screenshot-label">The Garage</span>
+        </div>
+
+        <div class="screenshot-item" data-category="emergency" onclick="openLightbox(this)">
+          <div class="phone-frame featured">
+            <img src="/assets/screenshots/Emergency tab.jpg" alt="SOS neyðarskjár" />
+          </div>
+          <span class="screenshot-label">SOS-skjár</span>
+        </div>
+
+        <div class="screenshot-item" data-category="settings" onclick="openLightbox(this)">
+          <div class="phone-frame settings-screen">
+            <img src="/assets/screenshots/Settings1.png" alt="Stillingarskjár" />
+          </div>
+          <span class="screenshot-label">Stillingar</span>
+        </div>
+
+        <div class="screenshot-item" data-category="language settings" onclick="openLightbox(this)">
+          <div class="phone-frame">
+            <div class="screen">
+              <div class="screen-header">Language</div>
+              <div class="screen-label">SELECT YOUR LANGUAGE</div>
+              <div class="screen-row active">
+                <span class="screen-emoji" style="font-size:14px;">🇬🇧</span>
+                <span class="screen-title" style="flex:1;">English</span>
+                <span class="screen-active-badge">✓ Active</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇪🇸</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Spanish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇩🇪</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">German</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇫🇷</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">French</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇮🇸</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Icelandic</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇴</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Norwegian</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇩🇰</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Danish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇸🇪</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Swedish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇱</span>
+                <span class="screen-title" style="flex:1; opacity:.65;">Dutch</span>
+              </div>
+              <div class="screen-label" style="margin-top:4px; text-align:center; opacity:.4;">9 languages · Your choice is remembered</div>
+            </div>
+          </div>
+          <span class="screenshot-label">9 Tungumál</span>
+        </div>
+
+      </div><!-- /screenshots-grid -->
+    </div>
+  </section>
+
+  <!-- ── Lightbox modal ───────────────────────────────────────────────────── -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content" id="modal-content">
+      <button class="modal-close" onclick="closeModalBtn()" aria-label="Loka">✕</button>
+    </div>
+  </div>
+
   <div class="gold-divider"></div>
 
-  <section class="section-pad" style="background:var(--bg-soft); text-align:center;">
+  <!-- ── CTA ──────────────────────────────────────────────────────────────── -->
+  <section class="section-pad" style="background:var(--bg); text-align:center;">
     <div style="max-width:560px; margin:0 auto;">
+      <span class="section-label">Tiltækt núna</span>
       <h2 style="font-size:clamp(1.6rem,5vw,2.2rem); font-weight:800; color:var(--text-primary); letter-spacing:-.03em; margin:0 0 1rem; line-height:1.15;">
-        Tilbúinn að prófa <span class="text-gold">Where Am I</span>?
+        Viltu sjá það á lífinu?
       </h2>
       <p style="color:var(--text-secondary); font-size:1.05rem; margin:0 0 2rem; line-height:1.7;">
-        Sæktu frítt á Google Play og taktu það meðferðis á næstu ferð.
+        Where Am I er tiltækt á Google Play núna. Sæktu það í dag.
       </p>
       <a href="https://play.google.com/store/apps/details?id=com.sassagold.whereami" target="_blank" rel="noopener noreferrer" class="btn-gold" style="padding:1rem 2.5rem; border-radius:9999px; font-size:1rem;">
         Sækja á Google Play
@@ -176,6 +250,48 @@
       <p class="footer-copy">© 2026 SassaGold Studios. Öll réttindi áskilin.</p>
     </div>
   </footer>
+  <script>
+    function filterScreens(category, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('#screenshots-grid .screenshot-item').forEach(item => {
+        const cats = item.dataset.category || '';
+        item.style.display = (category === 'all' || cats.includes(category)) ? '' : 'none';
+      });
+    }
+
+    function openLightbox(el) {
+      const overlay = document.getElementById('modal-overlay');
+      const content = document.getElementById('modal-content');
+      const closeBtn = content.querySelector('.modal-close');
+      content.innerHTML = '';
+      content.appendChild(closeBtn);
+
+      const img = el.querySelector('img');
+      if (img) {
+        const bigImg = document.createElement('img');
+        bigImg.src = img.src;
+        bigImg.alt = img.alt;
+        bigImg.className = 'modal-img';
+        content.appendChild(bigImg);
+      } else {
+        const phoneClone = el.querySelector('.phone-frame').cloneNode(true);
+        phoneClone.style.transform = 'none';
+        phoneClone.style.cursor = 'default';
+        content.appendChild(phoneClone);
+      }
+
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+      if (e.target === document.getElementById('modal-overlay')) closeModalBtn();
+    }
+    function closeModalBtn() {
+      document.getElementById('modal-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalBtn(); });
+  </script>
   <script src="/site.js"></script>
-</body>
-</html>

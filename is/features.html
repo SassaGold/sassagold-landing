@@ -86,63 +86,365 @@
     </div>
   </header>
 
-  <section class="section-pad" style="background:var(--bg);">
+  <!-- ── Feature blocks ────────────────────────────────────────────────────── -->
+  <main style="padding: 0 1.5rem;">
     <div class="section-inner">
-      <div class="section-hd">
-        <span class="section-label">Kjarnaeiginleikar</span>
-        <h2 class="section-title">Hannað fyrir <span class="text-gold">hjólara á veginum</span></h2>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">⛽</div>
-          <h3 class="feature-title">Bensínstöðvar</h3>
-          <p class="feature-body">Finndu næstu bensínstöð með einum tappa. Sía eftir fjarlægð og sjá opnunartíma — jafnvel án nettengingar.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔧</div>
-          <h3 class="feature-title">MC-viðgerðarstöðvar</h3>
-          <p class="feature-body">Finndu MC-verkstæði, dekkjaþjónustu og sérfræðingar þar sem þú ert. Nauðsynlegt þegar þú ert langt frá heimili og þarft aðstoð.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">☕</div>
-          <h3 class="feature-title">Biker-kaffihús og fundarstaðir</h3>
-          <p class="feature-body">Uppgötvaðu mótorhjólavinsamleg kaffihús, krár og fundarstaði í nágrenninu — fullkomið til hvíldar á löngum ferðum.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🛖</div>
-          <h3 class="feature-title">Hvíldarstaðir</h3>
-          <p class="feature-body">Finndu bílastæði og hvíldarstaði sem henta mótorhjólum. Skipulegðu stöðvar án þess að þurfa að googla í gegnum.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🚨</div>
-          <h3 class="feature-title">Neyðarsímar</h3>
-          <p class="feature-body">Tafarlaus aðgangur að staðbundnum neyðarsímanúmerum — lögregla, sjúkrabíll, slökkvilið og vegaþjónusta. Virkar offline.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🗺️</div>
-          <h3 class="feature-title">Offline-kort</h3>
-          <p class="feature-body">Sæktu kortgögn fyrir svæðið þitt og hafðu þau tiltæk án internets. Fullkomið fyrir langar ferðir þar sem farsímasamband er slæmt.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌐</div>
-          <h3 class="feature-title">9 tungumál</h3>
-          <p class="feature-body">Skiptu á milli íslensku, norsku, ensku, þýsku, spænsku, frönsku, ítölsku, portúgölsku og hollenska — val þitt geymt á milli lota.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌙</div>
-          <h3 class="feature-title">Dökkt/bjart þema</h3>
-          <p class="feature-body">Sjálfvirk aðlögun að kerfisþema þínu, eða skiptu handvirkt. Dökkt þema er léttara fyrir augun í göngum og næturakstur.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3 class="feature-title">Persónuvernd fyrst</h3>
-          <p class="feature-body">Enginn aðgangur þörf, engar auglýsingar, engin rakning. Eina tilgangur forritsins er að hjálpa þér á veginum.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <div class="gold-divider"></div>
+      <!-- 1. Hjólaravinsamlegar áhugaverðar staðsetningar -->
+      <div class="feature-block fade-up">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">🗺️</div>
+          <h2 class="feature-block-title">Hjólaravinsamlegar áhugaverðar staðsetningar</h2>
+          <p class="feature-block-body">
+            Finndu allt sem hjólari þarfnast í nágrenninu — bensínstöðvar, MC-þjónustuverkstæði, hvíldarstaðir,
+            biker-kaffihús, sjúkrahús og meira. Hver áhugaverð staðsetning sýnir skýrar, læsilegar upplýsingar svo
+            þú vitir alltaf hvað er til staðar og hversu langt í burtu það er.
+          </p>
+          <ul style="color:var(--text-secondary); font-size:1rem; line-height:1.8; padding-left:1.25rem; margin:0;">
+            <li>Bensínstöðvar og þjónustusvæði</li>
+            <li>MC-viðgerð og þjónustuverkstæði</li>
+            <li>Sjúkrahús og apótek</li>
+            <li>Biker-kaffihús og hvíldarstaðir</li>
+            <li>Bílastæði og gistingarstopp</li>
+          </ul>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(-2deg);">
+            <div class="screen">
+              <div class="screen-header">Where Am I</div>
+              <div class="screen-label">NEARBY FOR RIDERS</div>
+              <div class="screen-row">
+                <span class="screen-emoji">⛽</span>
+                <div>
+                  <div class="screen-title">Fuel Station</div>
+                  <div class="screen-sub">2.4 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🔧</span>
+                <div>
+                  <div class="screen-title">Moto Service</div>
+                  <div class="screen-sub">4.1 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🏥</span>
+                <div>
+                  <div class="screen-title">Hospital</div>
+                  <div class="screen-sub">5.8 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">☕</span>
+                <div>
+                  <div class="screen-title">Biker Café</div>
+                  <div class="screen-sub">6.2 km away</div>
+                </div>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji">🅿️</span>
+                <div>
+                  <div class="screen-title">Rest Stop</div>
+                  <div class="screen-sub">7.0 km away</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. SOS og neyð -->
+      <div class="feature-block reversed fade-up delay-1">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">🆘</div>
+          <h2 class="feature-block-title">SOS og neyð</h2>
+          <p class="feature-block-body">
+            Sérstakur neyðarskjár sem gefur þér aðgang að hjálp með einum tappa. Finndu næstu þjónustu,
+            deildu nákvæmni staðsetningu þínar og fáðu aðgang að leiðbeiningum um skyndihjálp — allt án
+            nettengingar.
+          </p>
+          <ul style="color:var(--text-secondary); font-size:1rem; line-height:1.8; padding-left:1.25rem; margin:0;">
+            <li>Einn tappi til að hringja í 112 (alþjóðlegt neyðarnúmer)</li>
+            <li>Næstu sjúkrahús, lögregla, slökkviliðsstöðvar og apótek</li>
+            <li>Staðsetningardeling í gegnum SMS eða WhatsApp</li>
+            <li>Vasaljós / flöskubirta fyrir merkjagjöf</li>
+            <li>Skref-fyrir-skref skyndihjálp við mótorhjólaslys</li>
+          </ul>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(2deg);">
+            <div class="screen tall">
+              <div class="screen-header">SOS / Emergency</div>
+              <div class="screen-emerg-banner">
+                <div style="font-size:26px; margin-bottom:4px;">🆘</div>
+                <div style="font-size:10px; color:#ef4444; font-weight:700;">Call 112 — International Emergency</div>
+                <div style="font-size:8px; color:rgba(255,255,255,.35); margin-top:2px;">One tap to connect</div>
+              </div>
+              <div class="screen-label">NEAREST SERVICES</div>
+              <div class="screen-row-between">
+                <span class="screen-title">🏥 Hospital</span>
+                <span class="screen-num">2.1 km</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">👮 Police</span>
+                <span class="screen-num">3.4 km</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">🚒 Fire Station</span>
+                <span class="screen-num">4.8 km</span>
+              </div>
+              <div class="screen-label" style="margin-top:6px;">TOOLS</div>
+              <div class="screen-row-between">
+                <span class="screen-title">📍 Share Location</span>
+                <span style="font-size:8px; color:#D4A017;">SMS · WA</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">🔦 Torch / Flash</span>
+                <span class="screen-online">On</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 9 Tungumál -->
+      <div class="feature-block fade-up">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">🌐</div>
+          <h2 class="feature-block-title">9 Tungumál</h2>
+          <p class="feature-block-body">
+            Where Am I talar tungumálið þitt. Skiptu strax á milli níu fullþýdda tungumála —
+            appið man valið þitt svo þú þurfir aldrei að stilla það aftur.
+          </p>
+          <div class="lang-badges" style="margin-bottom:1.25rem;">
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇬🇧 English</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇪🇸 Spanish</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇩🇪 German</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇫🇷 French</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇮🇸 Icelandic</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇳🇴 Norwegian</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇩🇰 Danish</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇸🇪 Swedish</span>
+            <span class="lang-badge" style="font-size:.9rem; padding:.3rem .9rem;">🇳🇱 Dutch</span>
+          </div>
+          <p class="feature-block-body" style="margin:0;">
+            Allt efni — valmyndir, merki, neyðarupplýsingar — er tiltækt á völdu tungumáli þínu.
+          </p>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(-2deg);">
+            <div class="screen">
+              <div class="screen-header">Settings</div>
+              <div class="screen-label">LANGUAGE</div>
+              <div class="screen-row active">
+                <span class="screen-emoji" style="font-size:14px;">🇬🇧</span>
+                <span class="screen-title" style="flex:1;">English</span>
+                <span class="screen-active-badge">✓</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇪🇸</span>
+                <span class="screen-title" style="opacity:.6;">Spanish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇩🇪</span>
+                <span class="screen-title" style="opacity:.6;">German</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇫🇷</span>
+                <span class="screen-title" style="opacity:.6;">French</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇮🇸</span>
+                <span class="screen-title" style="opacity:.6;">Icelandic</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇴</span>
+                <span class="screen-title" style="opacity:.6;">Norwegian</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇩🇰</span>
+                <span class="screen-title" style="opacity:.6;">Danish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇸🇪</span>
+                <span class="screen-title" style="opacity:.6;">Swedish</span>
+              </div>
+              <div class="screen-row">
+                <span class="screen-emoji" style="font-size:14px;">🇳🇱</span>
+                <span class="screen-title" style="opacity:.6;">Dutch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Offline-vinsamlegt -->
+      <div class="feature-block reversed fade-up delay-1">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">📡</div>
+          <h2 class="feature-block-title">Offline‑vinsamlegt</h2>
+          <p class="feature-block-body">
+            Afskekktar leiðir hafa oft lakara eða ekkert samband. Where Am I er hannað frá grunni til
+            að virka án áreiðanlegrar tengingar. Mikilvæg gögn eru í skyndiminni á tækinu þínu svo þú
+            haldist upplýst jafnvel þegar þú ert að keyra utan farsímasambands.
+          </p>
+          <ul style="color:var(--text-secondary); font-size:1rem; line-height:1.8; padding-left:1.25rem; margin:0;">
+            <li>Neyðarverkfæri alltaf tiltæk offline</li>
+            <li>Áður hlaðnar POI-ar geymdar staðbundið</li>
+            <li>Tungumálastillingar geymdar á tækinu</li>
+            <li>Engin farsímagögn þörf fyrir kjarnaeiginleika</li>
+          </ul>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(2deg);">
+            <div class="screen">
+              <div class="screen-header">Status</div>
+              <div class="screen-label">CONNECTIVITY</div>
+              <div class="screen-row-between" style="background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.25);">
+                <div>
+                  <div class="screen-title">Emergency Tools</div>
+                  <div class="screen-sub">Always available</div>
+                </div>
+                <span class="screen-online">✓ Ready</span>
+              </div>
+              <div class="screen-row-between" style="background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.25);">
+                <div>
+                  <div class="screen-title">Cached POIs</div>
+                  <div class="screen-sub">Last sync: 2h ago</div>
+                </div>
+                <span class="screen-online">✓ Ready</span>
+              </div>
+              <div class="screen-row-between">
+                <div>
+                  <div class="screen-title">Live updates</div>
+                  <div class="screen-sub">Needs connection</div>
+                </div>
+                <span style="font-size:8px; color:rgba(255,255,255,.4);">Offline</span>
+              </div>
+              <div class="screen-label" style="margin-top:6px;">OFFLINE CACHE</div>
+              <div class="screen-row-between">
+                <span class="screen-title">Stored locations</span>
+                <span class="screen-num">142</span>
+              </div>
+              <div class="screen-row-between">
+                <span class="screen-title">Languages</span>
+                <span class="screen-num">9</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Ferðadagbók -->
+      <div class="feature-block fade-up">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">📏</div>
+          <h2 class="feature-block-title">Ferðadagbók</h2>
+          <p class="feature-block-body">
+            Skráðu hverja ferð með lifandi hraðamæli, rauntíma kílómetrarálestur og GPS
+            leiðarskráningu. Öll ferðasaga geymd aðeins á tækinu þínu — aldrei hlaðið upp neitt.
+          </p>
+          <ul style="color:var(--text-secondary); font-size:1rem; line-height:1.8; padding-left:1.25rem; margin:0;">
+            <li>Lifandi hraðamælir á meðan á keyrslu stendur</li>
+            <li>Rauntíma fjarlægð og tímarálestur</li>
+            <li>GPS leiðarskráning (bakgrunnsmeðhöndlun)</li>
+            <li>Full ferðasaga geymd aðeins á tækinu</li>
+            <li>Eyða einstaklingsferlum eða hreinsa allt hvenær sem er</li>
+          </ul>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(-2deg);">
+            <div class="screen">
+              <div class="screen-header">Trip Logger</div>
+              <div class="screen-label">RECORDING</div>
+              <div class="screen-row-between" style="background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.25);">
+                <div>
+                  <div class="screen-title">Status</div>
+                  <div class="screen-sub">GPS locked</div>
+                </div>
+                <span class="screen-online">● Live</span>
+              </div>
+              <div class="screen-row-between">
+                <div>
+                  <div class="screen-title">Speed</div>
+                  <div class="screen-sub">Current</div>
+                </div>
+                <span class="screen-num">84 km/h</span>
+              </div>
+              <div class="screen-row-between">
+                <div>
+                  <div class="screen-title">Distance</div>
+                  <div class="screen-sub">This ride</div>
+                </div>
+                <span class="screen-num">47.2 km</span>
+              </div>
+              <div class="screen-row-between">
+                <div>
+                  <div class="screen-title">Duration</div>
+                  <div class="screen-sub">Elapsed</div>
+                </div>
+                <span class="screen-num">0:38</span>
+              </div>
+              <div class="screen-label" style="margin-top:6px;">STORAGE</div>
+              <div class="screen-row-between">
+                <span class="screen-title">Saved on device</span>
+                <span style="font-size:8px; color:#D4A017;">Never uploaded</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Hreint, hjólaramiðað viðmót -->
+      <div class="feature-block reversed fade-up delay-1">
+        <div class="feature-block-text">
+          <div class="feature-block-icon">🧭</div>
+          <h2 class="feature-block-title">Hreint, hjólaramiðað viðmót</h2>
+          <p class="feature-block-body">
+            Hjólaraforrit eru oft full af auglýsingum, tilkynningum og óþarfa eiginleikum.
+            Where Am I tekur gagnstæða nálgun — lágmarks, einbeitt viðmót sem sýnir þér
+            nákvæmlega það sem þú þarft og ekkert sem þú þarft ekki.
+          </p>
+          <ul style="color:var(--text-secondary); font-size:1rem; line-height:1.8; padding-left:1.25rem; margin:0;">
+            <li>Engar auglýsingar, engin rakning</li>
+            <li>Enginn aðgangur eða skráning þörf</li>
+            <li>Hratt að opna, auðvelt að sigla í</li>
+            <li>Yfirlitsalegt hönnun til notkunar á veginum</li>
+            <li>Skandinavísk einfaldleiki — ekkert óþarfi</li>
+          </ul>
+        </div>
+        <div class="feature-block-visual">
+          <div class="phone-frame" style="transform: rotate(2deg);">
+            <div class="screen">
+              <div class="screen-header">Where Am I</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:4px;">
+                <div style="background:rgba(196,154,0,.1); border:1px solid rgba(196,154,0,.25); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">🗺️</div>
+                  <div class="screen-title">Places</div>
+                </div>
+                <div style="background:rgba(239,68,68,.08); border:1px solid rgba(239,68,68,.2); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">🚨</div>
+                  <div class="screen-title">Emergency</div>
+                </div>
+                <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">🌐</div>
+                  <div class="screen-title">Language</div>
+                </div>
+                <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:12px 10px; text-align:center;">
+                  <div style="font-size:20px; margin-bottom:6px;">⚙️</div>
+                  <div class="screen-title">Settings</div>
+                </div>
+              </div>
+              <div class="screen-label" style="margin-top:8px; text-align:center;">NO ADS · NO CLUTTER · NO ACCOUNT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="gold-divider" style="margin-top:2rem;"></div>
 
   <section class="section-pad" style="background:var(--bg-soft); text-align:center;">
     <div style="max-width:560px; margin:0 auto;">

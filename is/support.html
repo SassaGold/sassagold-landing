@@ -26,6 +26,42 @@
   <link rel="alternate" hreflang="no" href="https://sassagold.com/no/support.html" />
   <link rel="alternate" hreflang="is" href="https://sassagold.com/is/support.html" />
   <link rel="alternate" hreflang="x-default" href="https://sassagold.com/support.html" />
+  <style>
+    .contact-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: 0 4px 24px var(--shadow-sm);
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .contact-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 1rem;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.25rem;
+    }
+    .contact-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 .5rem;
+    }
+    .contact-body {
+      font-size: .95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0 0 1.25rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -86,58 +122,101 @@
     </div>
   </header>
 
-  <section class="section-pad" style="background:var(--bg);">
-    <div class="section-inner" style="max-width:780px;">
+  <!-- ── Contact ───────────────────────────────────────────────────────────── -->
+  <section class="section-pad">
+    <div class="section-inner">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; max-width:720px; margin:0 auto;">
 
-      <div class="section-hd" style="text-align:left; margin-bottom:2rem;">
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <h2 class="contact-title">Tölvupóstsþjónusta</h2>
+          <p class="contact-body">
+            Sendu okkur tölvupóst og við svörum eins fljótt og við getum.
+            Svartími er venjulega innan 1–2 virkra daga.
+          </p>
+          <a href="mailto:support@sassagold.com" class="support-email">
+            support@sassagold.com
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">🔒</div>
+          <h2 class="contact-title">Persónuverndnarspurningar</h2>
+          <p class="contact-body">
+            Spurningar um gögn, persónuvernd eða réttindi þín?
+            Lestu persónuverndarstefnu okkar eða hafðu samband vegna sérstakra áhyggna.
+          </p>
+          <a href="/is/privacy.html" class="support-email">
+            Lesa persónuverndarstefnu →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── FAQ ───────────────────────────────────────────────────────────────── -->
+  <section class="section-pad">
+    <div class="section-inner">
+      <div class="section-hd">
         <span class="section-label">Algengar spurningar</span>
-        <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2rem);">Oft spurðar <span class="text-gold">spurningar</span></h2>
+        <h2 class="section-title">Oft spurðar <span class="text-gold">spurningar</span></h2>
+        <p class="section-sub">Fannst þér ekki svarið þitt? Sendu okkur tölvupóst á <a href="mailto:support@sassagold.com" style="color:var(--gold);">support@sassagold.com</a></p>
       </div>
 
-      <div class="faq-list">
+      <div style="max-width:720px; margin:0 auto;">
+
         <details class="faq-item">
-          <summary class="faq-q">Virkar Where Am I án nettengingar?</summary>
-          <p class="faq-a">Já. Neyðarsímar og offline-kort eru aðgengileg án nettengingar. Þú þarft net til að hlaða inn live POI-gögnum, en sótt kort og neyðarsímar eru alltaf tiltæk.</p>
+          <summary>Hvernig breyti ég tungumálinu?</summary>
+          <div class="faq-answer">
+            Opnaðu stillingarvalmyndina í appinu og veldu tungumálið þitt af listanum.
+            Where Am I styður níu tungumál og man valið þitt á milli lotna.
+          </div>
         </details>
+
         <details class="faq-item">
-          <summary class="faq-q">Þarf ég aðgang til að nota forritið?</summary>
-          <p class="faq-a">Nei. Where Am I krefst enginn aðgangs, engir netfangs og engra persónuupplýsinga. Sæktu og notaðu — ekkert fleira.</p>
+          <summary>Af hverju sé ég ekki ákveðnar áhugaverðar staðsetningar?</summary>
+          <div class="faq-answer">
+            Áhugaverðar staðsetningar uppfærast sjálfkrafa þegar tækið þitt er tengt.
+            Ef þú ert á svæði með takmarkaða þjónustu gætu sumar POI-ar verið óaðgengilegar þar til appið samstillir.
+            Reyndu að uppfæra þegar þú endurheimtir tenginguna.
+          </div>
         </details>
+
         <details class="faq-item">
-          <summary class="faq-q">Hvaða tæki eru studd?</summary>
-          <p class="faq-a">Where Am I er í boði fyrir Android-tæki í gegnum Google Play. iOS-stuðningur er í þróun.</p>
+          <summary>Virkar appið offline?</summary>
+          <div class="faq-answer">
+            Já. Where Am I er hannað til að virka með takmarkaða eða enga netaðgang.
+            Kjarnaeiginleikar — þar á meðal neyðarverkfæri og áður í skyndiminni geymar staðbundnar upplýsingar — eru tiltækar offline.
+          </div>
         </details>
+
         <details class="faq-item">
-          <summary class="faq-q">Safnar forritið staðsetningargögnum?</summary>
-          <p class="faq-a">Forritið notar GPS tækisins til að finna POI í nágrenninu, en staðsetningargögn þín eru aldrei send á netþjóna okkar né deilt með þriðja aðilum.</p>
+          <summary>Hversu oft uppfærist appið?</summary>
+          <div class="faq-answer">
+            Appið athugar sjálfkrafa eftir nýju efni og umbótum í bakgrunni.
+            Þú þarft ekki að kveikja handvirkt á uppfærslum — appið sér um það þegar tenging er tiltæk.
+          </div>
         </details>
+
         <details class="faq-item">
-          <summary class="faq-q">Hversu mörg tungumál styður Where Am I?</summary>
-          <p class="faq-a">Níu: íslensku, norsku, ensku, þýsku, spænsku, frönsku, ítölsku, portúgölsku og hollenska. Veldu tungumálið þitt í stillingum — það er geymt sjálfkrafa.</p>
+          <summary>Kostar forritið eitthvað?</summary>
+          <div class="faq-answer">
+            Where Am I er ókeypis að sækja og nota. Það eru engar kaup í appinu, engin áskrift og engar auglýsingar.
+          </div>
         </details>
+
         <details class="faq-item">
-          <summary class="faq-q">Kostar forritið eitthvað?</summary>
-          <p class="faq-a">Where Am I er frítt að sækja og nota. Engar innkaup í forriti, engin áskrift og engar auglýsingar.</p>
+          <summary>Vantar POI eða gögn eru röng — hvað geri ég?</summary>
+          <div class="faq-answer">
+            Hafðu samband við okkur á support@sassagold.com með upplýsingum um hvað vantar eða er rangt.
+            Við þökkum endurgjöf sem hjálpar til við að bæta forritið fyrir alla hjólara.
+          </div>
         </details>
-        <details class="faq-item">
-          <summary class="faq-q">POI vantar eða gögn eru röng — hvað geri ég?</summary>
-          <p class="faq-a">Hafðu samband við okkur á þjónustunetfanginu hér að neðan með nákvæmni um hvað vantar eða er rangt. Við þökkum endurgjöf sem hjálpar til við að bæta forritið fyrir alla hjólara.</p>
-        </details>
+
       </div>
-
-      <div class="gold-divider"></div>
-
-      <div style="text-align:center; padding:3rem 0 1rem;">
-        <span class="section-label">Hafðu samband</span>
-        <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2rem);">Fannst þér ekki svarið <span class="text-gold">þitt</span>?</h2>
-        <p style="color:var(--text-secondary); font-size:1.05rem; margin:1rem 0 2rem; line-height:1.7;">
-          Sendu okkur tölvupóst og við svörum eins fljótt og við getum. Taktu gjarnan með tækjalíkan og Android-útgáfu fyrir hraðari aðstoð.
-        </p>
-        <a href="mailto:support@sassagold.com" class="btn-gold" style="padding:1rem 2.5rem; border-radius:9999px; font-size:1rem;">
-          Hafa samband við þjónustu
-        </a>
-      </div>
-
     </div>
   </section>
 
