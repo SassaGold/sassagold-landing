@@ -26,6 +26,42 @@
   <link rel="alternate" hreflang="no" href="https://sassagold.com/no/support.html" />
   <link rel="alternate" hreflang="is" href="https://sassagold.com/is/support.html" />
   <link rel="alternate" hreflang="x-default" href="https://sassagold.com/support.html" />
+  <style>
+    .contact-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: 0 4px 24px var(--shadow-sm);
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .contact-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 1rem;
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.25rem;
+    }
+    .contact-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 .5rem;
+    }
+    .contact-body {
+      font-size: .95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0 0 1.25rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -86,58 +122,101 @@
     </div>
   </header>
 
-  <section class="section-pad" style="background:var(--bg);">
-    <div class="section-inner" style="max-width:780px;">
+  <!-- ── Contact ───────────────────────────────────────────────────────────── -->
+  <section class="section-pad">
+    <div class="section-inner">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; max-width:720px; margin:0 auto;">
 
-      <div class="section-hd" style="text-align:left; margin-bottom:2rem;">
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <h2 class="contact-title">E-postsupport</h2>
+          <p class="contact-body">
+            Send oss en e-post, så svarer vi så fort vi kan.
+            Svartid er vanligvis innen 1–2 virkedager.
+          </p>
+          <a href="mailto:support@sassagold.com" class="support-email">
+            support@sassagold.com
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">🔒</div>
+          <h2 class="contact-title">Personvernspørsmål</h2>
+          <p class="contact-body">
+            Spørsmål om data, personvern eller dine rettigheter?
+            Les personvernreglene våre eller kontakt oss med spesifikke bekymringer.
+          </p>
+          <a href="/no/privacy.html" class="support-email">
+            Les personvernreglene →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ── FAQ ───────────────────────────────────────────────────────────────── -->
+  <section class="section-pad">
+    <div class="section-inner">
+      <div class="section-hd">
         <span class="section-label">Vanlige spørsmål</span>
-        <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2rem);">Ofte stilte <span class="text-gold">spørsmål</span></h2>
+        <h2 class="section-title">Ofte stilte <span class="text-gold">spørsmål</span></h2>
+        <p class="section-sub">Fant du ikke svaret ditt? Send oss en e-post på <a href="mailto:support@sassagold.com" style="color:var(--gold);">support@sassagold.com</a></p>
       </div>
 
-      <div class="faq-list">
+      <div style="max-width:720px; margin:0 auto;">
+
         <details class="faq-item">
-          <summary class="faq-q">Fungerer Where Am I uten internett?</summary>
-          <p class="faq-a">Ja. Nødnumre og offline-kart er tilgjengelige uten internettforbindelse. Du trenger nett for å laste inn live POI-data, men nedlastede kart og nødnumre er alltid tilgjengelige.</p>
+          <summary>Hvordan endrer jeg språket?</summary>
+          <div class="faq-answer">
+            Åpne innstillingsmenyen i appen og velg ønsket språk fra listen.
+            Where Am I støtter ni språk og husker valget ditt mellom sesjoner.
+          </div>
         </details>
+
         <details class="faq-item">
-          <summary class="faq-q">Trenger jeg en konto for å bruke appen?</summary>
-          <p class="faq-a">Nei. Where Am I krever ingen konto, ingen e-post og ingen personopplysninger. Last ned og bruk — ingenting mer.</p>
+          <summary>Hvorfor ser jeg ikke visse interessepunkter?</summary>
+          <div class="faq-answer">
+            Interessepunkter oppdateres automatisk når enheten din er tilkoblet.
+            Hvis du er i et område med begrenset dekning, kan noen POI-er være utilgjengelige inntil appen synkroniserer.
+            Prøv å oppdatere når du gjenoppretter tilkoblingen.
+          </div>
         </details>
+
         <details class="faq-item">
-          <summary class="faq-q">Hvilke enheter støttes?</summary>
-          <p class="faq-a">Where Am I er tilgjengelig for Android-enheter via Google Play. iOS-støtte er under utvikling.</p>
+          <summary>Fungerer appen offline?</summary>
+          <div class="faq-answer">
+            Ja. Where Am I er designet for å fungere med begrenset eller ingen nettverkstilgang.
+            Kjernefunksjoner — inkludert nødverktøy og tidligere bufret lokal informasjon — er tilgjengelige offline.
+          </div>
         </details>
+
         <details class="faq-item">
-          <summary class="faq-q">Samler appen inn lokasjonsdata?</summary>
-          <p class="faq-a">Appen bruker enhetens GPS for å finne nærliggende POI-er, men lokasjonsdata din sendes aldri til serverne våre eller deles med tredjeparter.</p>
+          <summary>Hvor ofte oppdaterer appen?</summary>
+          <div class="faq-answer">
+            Appen sjekker automatisk etter nytt innhold og forbedringer i bakgrunnen.
+            Du trenger ikke å utløse oppdateringer manuelt — appen håndterer det for deg når tilkobling er tilgjengelig.
+          </div>
         </details>
+
         <details class="faq-item">
-          <summary class="faq-q">Hvor mange språk støtter Where Am I?</summary>
-          <p class="faq-a">Ni: norsk, islandsk, engelsk, tysk, spansk, fransk, italiensk, portugisisk og nederlandsk. Velg foretrukket språk i innstillingene — det lagres automatisk.</p>
+          <summary>Koster appen noe?</summary>
+          <div class="faq-answer">
+            Where Am I er gratis å laste ned og bruke. Det er ingen kjøp i appen, ingen abonnementer og ingen reklame.
+          </div>
         </details>
+
         <details class="faq-item">
-          <summary class="faq-q">Koster appen noe?</summary>
-          <p class="faq-a">Where Am I er gratis å laste ned og bruke. Det er ingen kjøp i appen, ingen abonnementer og ingen reklame.</p>
+          <summary>Mangler et POI eller data er feil — hva gjør jeg?</summary>
+          <div class="faq-answer">
+            Kontakt oss på support@sassagold.com med detaljer om hva som mangler eller er feil.
+            Vi setter pris på tilbakemeldinger som bidrar til å forbedre appen for alle ryttere.
+          </div>
         </details>
-        <details class="faq-item">
-          <summary class="faq-q">Mangler et POI eller data er feil — hva gjør jeg?</summary>
-          <p class="faq-a">Kontakt oss på support-e-posten nedenfor med detaljer om hva som mangler eller er feil. Vi setter pris på tilbakemeldinger som bidrar til å forbedre appen for alle ryttere.</p>
-        </details>
+
       </div>
-
-      <div class="gold-divider"></div>
-
-      <div style="text-align:center; padding:3rem 0 1rem;">
-        <span class="section-label">Kontakt oss</span>
-        <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2rem);">Fant du ikke svaret <span class="text-gold">ditt</span>?</h2>
-        <p style="color:var(--text-secondary); font-size:1.05rem; margin:1rem 0 2rem; line-height:1.7;">
-          Send oss en e-post og vi svarer så fort vi kan. Inkluder gjerne enhetsmodell og Android-versjon for raskere hjelp.
-        </p>
-        <a href="mailto:support@sassagold.com" class="btn-gold" style="padding:1rem 2.5rem; border-radius:9999px; font-size:1rem;">
-          Kontakt support
-        </a>
-      </div>
-
     </div>
   </section>
 
