@@ -84,3 +84,27 @@
   });
 })();
 
+
+/* ── Language switcher ──────────────────────────────────────────────────── */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.lang-switcher').forEach(function (sw) {
+      var btn = sw.querySelector('.lang-btn');
+      if (!btn) return;
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var isOpen = sw.classList.contains('open');
+        document.querySelectorAll('.lang-switcher.open').forEach(function (s) { s.classList.remove('open'); s.querySelector('.lang-btn').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { sw.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+    document.addEventListener('click', function () {
+      document.querySelectorAll('.lang-switcher.open').forEach(function (s) { s.classList.remove('open'); s.querySelector('.lang-btn').setAttribute('aria-expanded', 'false'); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.lang-switcher.open').forEach(function (s) { s.classList.remove('open'); s.querySelector('.lang-btn').setAttribute('aria-expanded', 'false'); });
+      }
+    });
+  });
+})();
